@@ -1,0 +1,1 @@
+json.array! @uplifts, partial: 'uplifts/uplift', as: :uplift

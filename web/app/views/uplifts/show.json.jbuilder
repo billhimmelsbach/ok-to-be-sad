@@ -1,0 +1,1 @@
+json.partial! "uplifts/uplift", uplift: @uplift
