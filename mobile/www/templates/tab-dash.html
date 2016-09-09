@@ -1,12 +1,17 @@
-<ion-view view-title="Dashboard">
-  <ion-content class="padding">
-    <div class="list card" ng-repeat="uplift in uplifts">
-      <div class="item item-divider"><img src="{{uplift.title}}"></div>
-      <div class="item item-body">
-        <div>
-          {{uplift}}
-        </div>
-      </div>
-    </div>
-  </ion-content>
-</ion-view>
+<body ng-app="starter" no-scroll>
+    <ion-pane ng-controller="CardsCtrl">
+      <ion-header-bar class="bar-default">
+        <h1 class="title">TD Cards</h1>
+      </ion-header-bar>
+        <h1> TEST </h1>
+      <td-cards>
+        <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
+          <div class="image" ng-controller="CardCtrl">
+            <div class="no-text">NOPE</div>
+            <img ng-src="{{card.image}}">
+            <div class="yes-text">LIKE</div>
+          </div>
+        </td-card>
+      </td-cards>
+    </ion-pane>
+  </body>
