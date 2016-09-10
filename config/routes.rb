@@ -12,6 +12,13 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new", as: "new_session"
   get "/logout", to: "sessions#destroy"
   post "/sessions", to: "sessions#create", as: "create_session"
+
+  get "/articles/new", to: "articles#new", as: "new_article"
+  post "/articles", to: "articles#create"
+  get "/articles/:id", to: "articles#show", as: "article"
+  get "/articles/:id/edit", to: "articles#edit", as: "edit_article"
+  patch "/articles/:id", to: "articles#update"
+  delete "/articles/:id", to: "articles#destroy", as: "destroy_article"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
