@@ -4,7 +4,7 @@
 </div>
 <br>
 <% if current_user != nil && current_user.id == @user.id %>
-  <div class="dropdownprofile">
+  <div class="drop-down-profile">
     <div class="cog glyphicon glyphicon-cog"></div>
     <div class="dropdown-content"><br><br>
       <%= link_to current_user.first_name + "\'s Profile", user_path(current_user) %><br><br>
@@ -14,7 +14,7 @@
   </div>
 <% end %>
 <br>
-<div class="ProfilePhoto">
+<div class="profile-photo">
   <img src="<%= @user.image%>" class="product_img img-responsive img-circle">
 </div>
 <h2><%= @user.first_name %>
@@ -25,7 +25,7 @@
 </h4>
 <div class="index-container col-xs-12 container-fluid well">
   <% if @user.articles.distinct.count < 1 || nil %>
-    <p>Are you telling me you haven't seen anything funny on the Muni yet?</p>
+    <p>What makes you happy?</p>
     <p><%= link_to "Click here", new_article_path %> to share now!</p>
   <% end %>
   <% @articles.each do |article| %>

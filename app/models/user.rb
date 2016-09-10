@@ -6,9 +6,11 @@ class User < ActiveRecord::Base
 
   # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  # validates :email, uniqueness: true, length: { in: 2..150}, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}, presence: true
-  # validates :first_name, length: { in: 2..50}, presence: true
-  # validates :last_name, length: { in: 2..75}, presence: true
+  validates :email, uniqueness: true, length: { in: 2..150}, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}, presence: true
+  validates :first_name, length: { in: 2..50}, presence: true
+  validates :last_name, length: { in: 2..75}, presence: true
+  validates :password, length: { in: 2..150}
+  validates :password_confirmation, presence: true
 
 
   has_many :articles

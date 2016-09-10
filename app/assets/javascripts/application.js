@@ -19,12 +19,12 @@ $(document).on('turbolinks:load', function(){
   $(".cog").hide();
   $(".cog").click(function() {
       console.log("test");
-      $(".dropdownprofile .dropdown-content").show();
+      $(".drop-down-profile .dropdown-content").show();
       // $(".dropdown-content a").show();
   });
 
   $(".ProfilePhoto").click(function() {
       console.log("test");
-      $(".dropdownprofile .dropdown-content").hide();
+      $(".drop-down-profile .dropdown-content").hide();
   });
 });
