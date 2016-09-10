@@ -1,3 +1,47 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.about {
+  text-align: center;
+}
+
+.demo {
+  height: 250px;
+  width: 350px;
+}
+
+.ruby-link {
+  color: white;
+  text-decoration: none !important;
+}
+
+.ruby-link:hover {
+  color: white;
+}
+
+.style_image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonrow {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+.userbutton {
+  margin: 10px;
+}
+
+.glyphicon {
+  font-size:24pt
+}
