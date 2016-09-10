@@ -16,6 +16,7 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function(){
+  $(".cog").hide();
   $(".cog").click(function() {
       console.log("test");
       $(".dropdownprofile .dropdown-content").show();
