@@ -14,14 +14,14 @@ class UsersController < ApplicationController
       flash[:notice] = "User account created. Welcome!"
       redirect_to @user
     else
-      flash[:notice] = "There was a problem creating your account. #{@user.errors.full_messages.join(', ')}."
+      flash[:error] = "There was a problem creating your account. #{@user.errors.full_messages.join(', ')}."
       redirect_to new_user_path
     end
   end
 
   def show
     @user = User.find(params[:id])
-    @articles = @user.articles.order("created_at DESC")
+    @articles = @user.articles.order("updated_at DESC")
     render :show
   end
 
@@ -32,11 +32,14 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    # params.delete(:password) if params[:password].blank?
+    # params[:user].delete(:password_confirmation) if params[:password_confirmation].blank?
     if auth_route(@user)
       if @user.update(user_params)
         flash[:success] = "Your profile was successfully updated"
         redirect_to @user
       else
+        flash[:error] = "Cannot edit your profile: #{@user.errors.full_messages.join(', ')}."
         render :edit
       end
     else

@@ -1,8 +1,4 @@
-
-<div class="flash-message-container">
-  <%= flash_messages %>
-</div>
-<br>
+<%= render :partial => "layouts/flash_messages"%>
 <% if current_user != nil && current_user.id == @user.id %>
   <div class="dropdownprofile">
     <div class="cog glyphicon glyphicon-cog"></div>

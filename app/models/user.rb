@@ -2,6 +2,17 @@ class User < ActiveRecord::Base
   has_secure_password
   before_validation :default_values
 
+  # before_update :update
+
+  # def update(params)
+  #   if params[:user][:password].blank?
+  #     params[:user].delete("password")
+  #     params[:user].delete("password_confirmation")
+  #   end
+  #   super
+  # end
+
+
   # friendly_id :full_name, use: [:slugged, :finders]
 
   # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -9,7 +20,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, length: { in: 2..150}, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}, presence: true
   validates :first_name, length: { in: 2..50}, presence: true
   validates :last_name, length: { in: 2..75}, presence: true
-  validates :password, length: { in: 2..150}
+  validates :password, length: { in: 2..150}, presence: true
   validates :password_confirmation, presence: true
 
 
