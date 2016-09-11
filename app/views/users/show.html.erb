@@ -25,71 +25,37 @@
 </h4>
 <div class="index-container col-xs-12 container-fluid well">
   <% if @user.articles.distinct.count < 1 || nil %>
-    <p>Are you telling me you haven't seen anything funny on the Muni yet?</p>
-    <p><%= link_to "Click here", new_article_path %> to share now!</p>
-  <% end %>
-  <% @articles.each do |article| %>
-    <%= link_to article_path(article) do %>
-      <div class="column col-xs-12 col-s-6 col-md-6 col-lg-4" style="padding: 3px">
-        <div class="card card-inverse image-index" style="background-image: url('<%=article.content %>')"></div>
-      </div>
-    <% end %>
-  <% end %>
-  <br/>
-</div>
-
-<div class="flash-message-container">
-  <%= flash_messages %>
-</div>
-<br>
-<% if current_user != nil && current_user.id == @user.id %>
-  <div class="drop-down-profile">
-    <div class="cog glyphicon glyphicon-cog"></div>
-    <div class="dropdown-content"><br><br>
-      <%= link_to current_user.first_name + "\'s Profile", user_path(current_user) %><br><br>
-      <%= link_to "Profile Settings", edit_user_path(current_user) %><br><br>
-      <%= link_to "Log Out", logout_path %><br>
-    </div>
-  </div>
-<% end %>
-<br>
-<div class="profile-photo">
-  <img src="<%= @user.image%>" class="product_img img-responsive img-circle">
-</div>
-<h2><%= @user.first_name %>
-  <%= @user.last_name %>'s Profile Page
-</h2>
-<h4>Date Joined:
-  <%= @user.created_at.localtime.strftime("%B #{@user.created_at.day.ordinalize}, %Y") %>
-</h4>
-<div class="index-container col-xs-12 container-fluid well">
-  <% if @user.articles.distinct.count < 1 || nil %>
     <p>What makes you happy?</p>
     <p><%= link_to "Click here", new_article_path %> to share now!</p>
   <% end %>
   <% @articles.each do |article| %>
     <div class="column col-xs-12 col-s-6 col-md-6 col-lg-4" style="padding: 3px">
-      <div class="card card-inverse image-index" style="background-image: url('<%= article.content %>')"></div>
-      <% if current_user != nil && current_user.id == article.user.id %>
-        <div class="buttonrow">
-        <%= link_to "Edit Article", edit_article_path, method: :get, :class=>"ruby-link btn btn-info btn-primary btn-md inline" %>
-        <button class="ruby-link btn btn-danger inline btn-primary btn-md inline" type="button" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-expanded="false" aria-controls="collapseExample">Delete Article</button>
-        <br>
-          <div class = "row">
-            <div class="collapse" id="delete<%= article.id %>"><a> <br>
-              <div class="well col-xs-6 col-xs-offset-3">
-                <h5 class="inline"> Are you sure you want to delete your article? </h5>
-                  <button class="ruby-link btn-danger btn-primary btn-sm inline">
-                    <%= link_to "Delete Article", destroy_article_path, method: :delete, :class=>"ruby-link"%>
-                  </button>
-                  <button class = "btn-success btn-primary btn-sm inline" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-expanded="false" aria-controls="collapseExample">Cancel</button>
+      <div class = "row">
+        <div class="card card-inverse image-index" style="background-image: url('<%=article.content %>')">
+        </div>
+      </div>
+      <br>
+      <div class = "row">
+        <% if current_user != nil && current_user.id == article.user.id %>
+          <div class="buttonrow">
+          <%= link_to "Edit Article", edit_article_path, method: :get, :class=>"ruby-link btn btn-info btn-primary btn-md inline" %>
+          <button class="ruby-link btn btn-danger inline btn-primary btn-md inline" type="button" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-expanded="false" aria-controls="collapseExample">Delete Article</button>
+          <br>
+            <div class = "row">
+              <div class="collapse" id="delete<%= article.id %>"><a> <br>
+                <div class="well col-xs-6 col-xs-offset-3">
+                  <h5 class="inline"> Are you sure you want to delete your article? </h5>
+                    <button class="ruby-link btn-danger btn-primary btn-sm inline">
+                      <%= link_to "Delete Article", destroy_article_path, method: :delete, :class=>"ruby-link"%>
+                    </button>
+                    <button class = "btn-success btn-primary btn-sm inline" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-expanded="false" aria-controls="collapseExample">Cancel</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <br><br>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
   <% end %>
   <br/>
 </div>
