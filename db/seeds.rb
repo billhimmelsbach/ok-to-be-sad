@@ -1,5 +1,13 @@
 USERS = [
   {
+    first_name: "Bill",
+    last_name: "Himmelsbach",
+    email: "test@test.com",
+    password: "test",
+    password_confirmation: "test",
+    image: "https://ucarecdn.com/41f452c8-6397-430a-8515-98e621f1b914/"
+  },
+  {
     first_name: "Nathan",
     last_name: "Allen",
     email: "NathanAllen@WDI30.com",
@@ -67,14 +75,6 @@ USERS = [
     first_name: "Jane",
     last_name: "Smith",
     email: "JaneSmith@WDI30.com",
-    password: "test",
-    password_confirmation: "test",
-    image: "https://ucarecdn.com/1386c488-f2db-4b63-959f-32656a7e35c6/"
-  },
-  {
-    first_name: "Bob",
-    last_name: "Ross",
-    email: "BobRoss@WDI30.com",
     password: "test",
     password_confirmation: "test",
     image: "https://ucarecdn.com/1386c488-f2db-4b63-959f-32656a7e35c6/"
