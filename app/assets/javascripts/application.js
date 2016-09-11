@@ -25,6 +25,9 @@ $(document).on('turbolinks:load', function(){
     nav: true,
     // autoHeight:true
   });
+
+  $(".form-icons").fitText(1.2);
+
   $(".cog").click(function() {
       console.log("test");
       $(".dropdown-content").show();
