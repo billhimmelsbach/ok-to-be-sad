@@ -1,19 +1,15 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
+ * app/assets/stylesheets/application.css
+ */
+
+/*
+ *= require bootstrap-3.3.6.min
  *= require rails_bootstrap_forms
  *= require_tree .
  *= require_self
  */
+
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 
  footer {
    left: 0;
@@ -97,7 +93,7 @@ h6 {
   visibility: hidden !important;
 }
 
-.drop-down-profile, .cog{
+.dropdownprofile, .cog{
   display: none;
 }
 @media only screen and (max-width: 770px) {
@@ -124,8 +120,8 @@ h6 {
     }
 
     .show-mobile {
-      /*padding-top: 3vh;
-      padding-bottom: 3vh;*/
+      padding-top: 3vh;
+      padding-bottom: 3vh;
     }
 
     #wrap {
@@ -277,7 +273,7 @@ h6 {
 }
 
 /* The container <div> - needed to position the dropdown content */
-.drop-down-profile {
+.dropdownprofile {
   position: relative;
   display: inline-block;
 }
@@ -303,7 +299,7 @@ h6 {
 /*.dropdown-content a:active {background-color: #f1f1f1}*/
 
 /* Show the dropdown menu on hover */
-/*.drop-down-profile:active .dropdown-content {
+/*.dropdownprofile:active .dropdown-content {
   display: block;
 }*/
 
