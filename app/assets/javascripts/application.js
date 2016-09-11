@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
+
 $(document).on('turbolinks:load', function(){
   $('.owl-carousel').owlCarousel({
     items:1,
@@ -30,9 +31,17 @@ $(document).on('turbolinks:load', function(){
       // $(".dropdown-content a").show();
   });
 
-  $(document).on("click", "#video-form-buton", function() {
-    console.log("yes!");
+  $(document).on("click", "#video-form-button", function() {
+    $("#image-form").hide();
+    console.log("VIDEO!");
     $("#video-form").show();
+  });
+
+
+  $(document).on("click", "#image-form-button", function() {
+    $("#video-form").hide();
+    console.log("IMAGE!");
+    $("#image-form").show();
   });
 
   $(".ProfilePhoto").click(function() {
