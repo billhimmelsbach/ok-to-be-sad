@@ -12,10 +12,11 @@
           <% if article.content_type == "image" %>
             <div class="text-center"> <img class = "img-responsive" style="max-height:60vh; width:auto;" src="<%= article.content %>"> <h1><%= article.title %></div>
           <% end %>
+          <% if article.content_type == "video" %>
+            <div class="item-video" style="height:60vh"><a class="owl-video" href="<%= article.content %>"></a></div>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
   </div>
 </div>
-
-  <!-- <div class="item-video" style="height:90vh"><a class="owl-video" href="https://www.youtube.com/watch?v=eNHDG-2w1xo"></a></div> -->
