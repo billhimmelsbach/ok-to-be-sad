@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   include AuthHelper
+  include SessionsHelper
 
   def index
     @user = User.find_by_id(session[:user_id])
@@ -34,7 +35,7 @@ class ArticlesController < ApplicationController
     if auth_route(@article.user)
       if @article.update(article_params)
         flash[:success] = "#{@article.title} successfully updated"
-        redirect_to @user
+        redirect_to @article.user
       else
         flash[:error] = "Cannot edit your post: #{@article.errors.full_messages.join(', ')}."
         render :edit
