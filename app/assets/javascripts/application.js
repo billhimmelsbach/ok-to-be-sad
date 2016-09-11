@@ -30,6 +30,11 @@ $(document).on('turbolinks:load', function(){
       // $(".dropdown-content a").show();
   });
 
+  $(document).on("click", "#video-form-buton", function() {
+    console.log("yes!");
+    $("#video-form").show();
+  });
+
   $(".ProfilePhoto").click(function() {
       console.log("test");
       $(".dropdown-content").hide();
