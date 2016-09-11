@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function(){
+  $(".cog").hide();
+  $(".cog").click(function() {
+      console.log("test");
+      $(".drop-down-profile .dropdown-content").show();
+      // $(".dropdown-content a").show();
+  });
+
+  $(".ProfilePhoto").click(function() {
+      console.log("test");
+      $(".drop-down-profile .dropdown-content").hide();
+  });
+});

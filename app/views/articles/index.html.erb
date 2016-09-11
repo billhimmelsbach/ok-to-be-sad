@@ -1,0 +1,21 @@
+<div class="col-xs-12">
+  <% if current_user == nil %>
+    <h1> NO USER </h1>
+  <% end %>
+  <div class="newusertext">
+    <% if current_user == nil %>
+      <h1 class="text-center splash-title">Ok To Be Sad</h1>
+      <h2 class="text-center splash-title2">A Community When You Need It The Most</h2>
+    <% end %>
+  </div>
+  <% if @articles %>
+    <% @articles.each do |article| %>
+      <%= link_to article_path(article) do %>
+        <div class="column col-xs-12 col-s-6 col-md-6 col-lg-4" style="padding: 3px">
+          <div class="card card-inverse image-index" style="background-image: url('<%=article.image %>')">
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>

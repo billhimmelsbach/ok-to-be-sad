@@ -5,10 +5,113 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <%= include_uploadcare_widget_from_cdn version: "2.9.0", min: true %>
+  <script>
+  UPLOADCARE_LOCALE = "en";
+  UPLOADCARE_TABS = "file url camera facebook gdrive dropbox instagram flickr skydrive";
+  UPLOADCARE_PUBLIC_KEY = "de4b8b434e0a29b54373";
+  </script>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class = "col-xs-12">
+    <div class = "nav-div">
+      <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="col-xs-12 navbar-header" style="padding-left:-10px">
+            <div class="col-xs-3 pull-left">
+              <a href="/" class="navbar-brand">Ok To Be Sad</a>
+            </div>
+            <div class="col-xs-9 pull-right">
+              <ul class="nav navbar-nav v-align pull-right">
+                <li>
+                  <% if current_user %>
+                    <%= link_to "New Post", new_article_path, :class => "pull-right btn blue-grey lighten-3" %>
+                  <% else %>
+                    <%= link_to "New Post", new_session_path, :class => "pull-right btn blue-grey lighten-3" %>
+                  <% end %>
+                </li>
+                <% if current_user %>
+                  <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, <%= current_user.first_name %>! <span class="glyphicon glyphicon-user pull-right"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><%= link_to current_user.first_name + "\'s Profile", user_path(current_user)%></li>
+                          <li class="divider"></li>
+                          <li><%= link_to "Profile Settings", edit_user_path(current_user) %></li>
+                          <li class="divider"></li>
+                          <li><%= link_to "Log Out", logout_path %></li>
+                        </ul>
+                    </li>
+                  </ul>
+              </ul>
+              <% else %>
+                <li><%= link_to "Sign up", new_user_path %></li>
+                <li><%= link_to "Log In", new_session_path %></li>
+              <% end %>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <main>
+      <div class ="row">
+        <div class = "col-xs-12">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
+    <% if current_user %>
+      <div class="col-xs-12 navbar navbar-fixed-bottom bottom-nav-div">
+        <div class="row" id="bottomNav">
+          <% if current_user %>
+            <div class="col-xs-3 text-center">
+              <%= link_to :back do %><br>
+                <i class="glyphicon glyphicon-chevron-left"></i>
+              <% end %>
+            </div>
+            <div class="col-xs-3 text-center">
+              <%= link_to root_path do %><br>
+                <i class="glyphicon glyphicon-home"></i>
+              <% end %>
+            </div>
+            <div class="col-xs-3 text-center">
+              <%= link_to new_article_path do %><br>
+                <i class="glyphicon glyphicon-plus"></i>
+              <% end %>
+            </div>
+            <div class="col-xs-3 text-center">
+              <%= link_to user_path(current_user) do %><br>
+                <i class="glyphicon glyphicon-user"></i>
+              <% end %>
+            </div>
+          <% else %>
+            <div class="col-xs-3 text-center">
+              <%= link_to :back do %><br>
+                <i class="glyphicon glyphicon-chevron-left"></i>
+              <% end %>
+            </div>
+            <div class="col-xs-3 text-center">
+              <%= link_to root_path do %><br>
+                <i class="glyphicon glyphicon-home"></i>
+              <% end %>
+            </div>
+            <div class="col-xs-3 text-center">
+              <%= link_to new_session_path do %><br>
+                <i class="glyphicon glyphicon-plus"></i>
+              <% end %>
+            </div>
+            <div class="col-xs-3 text-center">
+              <%= link_to new_session_path do %><br>
+                <i class="glyphicon glyphicon-log-in"></i>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </body>
 </html>
