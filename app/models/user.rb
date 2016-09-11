@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
 
-  has_many :articles
+  has_many :articles, dependent: :delete_all
   has_many :messages, dependent: :delete_all
 
   private
