@@ -19,8 +19,7 @@ ActiveRecord::Schema.define(version: 20160910120820) do
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.text     "image"
-    t.text     "video"
+    t.string   "content_type"
     t.datetime "last_time_accessed"
     t.integer  "user_id"
     t.datetime "created_at",         null: false
