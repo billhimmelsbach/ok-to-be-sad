@@ -17,9 +17,9 @@ class ArticlesController < ApplicationController
     @article.user_id = session[:user_id]
     if @article.save
       flash[:success] = "Your article titled \"#{@article.title}\" was successfully created"
-      redirect_to article_path(@user)
+      redirect_to @article.user
     else
-      flash[:notice] = "Cannot create your post: #{@article.errors.full_messages.join(', ')}."
+      flash[:error] = "Cannot create your post: #{@article.errors.full_messages.join(', ')}."
       redirect_to new_article_path
     end
   end
@@ -34,12 +34,13 @@ class ArticlesController < ApplicationController
     if auth_route(@article.user)
       if @article.update(article_params)
         flash[:success] = "#{@article.title} successfully updated"
-        redirect_to article_path
+        redirect_to @user
       else
-        # render :edit
+        flash[:error] = "Cannot edit your post: #{@article.errors.full_messages.join(', ')}."
+        render :edit
       end
     else
-      auth_fail("update other people's articles", article_path)
+      auth_fail("update other people's articles", root_path)
     end
   end
 
@@ -50,7 +51,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Your article titled \"#{@article.title}\" was deleted."
       redirect_to user_path(current_user)
     else
-      auth_fail("delete other people's articles", article_path)
+      auth_fail("delete other people's articles", root_path)
     end
   end
 
