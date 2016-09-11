@@ -98,7 +98,7 @@ ARTICLES = [
     title: "Roger Rabbit takes the 19-Polk to Toontown",
     content: "https://ucarecdn.com/31d96850-b864-4665-9e43-3d7f8888ad98/",
     content_type: "image",
-    user_id: 2,
+    user_id: 1,
   },
 ]
 
