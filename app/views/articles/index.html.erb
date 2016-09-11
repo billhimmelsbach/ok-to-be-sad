@@ -9,6 +9,14 @@
       <h2 class="text-center splash-title2">A Community When You Need It The Most</h2>
     <% end %>
   </div>
+  <div class="owl-carousel owl-theme" style="height:100px;">
+    <div> <h1>Welcome to It's Ok To Be Sad</h1> <a href="https://www.google.com">Test</a></div>
+    <div class="item-video" style="height:90vh"><a class="owl-video" href="https://www.youtube.com/watch?v=eNHDG-2w1xo"></a></div>
+    <% @articles.each do |article| %>
+      <div> <img src="<%= article.content %>"> <h1><%= article.title %></div>
+    <% end %>
+    <div> <h1>Welcome to It's Ok To Be Sad</h1> </div>
+  </div>
   <% if @articles %>
     <% @articles.each do |article| %>
       <%= link_to article_path(article) do %>
