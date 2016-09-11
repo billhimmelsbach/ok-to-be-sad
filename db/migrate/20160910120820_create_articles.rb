@@ -3,8 +3,7 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.string :title
       t.text :content
-      t.text :image
-      t.text :video
+      t.string :content_type
       t.datetime :last_time_accessed
       t.belongs_to :user, index: true
 
