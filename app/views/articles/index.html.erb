@@ -9,7 +9,7 @@
     <% else %>
       <% if @articles %>
         <% @articles.each do |article| %>
-          <iframe src="https://embed.spotify.com/?uri=spotify:track:1ljzHUgt2SU2ADkhfa9eBC&view=coverart" width="200" height="300" frameborder="0" allowtransparency="true"></iframe>
+          <!-- <iframe src="https://embed.spotify.com/?uri=spotify:track:1ljzHUgt2SU2ADkhfa9eBC&view=coverart" width="200" height="300" frameborder="0" allowtransparency="true"></iframe> -->
           <% if article.content_type == "image" %>
             <div class="text-center"> <img class = "img-responsive" style="max-height:60vh; width:auto;" src="<%= article.content %>"> <h1><%= article.title %></div>
           <% end %>
@@ -17,7 +17,7 @@
             <div class="item-video" style="height:60vh"><a class="owl-video" href="<%= article.content %>"></a></div>
           <% end %>
           <% if article.content_type == "song" %>
-            <iframe src="https://embed.spotify.com/?uri=spotify:track:1ljzHUgt2SU2ADkhfa9eBC&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+            <iframe src="https://embed.spotify.com/?uri=spotify:track:<%= article.content[-22..-1] %>&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
           <% end %>
         <% end %>
       <% end %>

@@ -36,6 +36,7 @@ $(document).on('turbolinks:load', function(){
 
   $(document).on("click", "#video-form-button", function() {
     $("#image-form").hide();
+    $("#song-form").hide();
     console.log("VIDEO!");
     $("#video-form").show();
   });
@@ -43,8 +44,16 @@ $(document).on('turbolinks:load', function(){
 
   $(document).on("click", "#image-form-button", function() {
     $("#video-form").hide();
+    $("#song-form").hide();
     console.log("IMAGE!");
     $("#image-form").show();
+  });
+
+  $(document).on("click", "#song-form-button", function() {
+    $("#video-form").hide();
+    $("#image-form").hide();
+    console.log("SONG!");
+    $("#song-form").show();
   });
 
   $(".ProfilePhoto").click(function() {
