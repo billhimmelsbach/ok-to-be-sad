@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', function(){
     // autoHeight:true
   });
 
-  $(".form-icons").fitText(1.2);
+  $(".quote-title").fitText(2.0);
 
   $(".cog").click(function() {
       console.log("test");
@@ -35,25 +35,28 @@ $(document).on('turbolinks:load', function(){
   });
 
   $(document).on("click", "#video-form-button", function() {
-    $("#image-form").hide();
-    $("#song-form").hide();
+    $(".form-partials").hide();
     console.log("VIDEO!");
-    $("#video-form").show();
+    $("#video-form").fadeIn();
   });
 
 
   $(document).on("click", "#image-form-button", function() {
-    $("#video-form").hide();
-    $("#song-form").hide();
+    $(".form-partials").hide();
     console.log("IMAGE!");
-    $("#image-form").show();
+    $("#image-form").fadeIn();
   });
 
   $(document).on("click", "#song-form-button", function() {
-    $("#video-form").hide();
-    $("#image-form").hide();
+    $(".form-partials").hide();
     console.log("SONG!");
-    $("#song-form").show();
+    $("#song-form").fadeIn();
+  });
+
+  $(document).on("click", "#quote-form-button", function() {
+    $(".form-partials").hide();
+    console.log("QUOTE!");
+    $("#quote-form").fadeIn();
   });
 
   $(".ProfilePhoto").click(function() {

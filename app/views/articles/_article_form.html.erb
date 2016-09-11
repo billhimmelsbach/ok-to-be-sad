@@ -1,13 +1,16 @@
 <div class = "row">
   <div class = "col-xs-12 text-center">
-    <div class = "col-xs-4 form-icons" id="video-form-button">
-      <i class="fa fa-video-camera fa-5x" aria-hidden="true"> Video</i>
+    <div class = "col-xs-3 form-icons" id="video-form-button">
+      <i class="fa fa-video-camera fa-5x" aria-hidden="true"></i>
     </div>
-    <div class = "col-xs-4 form-icons" id="image-form-button">
-      <i class="fa fa-camera-retro fa-5x" aria-hidden="true"> Photo</i>
+    <div class = "col-xs-3 form-icons" id="image-form-button">
+      <i class="fa fa-camera-retro fa-5x" aria-hidden="true"></i>
     </div>
-    <div class = "col-xs-4 form-icons" id="song-form-button">
-      <i class="fa fa-spotify fa-5x" aria-hidden="true"> Song</i>
+    <div class = "col-xs-3 form-icons" id="song-form-button">
+      <i class="fa fa-spotify fa-5x" aria-hidden="true"></i>
+    </div>
+    <div class = "col-xs-3 form-icons" id="quote-form-button">
+      <i class="fa fa-pencil fa-5x" aria-hidden="true"></i>
     </div>
   </div>
 </div>
@@ -24,5 +27,9 @@
 
   <div id="song-form" class="form-partials">
     <%= render :partial => "articles/forms/song_form"%>
+  </div>
+
+  <div id="quote-form" class="form-partials">
+    <%= render :partial => "articles/forms/quote_form" %>
   </div>
 </div>
