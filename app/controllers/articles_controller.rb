@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
-    auth_fail("edit other people's article information!", @article) if !auth_route(@article.user)
+    auth_fail("edit other people's article information!", @article.user) if !auth_route(@article.user)
   end
 
   def update
