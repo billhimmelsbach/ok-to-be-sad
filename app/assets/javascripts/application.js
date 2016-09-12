@@ -29,7 +29,6 @@ $(document).on('turbolinks:load', function(){
     margin:5,
 
     video:true,
-    stagePadding: 20,
     nav: false,
     // autoHeight:true
   });
