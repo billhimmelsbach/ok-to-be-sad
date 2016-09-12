@@ -24,6 +24,10 @@ $(document).on('turbolinks:load', function(){
     console.log("Hit!");
   };
 
+  setTimeout(function() {
+    $('#flash_messages').slideUp();
+  }, 2000);
+
   $('.owl-carousel').owlCarousel({
     items:1,
     margin:5,
