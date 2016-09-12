@@ -13,7 +13,7 @@
     </div>
   </div>
 <% end %>
-<div class="profile-photo">
+<div class="ProfilePhoto">
   <img src="<%= @user.image%>" class="product_img img-responsive img-circle">
 </div>
 <h2><%= @user.first_name %>
@@ -25,7 +25,7 @@
   <% @articles.each do |article| %>
   <div class="index-container col-xs-12 container-fluid well">
     <div class="col-xs-12" style="padding: 10px">
-      
+
       <% if @user.articles.distinct.count < 1 || nil %>
         <p>What makes you happy?</p>
         <p><%= link_to "Click here", new_article_path %> to share now!</p>

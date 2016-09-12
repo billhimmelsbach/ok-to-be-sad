@@ -27,9 +27,10 @@ $(document).on('turbolinks:load', function(){
   $('.owl-carousel').owlCarousel({
     items:1,
     margin:10,
+
     video:true,
     stagePadding: 50,
-    nav: true,
+    nav: false,
     // autoHeight:true
   });
 
