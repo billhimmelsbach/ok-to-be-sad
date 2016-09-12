@@ -105,6 +105,10 @@ h6 {
       margin-top: -100px
     }
 
+    main {
+      margin-top: 0%;
+    }
+
     .bottom-nav-div, .show-mobile, .cog, .newusertext {
       display: block !important;
       visibility: visible !important;
