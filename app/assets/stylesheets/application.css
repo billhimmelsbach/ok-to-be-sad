@@ -141,7 +141,7 @@ h6 {
       border-top: 1px solid #bc132a;
     }
 
-    .glyphicon {
+    .glyphicon, .fa-navbar {
       color: #bc132a;
     }
 
