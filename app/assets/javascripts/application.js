@@ -65,9 +65,6 @@ $(document).on('turbolinks:load', function(){
   //   formSelect("#quote-form");
   // });
 
-  // SPECIFIC IPHONE TOUCH FUNCTIONALITY
-  $('#video-form-button').css('cursor','pointer');
-
   $(document).on("click touchstart", "#video-form-button", function() {
     formSelect("#video-form");
   });
