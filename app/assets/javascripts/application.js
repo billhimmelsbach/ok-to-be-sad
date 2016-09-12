@@ -49,19 +49,38 @@ $(document).on('turbolinks:load', function(){
       // $(".dropdown-content a").show();
   });
 
-  $(document).on("click", "#video-form-button", function() {
+  // $(document).on("click", "#video-form-button", function() {
+  //   formSelect("#video-form");
+  // });
+  //
+  // $(document).on("click", "#image-form-button", function() {
+  //   formSelect("#image-form");
+  // });
+  //
+  // $(document).on("click", "#song-form-button", function() {
+  //   formSelect("#song-form");
+  // });
+  //
+  // $(document).on("click", "#quote-form-button", function() {
+  //   formSelect("#quote-form");
+  // });
+
+  // SPECIFIC IPHONE TOUCH FUNCTIONALITY
+  $('#video-form-button').css('cursor','pointer');
+
+  $(document).on("click touchstart", "#video-form-button", function() {
     formSelect("#video-form");
   });
 
-  $(document).on("click", "#image-form-button", function() {
+  $(document).on("click touchstart", "#image-form-button", function() {
     formSelect("#image-form");
   });
 
-  $(document).on("click", "#song-form-button", function() {
+  $(document).on("click touchstart", "#song-form-button", function() {
     formSelect("#song-form");
   });
 
-  $(document).on("click", "#quote-form-button", function() {
+  $(document).on("click touchstart", "#quote-form-button", function() {
     formSelect("#quote-form");
   });
   // $(document).on("click", "#video-form-button", function() {
