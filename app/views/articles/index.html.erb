@@ -11,13 +11,13 @@
       <% if @articles %>
         <% @articles.each do |article| %>
           <% if article.content_type == "image" %>
-            <div class="text-center"> <img class = "img-responsive" style="max-height:60vh; width:auto;" src="<%= article.content %>"> <h1><%= article.title %></div>
+            <div class="text-center" style="background-color: #39abb6; height:80vh;"> <img class = "img-responsive vertically-align-force" style="max-height:60vh; width:auto; background-color:blue;" src="<%= article.content %>"></div>
           <% end %>
           <% if article.content_type == "video" %>
-            <div class="item-video" style="height:60vh"><a class="owl-video" href="<%= article.content %>"></a></div>
+            <div class="item-video" style="background-color:#39abb6; height:80vh;" ><a class="owl-video" href="<%= article.content %>"></a></div>
           <% end %>
           <% if article.content_type == "song" %>
-            <iframe src="https://embed.spotify.com/?uri=spotify:track:<%= article.content[-22..-1] %>&view=coverart" width="200" height="380" frameborder="0" allowtransparency="true"></iframe>
+            <div style = "height: 80vh;"> <iframe class= "vertically-align-force" src="https://embed.spotify.com/?uri=spotify:track:<%= article.content[-22..-1] %>&view=coverart" width="200" height="380" frameborder="0" allowtransparency="true"></iframe></div>
           <% end %>
           <% if article.content_type == "quote" %>
             <div style="height:60vh">

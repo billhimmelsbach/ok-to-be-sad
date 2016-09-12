@@ -120,7 +120,7 @@ ARTICLES = [
   },
   {
     title: "Dad's Bicycle Art",
-    content: "https://ucarecdn.com/702fa6d9-cb1c-48f4-a4be-7cc7c123b494/",
+    content: "https://ucarecdn.com/c6ce2c91-787c-4d97-bedc-771e44a5d3cd/",
     content_type: "image",
     user_id: 1
   },
