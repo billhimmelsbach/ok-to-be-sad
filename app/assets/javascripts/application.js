@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-
 $(document).on('turbolinks:load', function(){
 
   var formSelect = function(form) {
@@ -25,8 +24,9 @@ $(document).on('turbolinks:load', function(){
   };
 
   setTimeout(function() {
-    $('#flash_messages').slideUp();
-  }, 2000);
+    $('.alert').slideUp();
+    console.log("halp");
+  }, 3000);
 
   $('.owl-carousel').owlCarousel({
     items:1,
