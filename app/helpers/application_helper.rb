@@ -2,6 +2,10 @@ module ApplicationHelper
   include AuthHelper
   include SessionsHelper
 
+  def youtube_embed(youtube_url)
+    YouTubeAddy.extract_video_id(youtube_url)
+  end
+
   def test_if_it_works
     "test"
   end

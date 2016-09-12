@@ -1,0 +1,17 @@
+<div class = "col-md-4 col-md-offset-4">
+  <div class = "NewArticle">
+    <%= bootstrap_form_for @article do |f| %>
+      <%= f.text_field :title, placeholder: 'Countdown by Beyoncé', maxlength: 75 %>
+      <%= f.text_field :content, placeholder: 'https://open.spotify.com/track/1ljzHUgt2SU2ADkhfa9eBC' %>
+      <%= f.hidden_field :content_type, :value => "song" %>
+      <br><br>
+      <div class = "EditButton">
+        <%= f.submit @article.new_record? ? "Create Post" : "Update Post"%>
+      </div>
+    <% end %>
+    <div class = "CancelButton">
+      <%= button_to "Cancel", :back, method: :get, :class=>"ruby-link btn btn-info btn-default btn-md inline" %>
+    </div>
+    <br><br>
+  </div>
+</div>

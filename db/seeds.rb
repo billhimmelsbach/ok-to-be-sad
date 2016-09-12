@@ -1,5 +1,13 @@
 USERS = [
   {
+    first_name: "Bill",
+    last_name: "Himmelsbach",
+    email: "test@test.com",
+    password: "test",
+    password_confirmation: "test",
+    image: "https://ucarecdn.com/41f452c8-6397-430a-8515-98e621f1b914/"
+  },
+  {
     first_name: "Nathan",
     last_name: "Allen",
     email: "NathanAllen@WDI30.com",
@@ -71,14 +79,6 @@ USERS = [
     password_confirmation: "test",
     image: "https://ucarecdn.com/1386c488-f2db-4b63-959f-32656a7e35c6/"
   },
-  {
-    first_name: "Bob",
-    last_name: "Ross",
-    email: "BobRoss@WDI30.com",
-    password: "test",
-    password_confirmation: "test",
-    image: "https://ucarecdn.com/1386c488-f2db-4b63-959f-32656a7e35c6/"
-  },
 ]
 
 p User.create(USERS)
@@ -98,7 +98,7 @@ ARTICLES = [
     title: "Roger Rabbit takes the 19-Polk to Toontown",
     content: "https://ucarecdn.com/31d96850-b864-4665-9e43-3d7f8888ad98/",
     content_type: "image",
-    user_id: 2,
+    user_id: 1,
   },
 ]
 

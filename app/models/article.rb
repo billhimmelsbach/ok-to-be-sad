@@ -2,7 +2,7 @@ class Article < ActiveRecord::Base
   belongs_to :user
   # before_validation :default_values
 
-  # validates :title, length: { in: 2..75 }, presence: true
+  validates :title, length: { in: 2..75 }, presence: true
   # validates :content, length: { in: 2..2000 }, presence: true
 
   # extend FriendlyId

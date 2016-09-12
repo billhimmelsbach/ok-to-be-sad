@@ -13,7 +13,6 @@
     </div>
   </div>
 <% end %>
-<br>
 <div class="ProfilePhoto">
   <img src="<%= @user.image%>" class="product_img img-responsive img-circle">
 </div>
@@ -23,39 +22,58 @@
 <h4>Date Joined:
   <%= @user.created_at.localtime.strftime("%B #{@user.created_at.day.ordinalize}, %Y") %>
 </h4>
-<div class="index-container col-xs-12 container-fluid well">
-  <% if @user.articles.distinct.count < 1 || nil %>
-    <p>What makes you happy?</p>
-    <p><%= link_to "Click here", new_article_path %> to share now!</p>
-  <% end %>
   <% @articles.each do |article| %>
-    <div class="column col-xs-12 col-s-6 col-md-6 col-lg-4" style="padding: 3px">
-      <div class = "row">
-        <div class="card card-inverse image-index" style="background-image: url('<%=article.content %>')">
+  <div class="index-container col-xs-12 container-fluid well">
+    <div class="col-xs-12" style="padding: 10px">
+
+      <% if @user.articles.distinct.count < 1 || nil %>
+        <p>What makes you happy?</p>
+        <p><%= link_to "Click here", new_article_path %> to share now!</p>
+      <% end %>
+
+      <% if article.content_type == "image" %>
+        <div class="text-center"> <img class = "img-responsive" style="max-height:60vh; width:auto;" src="<%= article.content %>"> <h1><%= article.title %></div>
+      <% end %>
+
+      <% if article.content_type == "video" %>
+        <div class = "embed-container">
+          <iframe class="ytplayer" type="text/html"
+            src="https://www.youtube.com/embed/<%= youtube_embed(article.content) %>"
+            frameborder="0">
+          </iframe>
         </div>
-      </div>
-      <br>
-      <div class = "row">
-        <% if current_user != nil && current_user.id == article.user.id %>
-          <div class="buttonrow">
-          <%= link_to "Edit Article", edit_article_path, method: :get, :class=>"ruby-link btn btn-info btn-primary btn-md inline" %>
-          <button class="ruby-link btn btn-danger inline btn-primary btn-md inline" type="button" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-expanded="false" aria-controls="collapseExample">Delete Article</button>
-          <br>
-            <div class = "row">
-              <div class="collapse" id="delete<%= article.id %>"><a> <br>
-                <div class="well col-xs-6 col-xs-offset-3">
-                  <h5 class="inline"> Are you sure you want to delete your article? </h5>
-                    <button class="ruby-link btn-danger btn-primary btn-sm inline">
-                      <%= link_to "Delete Article", destroy_article_path, method: :delete, :class=>"ruby-link"%>
-                    </button>
-                    <button class = "btn-success btn-primary btn-sm inline" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-expanded="false" aria-controls="collapseExample">Cancel</button>
-                </div>
+      <% end %>
+
+      <% if article.content_type == "song" %>
+        <iframe src="https://embed.spotify.com/?uri=spotify:track:<%= article.content[-22..-1] %>&view=coverart" width="200" height="380" frameborder="0" allowtransparency="true"></iframe>
+      <% end %>
+
+      <% if article.content_type == "quote" %>
+        <div style="height:60vh">
+          <div style="height:60vh">
+            <p class = "quote-title"><%= article.content %></p>
+            <p class = "quote-title">-<%= article.title %></p>
+          </div>
+        </div>
+      <% end %>
+
+      <% if current_user != nil && current_user.id == article.user.id %>
+        <div class="buttonrow">
+        <%= link_to "Edit Article", edit_article_path(article), method: :get, :class=>"ruby-link btn btn-info btn-primary btn-md inline" %>
+        <button class="ruby-link btn btn-danger inline btn-primary btn-md inline" type="button" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-expanded="false" aria-controls="collapseExample">Delete Article</button>
+        <br>
+          <div class = "row">
+            <div class="collapse" id="delete<%= article.id %>"><a> <br>
+              <div class="well col-xs-6 col-xs-offset-3">
+                <h5 class="inline"> Are you sure you want to delete your article? </h5>
+                <button class="ruby-link btn-danger btn-primary btn-sm inline"><%= link_to "Delete Article", destroy_article_path(article), method: :delete, :class=>"ruby-link"%></button>
+                <button class = "btn-success btn-primary btn-sm inline" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-expanded="false" aria-controls="collapseExample">Cancel</button>
               </div>
             </div>
           </div>
         </div>
-        <% end %>
       </div>
-      <br/>
+      <% end %>
+    </div>
   <% end %>
 </div>
