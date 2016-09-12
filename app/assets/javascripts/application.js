@@ -43,6 +43,14 @@ $(document).on('turbolinks:load', function(){
 
   $(".quote-title").fitText(2.0);
 
+  $(document).on('click', function(e) {
+      if (e.target.id == 'cog') {
+        $(".dropdown-content").show();
+      } else {
+        $(".dropdown-content").hide();
+      }
+  });
+
   $(".cog").click(function() {
       console.log("test");
       $(".dropdown-content").show();

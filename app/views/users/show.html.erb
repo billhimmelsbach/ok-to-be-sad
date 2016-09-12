@@ -1,7 +1,7 @@
 <%= render :partial => "layouts/flash_messages"%>
 <% if current_user != nil && current_user.id == @user.id %>
   <div class="dropdownprofile">
-    <div class="cog glyphicon glyphicon-cog"></div>
+    <div id ="cog" class="cog glyphicon glyphicon-cog"></div>
     <div class="dropdown-content">
       <br>
       <%= link_to current_user.first_name + "\'s Profile", user_path(current_user) %>
