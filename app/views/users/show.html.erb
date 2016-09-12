@@ -1,4 +1,7 @@
 <%= render :partial => "layouts/flash_messages"%>
+<div class = "embed-container">
+
+</div>
 <% if current_user != nil && current_user.id == @user.id %>
   <div class="dropdownprofile">
     <div class="cog glyphicon glyphicon-cog"></div>
@@ -29,7 +32,15 @@
   <% end %>
   <% @articles.each do |article| %>
     <div class="column col-xs-12 col-s-6 col-md-6 col-lg-4" style="padding: 3px">
-      <div class="card card-inverse image-index" style="background-image: url('<%= article.content %>')"></div>
+      <% if article.content_type == "video" %>
+        <div class = "embed-container">
+          <iframe class="ytplayer" type="text/html" width="640" height="390"
+            src="https://www.youtube.com/embed/<%= youtube_embed(article.content) %>"
+            frameborder="0">
+          </iframe>
+        </div>
+      <% end %>
+      <!-- <div class="card card-inverse image-index" style="background-image: url('<%= article.content %>')"></div> -->
       <% if current_user != nil && current_user.id == article.user.id %>
         <div class="buttonrow">
         <%= link_to "Edit Article", edit_article_path(article), method: :get, :class=>"ruby-link btn btn-info btn-primary btn-md inline" %>
@@ -45,7 +56,7 @@
                   <button class = "btn-success btn-primary btn-sm inline" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-expanded="false" aria-controls="collapseExample">Cancel</button>
               </div>
             </div>
-          </div>
+          <!-- </div> -->
         </div>
         <br><br>
       <% end %>
