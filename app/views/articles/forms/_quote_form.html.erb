@@ -8,7 +8,7 @@
       <div class="text-center">
         <%= f.submit @article.new_record? ? "Upload Quote" : "Update Quote", class: "btn btn-success btn-default btn-md"%>
         <span style="margin-right:30px;"></span>
-        <%= button_to "Cancel", :back, method: :get, :class=>"ruby-link btn btn-info btn-default btn-md inline" %>
+        <%= button_to "Cancel", :back, method: :get, :class=>"ruby-link btn btn-info btn-default btn-md inline", :onclick => "window.history.go(-1)" %>
       </div>
     <% end %>
   </div>
