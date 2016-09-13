@@ -4,7 +4,6 @@
       <%= f.text_field :title, placeholder: 'The Best Cat Photo Ever Taken', maxlength: 75, required: true%>
       <%= f.uploadcare_uploader :content, :data => {:images_only => true, :image_shrink => "800x800", :clearable => true } %>
       <%= f.hidden_field :content_type, :value => "image" %>
-      <br><br>
       <div class = "EditButton">
         <%= f.submit @article.new_record? ? "Create Post" : "Update Post"%>
       </div>

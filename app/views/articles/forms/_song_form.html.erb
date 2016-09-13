@@ -4,7 +4,6 @@
       <%= f.text_field :title, placeholder: 'Countdown by Beyoncé', maxlength: 75, required: true %>
       <%= f.text_field :content, placeholder: 'https://open.spotify.com/track/1ljzHUgt2SU2ADkhfa9eBC', required: true %>
       <%= f.hidden_field :content_type, :value => "song" %>
-      <br><br>
       <div class = "EditButton">
         <%= f.submit @article.new_record? ? "Create Post" : "Update Post"%>
       </div>
