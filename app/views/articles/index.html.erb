@@ -2,20 +2,22 @@
 <div class= "swipe-right-icon absolute-middle">
   <i class= "fa fa-angle-double-right fa-5x text-center swipe-icon" aria-hidden="true"></i>
 </div>
-<div class="col-xs-12" >
-  <div class="owl-carousel owl-theme" style="width: 1px; min-width: 100%;">
-    <% if current_user == nil %>
-      <div class="newusertext text-center">
-        <div style="height:100%";>
-          <div class="wrapper">
-            <div class="clip-text clip-text_one" style="font-size:12.2vh;">Ok To Be Sad<i class="fa fa-angle-double-down fa-3x show-mobile" aria-hidden="true"></i></div>
-            <h1 class="text-center splash-title2">A Community When You Need It The Most</h1>
-          </div>
-        </div>
-        <br>
-        <button class="btn"><%= link_to "Log In", new_session_path %></button>
+<% if current_user == nil %>
+  <div class="newusertext text-center">
+    <div style="height:100%";>
+      <div class="wrapper">
+        <div class="clip-text clip-text_one" style="font-size:12.2vh;">Ok To Be Sad<i class="fa fa-angle-double-down fa-3x show-mobile" aria-hidden="true"></i></div>
+        <h1 style="font-size:5vh;" class="text-center splash-title2">A Community When You Need It The Most</h1>
       </div>
-    <% else %>
+    </div>
+    <br>
+    <%= link_to new_session_path do %>
+      <button class="btn btn-success btn-large">Log In</button>
+    <% end %>
+  </div>
+<% else %>
+  <div class="col-xs-12" >
+    <div class="owl-carousel owl-theme" style="width: 1px; min-width: 100%;">
       <% if @articles %>
         <% @articles.each do |article| %>
           <% if article.content_type == "image" %>
@@ -62,7 +64,7 @@
             <% end %>
           </div>
         </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
