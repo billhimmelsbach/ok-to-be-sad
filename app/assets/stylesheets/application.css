@@ -357,7 +357,7 @@ h6 {
   position: absolute;
   top: -10px;
   right: 16px;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .dropdown ul.dropdown-menu:after {
@@ -368,7 +368,7 @@ h6 {
   position: absolute;
   top: -12px;
   right: 14px;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .dropbtn {
@@ -391,7 +391,7 @@ h6 {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 28vw;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
@@ -400,6 +400,7 @@ h6 {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
+  font-size: 1.6em;
   /*display: block;*/
 }
 
