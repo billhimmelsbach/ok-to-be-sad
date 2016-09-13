@@ -31,10 +31,9 @@ $(document).on('turbolinks:load', function(){
   $('.owl-carousel').owlCarousel({
     items:1,
     margin:5,
-
     video:true,
     nav: false,
-    // autoHeight:true
+    autoHeight:true
   });
 
   var formContentType = $(".form-container").data("type");
@@ -51,11 +50,10 @@ $(document).on('turbolinks:load', function(){
       }
   });
 
-  $(".cog").click(function() {
-      console.log("test");
-      $(".dropdown-content").show();
-      // $(".dropdown-content a").show();
-  });
+  // $(".cog").click(function() {
+  //     console.log("test");
+  //     $(".dropdown-content").show();
+  // });
 
   // $(document).on("click", "#video-form-button", function() {
   //   formSelect("#video-form");

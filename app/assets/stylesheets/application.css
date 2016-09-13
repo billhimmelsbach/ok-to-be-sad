@@ -299,12 +299,24 @@ h6 {
     .quote-title {
       font-size: 1.8em !important;
     }
+
+    .bottom-nav-div {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 115px;
+      width: 100%;
+      overflow:hidden;
+    }
+
+    main {
+      margin-bottom: 125px;
+    }
 }
 
 .bottom-nav-div, .show-mobile {
   display: none;
-  visibility: visible;
-  padding-bottom: 5vh;
+  visibility: none;
 }
 
 .index-container {
