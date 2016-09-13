@@ -2,8 +2,7 @@
   <%= link_to image_tag(message.user.image, alt: message.user.first_name, class: "media-object"),
               message.user.image, target: '_blank', class: 'pull-left' %>
   <div class="media-body">
-    <h4 class="media-heading"><%= link_to message.user.first_name, message.user.image, target: '_blank' %> says
-      <small class="text-muted">[at <%= message.created_at.strftime('%-d %B %Y, %H:%M:%S') %>]</small></h4>
-    <p><%= message.body %></p>
+    <p class="message-text"><%= message.body %></p>
+    <small class="text-muted">posted by <%= link_to message.user.first_name, message.user.image, target: '_blank' %> <%= time_ago_in_words(message.created_at) %> ago</small></h4>
   </div>
 </li>

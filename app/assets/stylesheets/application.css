@@ -488,3 +488,13 @@ h6 {
 .swipe-icon {
   margin-left: 25%;
 }
+
+.media-object {
+  max-height: 10vh;
+  width: auto;
+  overflow:auto;
+}
+
+.message-text {
+  text-align: left;
+}

@@ -1,9 +1,9 @@
 <div class="well">
   <%= form_for @message, remote: true do |f| %>
     <div class="form-group">
-      <%= f.label :body, 'Enter your message:' %>
+      <%= f.label :body, "What's on your mind?" %>
       <%= f.text_area :body, rows: 3, class: 'form-control', required: true, maxlength: 2000 %>
-      <small class="label label-warning">Cannot be blank or contain more than 2000 symbols.</small>
+      <p><small>Can't be longer than 2000 characters</small></p>
     </div>
 
     <%= f.submit 'Post', class: 'btn btn-primary btn-lg' %>

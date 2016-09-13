@@ -1,8 +1,4 @@
 <% if current_user %>
-  <div class="page-header">
-    <h1>Join the discussion!</h1>
-  </div>
-
   <%= render 'form' %>
   <div class="panel panel-default" id="messages">
     <div class="panel-body">
@@ -11,6 +7,4 @@
       </ul>
     </div>
   </div>
-<% else %>
-
 <% end %>
