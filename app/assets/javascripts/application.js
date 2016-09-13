@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
+//= require faye
+//= require messages
 //= require turbolinks
 //= require_tree .
 

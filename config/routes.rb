@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get "/articles/:id/edit", to: "articles#edit", as: "edit_article"
   patch "/articles/:id", to: "articles#update"
   delete "/articles/:id", to: "articles#destroy", as: "destroy_article"
+
+  resources :messages, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
