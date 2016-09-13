@@ -1,4 +1,7 @@
 <%= render :partial => "layouts/flash_messages"%>
+<div class= "swipe-right-icon absolute-middle">
+  <i class= "fa fa-angle-double-right fa-5x text-center show-mobile img-responsive swipe-icon" aria-hidden="true"></i>
+</div>
 <div class="col-xs-12" >
   <div class="owl-carousel owl-theme" style="width: 1px; min-width: 100%;">
     <% if current_user == nil %>
@@ -11,8 +14,6 @@
           <i class="fa fa-angle-double-down fa-5x show-mobile" aria-hidden="true"></i>
         </div>
         <br>
-
-
         <button class="btn"><%= link_to "Log In", new_session_path %></button>
       </div>
     <% else %>

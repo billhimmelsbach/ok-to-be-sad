@@ -24,8 +24,15 @@ $(document).on('turbolinks:load', function(){
   };
 
   setTimeout(function() {
+    $('.swipe-right-icon').fadeIn();
+  }, 1000);
+
+  setTimeout(function() {
+    $('.swipe-right-icon').fadeOut();
+  }, 5000);
+
+  setTimeout(function() {
     $('.alert').slideUp();
-    console.log("halp");
   }, 3000);
 
   $('.owl-carousel').owlCarousel({
