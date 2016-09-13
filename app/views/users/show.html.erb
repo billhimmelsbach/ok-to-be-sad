@@ -1,7 +1,9 @@
 <%= render :partial => "layouts/flash_messages"%>
 <% if current_user != nil && current_user.id == @user.id %>
   <div class="dropdownprofile">
-    <div id ="cog" class="cog glyphicon glyphicon-cog"></div>
+    <div class = "show-mobile">
+      <div id ="cog" class="cog glyphicon glyphicon-cog"></div>
+    </div>
     <div class="dropdown-content">
       <br>
       <%= link_to current_user.first_name + "\'s Profile", user_path(current_user) %>
@@ -22,7 +24,9 @@
 <h4>Date Joined:
   <%= @user.created_at.localtime.strftime("%B #{@user.created_at.day.ordinalize}, %Y") %>
 </h4>
-<i class="fa fa-angle-double-down fa-5x show-mobile text-center" aria-hidden="true"></i>
+<div class= "show-mobile text-center">
+  <i class="fa fa-angle-double-down fa-5x" aria-hidden="true"></i>
+</div>
   <% @articles.each do |article| %>
   <div class="index-container col-xs-12 container-fluid well">
     <div class="col-xs-12" style="padding: 10px">
