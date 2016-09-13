@@ -39,6 +39,30 @@
             </div>
           <% end %>
         <% end %>
+        <div style= "height:80vh" class= "text-center">
+          <div class= "vertically-align-force">
+            <i class="fa fa-comments fa-5x" aria-hidden="true"></i>
+            <h1> Feeling lonely? <h1>
+            <br>
+            <h1> Try chatting with other people using the app right now!</h1>
+            <br>
+            <%= link_to new_message_path do %>
+              <button class="btn btn-success">Enter Chat</button>
+            <% end %>
+          </div>
+        </div>
+        <div style= "height:80vh" class= "text-center">
+          <div class= "vertically-align-force">
+            <i class="fa fa-refresh fa-5x" aria-hidden="true"></i>
+            <h1> Want more? <h1>
+            <br>
+            <h1> Try out some different posts!</h1>
+            <br>
+            <%= link_to articles_path do %>
+              <button class="btn btn-success">Load Up New Posts!</button>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     <% end %>
   </div>
