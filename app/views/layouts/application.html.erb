@@ -77,11 +77,10 @@
 
     <footer class="text-center">
     </footer>
-
-    <div class = "row">
-      <div class="col-xs-12 navbar navbar-fixed-bottom bottom-nav-div">
-        <div class="row" id="bottomNav">
-          <% if current_user %>
+    <% if current_user %>
+      <div class = "row">
+        <div class="col-xs-12 navbar navbar-fixed-bottom bottom-nav-div">
+          <div class="row" id="bottomNav">
             <div class="col-xs-3 text-center">
               <%= link_to :back do %><br>
                 <i class="fa fa-arrow-circle-left fa-navbar fa-2x" aria-hidden="false"></i>
