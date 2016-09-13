@@ -34,6 +34,11 @@ gem 'uploadcare-rails'
 gem 'youtube-embed'
 
 gem 'youtube_addy'
+
+gem 'faye-rails', '~> 2.0'
+
+gem 'thin'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,6 +1,12 @@
-<% if @message.new_record? %>
-  alert('Your message cannot be saved.');
-<% else %>
-  $('#messages').find('.media-list').prepend('<%= j render @message %>');
+publisher = client.publish('/messages', {
+  message: '<%= j render @message %>'
+});
+
+publisher.callback(function() {
   $('#message_body').val('');
-<% end %>
+  $('#new_message').find("input[type='submit']").val('Submit').prop('disabled', false)
+});
+
+publisher.errback(function() {
+  alert('There was an error while posting your message.');
+});
