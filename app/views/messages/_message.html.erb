@@ -3,7 +3,6 @@
               message.user.image, target: '_blank', class: 'pull-left' %>
   <div class="media-body">
     <p class="message-text"><%= message.body %></p>
-    <small class="text-muted">posted by <%= link_to message.user.first_name, message.user.image, target: '_blank' %> <%= time_ago_in_words(message.created_at) %> ago</small></h4>
-    <span data-livestamp="<%= message.created_at.to_time.to_i %>"></span>.
+    <small class="text-muted">posted by <%= link_to message.user.first_name, message.user.image, target: '_blank' %> <span data-livestamp="<%= message.created_at.to_time.to_i %>"></span></small>
   </div>
 </li>
