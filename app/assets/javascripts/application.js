@@ -51,14 +51,30 @@ $(document).on('turbolinks:load', function(){
 
   $(".quote-title").fitText(2.0);
 
-  $(document).on('click touchstart', function(e) {
-      if (e.target.id == ('cog' || 'dropdown-content')) {
-        $(".dropdown-content").show();
-      } else {
-        $(".dropdown-content").hide();
-      }
-  });
+  // $(document).on('click touchstart', function(e) {
+  //     if (e.target.id == ('cog' || 'dropdown-content')) {
+  //       $(".dropdown-content").show();
+  //     } else {
+  //       $(".dropdown-content").hide();
+  //     }
+  // });
 
+  // $(document).not(".dropdownprofile").click(function() {
+  //   $(".dropdown-content").hide();
+  // });
+
+
+  $('.cog').on("click touchstart", function(e) { //button click class name is myDiv
+    $(".dropdown-content").show();
+   e.stopPropagation();
+ });
+//
+  $(function(){
+  $(document).on("click touchstart", function(){
+  $('.dropdown-content').hide(); //hide the button
+//
+  });
+});
   // $(".cog").click(function() {
   //     console.log("test");
   //     $(".dropdown-content").show();
