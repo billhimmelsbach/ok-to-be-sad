@@ -208,10 +208,10 @@ h6 {
       height: 100%;
     }
 
-    .show-mobile {
+    /*.show-mobile {
       padding-top: 3vh;
       padding-bottom: 3vh;
-    }
+    }*/
 
     #wrap {
       min-height: 100%;
@@ -480,7 +480,11 @@ h6 {
 .swipe-right-icon {
   background-color: #a9ecf0;
   display: none;
-  height:17vh;
+  height:12vh;
   width:10vh;
   z-index:100;
+}
+
+.swipe-icon {
+  margin-left: 25%;
 }

@@ -25,7 +25,9 @@ $(document).on('turbolinks:load', function(){
 
   setTimeout(function() {
     $('.swipe-right-icon').fadeIn();
-  }, 1000);
+  }, 1500);
+
+  // $('.swipe-right-icon').show();
 
   setTimeout(function() {
     $('.swipe-right-icon').fadeOut();
