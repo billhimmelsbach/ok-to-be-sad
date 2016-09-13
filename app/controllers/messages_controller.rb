@@ -1,21 +1,27 @@
 class MessagesController < ApplicationController
   include SessionsHelper
-  
+
   def new
     @message = Message.new
     @messages = Message.order('created_at DESC')
   end
 
   def create
-    if current_user
-      @message = current_user.messages.build(message_params)
-      if @message.save
-        flash[:success] = 'Your message was successfully posted!'
+    respond_to do |format|
+      if current_user
+        @message = current_user.messages.build(message_params)
+        if @message.save
+          flash.now[:success] = 'Your message was successfully posted!'
+        else
+          flash.now[:error] = 'Your message cannot be saved.'
+        end
+        format.html {redirect_to root_url}
+        format.js
       else
-        flash[:error] = 'Your message cannot be saved.'
+        format.html {redirect_to root_url}
+        format.js {render nothing: true}
       end
     end
-    redirect_to root_url
   end
 
   private
