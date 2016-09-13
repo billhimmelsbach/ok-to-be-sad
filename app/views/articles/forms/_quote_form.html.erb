@@ -4,13 +4,12 @@
       <%= f.text_field :title, label: "Who said it?", placeholder: 'Beyonce', maxlength: 30, required: true, help: "30 characters maximum" %>
       <%= f.text_area :content, placeholder: 'Who run the world? Girls.', maxlength: 120, required: true, help: "120 characters maximum, about a tweet's length" %>
       <%= f.hidden_field :content_type, :value => "quote" %>
-      <div class = "EditButton">
-        <%= f.submit @article.new_record? ? "Create Post" : "Update Post"%>
+      <br>
+      <div class="text-center">
+        <%= f.submit @article.new_record? ? "Upload Quote" : "Update Quote", class: "btn btn-success btn-default btn-md"%>
+        <span style="margin-right:30px;"></span>
+        <%= button_to "Cancel", :back, method: :get, :class=>"ruby-link btn btn-info btn-default btn-md inline" %>
       </div>
     <% end %>
-    <div class = "CancelButton">
-      <%= button_to "Cancel", :back, method: :get, :class=>"ruby-link btn btn-info btn-default btn-md inline" %>
-    </div>
-    <br><br>
   </div>
 </div>

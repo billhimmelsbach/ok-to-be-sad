@@ -4,13 +4,12 @@
       <%= f.text_field :title, placeholder: 'The Best Cat Photo Ever Taken', maxlength: 75, required: true%>
       <%= f.uploadcare_uploader :content, :data => {:images_only => true, :image_shrink => "800x800", :clearable => true } %>
       <%= f.hidden_field :content_type, :value => "image" %>
-      <div class = "EditButton">
-        <%= f.submit @article.new_record? ? "Create Post" : "Update Post"%>
+      <br>
+      <div class="text-center">
+        <%= f.submit @article.new_record? ? "Upload Image" : "Update Image", class: "btn btn-success btn-default btn-md"%>
+        <span style="margin-right:30px;"></span>
+        <%= button_to "Cancel", :back, method: :get, :class=>"ruby-link btn btn-info btn-default btn-md inline" %>
       </div>
     <% end %>
-    <div class = "CancelButton">
-      <%= button_to "Cancel", :back, method: :get, :class=>"ruby-link btn btn-info btn-default btn-md inline" %>
-    </div>
-    <br><br>
   </div>
 </div>
