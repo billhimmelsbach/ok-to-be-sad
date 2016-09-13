@@ -482,5 +482,5 @@ h6 {
   display: none;
   height:17vh;
   width:10vh;
-  z-index:1;
+  z-index:100;
 }
