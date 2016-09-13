@@ -56,7 +56,7 @@ $(document).on('turbolinks:load', function(){
   formSelect("#" + formContentType + "-form");
 
   $(".quote-title").fitText(2.0);
-
+  $(".clip-text").fitText(0.24);
   // $(document).on('click touchstart', function(e) {
   //     if (e.target.id == ('cog' || 'dropdown-content')) {
   //       $(".dropdown-content").show();

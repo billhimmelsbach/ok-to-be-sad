@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: "articles#index"
 
+  resources :messages, only: [:new, :create]
+
   get "/users/new", to: "users#new", as: "new_user"
   post "/users", to: "users#create"
   get "/users/:id", to: "users#show", as: "user"
@@ -16,11 +18,10 @@ Rails.application.routes.draw do
   get "/articles", to: "articles#index", as: "articles"
   get "/articles/new", to: "articles#new", as: "new_article"
   post "/articles", to: "articles#create"
+  get "/articles/:id", to: "article#show", as: "article"
   get "/articles/:id/edit", to: "articles#edit", as: "edit_article"
   patch "/articles/:id", to: "articles#update"
   delete "/articles/:id", to: "articles#destroy", as: "destroy_article"
-
-  resources :messages, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
