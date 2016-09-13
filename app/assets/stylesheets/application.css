@@ -9,23 +9,107 @@
  *= require_self
  */
 
+ /*
+  Based from this article from Divya Manian -
+  http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html
+*/
+
+.wrapper {
+    text-align: center;
+}
+
+.title {
+    font-size: 2em;
+    position: relative;
+    margin: 0 auto 1em;
+    padding: 1em 1em .25em 1em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Clip text element */
+.clip-text {
+    font-size: 6em;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    margin: .25em;
+    padding: .5em .75em;
+    text-align: center;
+    /* Color fallback */
+    color: #fff;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.clip-text:before,
+.clip-text:after {
+    position: absolute;
+    content: '';
+}
+
+/* Background */
+.clip-text:before {
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+}
+
+/* Text Background (black zone) */
+.clip-text:after {
+    position: absolute;
+    z-index: -1;
+    top: .3em;
+    right: .3em;
+    bottom: .3em;
+    left: .3em;
+    background-color: #FFF;
+}
+
+/* Change the background position to display letter when the black zone isn't here */
+.clip-text--no-textzone:before {
+    background-position: -.65em 0;
+}
+
+.clip-text--no-textzone:after {
+    content: none;
+}
+
+/* Use Background-size cover for photo background and no-repeat background */
+.clip-text--cover,
+.clip-text--cover:before {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+            background-size: cover;
+}
+
+/* Background image from http://thepatternlibrary.com/ and http://lorempixel.com */
+.clip-text_one {
+    background-image: url(http://bestanimations.com/Nature/Water/rain/rain-nature-animated-gif-32.gif);
+}
+
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 
- footer {
+ /*footer {
    left: 0;
    bottom: 0;
    height: 40px;
    width: 100%;
    font-size: 14px;
- }
+ }*/
 
  html, body{
    height: 100%;
    padding-top: 60px;
  }
 
- .footer, .push {
-   height: 4em;
+ .footer {
+   font-size: 1.5em;
  }
 
  .navbar-brand>img {
@@ -41,7 +125,7 @@
 }
 
  main {
-   margin-top: -5.5%;
+   margin-top: -4%;
  }
 
 .CreateButton {
@@ -66,7 +150,7 @@ h2 {
 }
 
 .navbar {
-  background-color: #bc132a !important;
+  background-color: #060760 !important;
 }
 
 h1,
@@ -105,6 +189,10 @@ h6 {
       margin-top: -100px
     }
 
+    main {
+      margin-top: 0%;
+    }
+
     .bottom-nav-div, .show-mobile, .cog, .newusertext {
       display: block !important;
       visibility: visible !important;
@@ -119,10 +207,10 @@ h6 {
       height: 100%;
     }
 
-    .show-mobile {
+    /*.show-mobile {
       padding-top: 3vh;
       padding-bottom: 3vh;
-    }
+    }*/
 
     #wrap {
       min-height: 100%;
@@ -134,11 +222,11 @@ h6 {
 
     .navbar {
       background-color: white !important;
-      border-top: 1px solid #bc132a;
+      border-top: 1px solid #060760;
     }
 
-    .glyphicon {
-      color: #bc132a;
+    .glyphicon, .fa-navbar {
+      color: #060760;
     }
 
     #wrap > .container {
@@ -146,7 +234,7 @@ h6 {
     }
 
     footer {
-      margin-bottom: 100px;
+      margin-bottom: 10vh;
     }
 
     .navbar-header {
@@ -210,12 +298,24 @@ h6 {
     .quote-title {
       font-size: 1.8em !important;
     }
+
+    .bottom-nav-div {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 115px;
+      width: 100%;
+      overflow:hidden !important;
+    }
+
+    main {
+      margin-bottom: 125px;
+    }
 }
 
 .bottom-nav-div, .show-mobile {
   display: none;
-  visibility: visible;
-  padding-bottom: 5vh;
+  visibility: none;
 }
 
 .index-container {
@@ -229,13 +329,13 @@ h6 {
 .vertically-align-force {
   position: relative;
   top: 50%;
-  transform: translateY(+50%);
-}
-
-.vertically-align-force {
-  position: relative;
-  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  /*left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);*/
 }
 
 .ProfilePhoto {
@@ -257,7 +357,7 @@ h6 {
   position: absolute;
   top: -10px;
   right: 16px;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .dropdown ul.dropdown-menu:after {
@@ -268,7 +368,7 @@ h6 {
   position: absolute;
   top: -12px;
   right: 14px;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .dropbtn {
@@ -291,7 +391,7 @@ h6 {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 250px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
@@ -300,6 +400,7 @@ h6 {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
+  font-size: 1.6em;
   /*display: block;*/
 }
 
@@ -366,4 +467,24 @@ h6 {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
+}
+
+.absolute-middle {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.swipe-right-icon {
+  background-color: #a9ecf0;
+  display: none;
+  height:12vh;
+  width:10vh;
+  z-index:100;
+}
+
+.swipe-icon {
+  margin-left: 25%;
 }

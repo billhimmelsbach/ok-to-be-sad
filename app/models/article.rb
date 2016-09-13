@@ -3,7 +3,7 @@ class Article < ActiveRecord::Base
   # before_validation :default_values
 
   validates :title, length: { in: 2..75 }, presence: true
-  # validates :content, length: { in: 2..2000 }, presence: true
+  validates :content, length: { in: 2..2000 }, presence: true
 
   # extend FriendlyId
   # friendly_id :title, use: [:slugged, :finders]

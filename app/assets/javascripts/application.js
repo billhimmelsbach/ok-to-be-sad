@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-
 $(document).on('turbolinks:load', function(){
 
   var formSelect = function(form) {
@@ -24,14 +23,26 @@ $(document).on('turbolinks:load', function(){
     console.log("Hit!");
   };
 
+  setTimeout(function() {
+    $('.swipe-right-icon').fadeIn();
+  }, 1500);
+
+  // $('.swipe-right-icon').show();
+
+  setTimeout(function() {
+    $('.swipe-right-icon').fadeOut();
+  }, 5000);
+
+  setTimeout(function() {
+    $('.alert').slideUp();
+  }, 3000);
+
   $('.owl-carousel').owlCarousel({
     items:1,
-    margin:10,
-
+    margin:5,
     video:true,
-    stagePadding: 50,
     nav: false,
-    // autoHeight:true
+    autoHeight:true
   });
 
   var formContentType = $(".form-container").data("type");
@@ -40,25 +51,64 @@ $(document).on('turbolinks:load', function(){
 
   $(".quote-title").fitText(2.0);
 
-  $(".cog").click(function() {
-      console.log("test");
-      $(".dropdown-content").show();
-      // $(".dropdown-content a").show();
-  });
+  // $(document).on('click touchstart', function(e) {
+  //     if (e.target.id == ('cog' || 'dropdown-content')) {
+  //       $(".dropdown-content").show();
+  //     } else {
+  //       $(".dropdown-content").hide();
+  //     }
+  // });
 
-  $(document).on("click", "#video-form-button", function() {
+  // $(document).not(".dropdownprofile").click(function() {
+  //   $(".dropdown-content").hide();
+  // });
+
+
+  $('.cog').on("click touchstart", function(e) { //button click class name is myDiv
+    $(".dropdown-content").show();
+   e.stopPropagation();
+ });
+//
+  $(function(){
+  $(document).on("click touchstart", function(){
+  $('.dropdown-content').hide(); //hide the button
+//
+  });
+});
+  // $(".cog").click(function() {
+  //     console.log("test");
+  //     $(".dropdown-content").show();
+  // });
+
+  // $(document).on("click", "#video-form-button", function() {
+  //   formSelect("#video-form");
+  // });
+  //
+  // $(document).on("click", "#image-form-button", function() {
+  //   formSelect("#image-form");
+  // });
+  //
+  // $(document).on("click", "#song-form-button", function() {
+  //   formSelect("#song-form");
+  // });
+  //
+  // $(document).on("click", "#quote-form-button", function() {
+  //   formSelect("#quote-form");
+  // });
+
+  $(document).on("click touchstart", "#video-form-button", function() {
     formSelect("#video-form");
   });
 
-  $(document).on("click", "#image-form-button", function() {
+  $(document).on("click touchstart", "#image-form-button", function() {
     formSelect("#image-form");
   });
 
-  $(document).on("click", "#song-form-button", function() {
+  $(document).on("click touchstart", "#song-form-button", function() {
     formSelect("#song-form");
   });
 
-  $(document).on("click", "#quote-form-button", function() {
+  $(document).on("click touchstart", "#quote-form-button", function() {
     formSelect("#quote-form");
   });
   // $(document).on("click", "#video-form-button", function() {

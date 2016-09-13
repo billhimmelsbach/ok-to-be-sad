@@ -89,18 +89,61 @@ puts "-----------"
 
 ARTICLES = [
   {
-    title: "Crow-M-G!!! Bird flies into Muni bus",
-    content: "https://ucarecdn.com/ba8a2930-8d01-4c4c-82ff-24dd545d4c46/",
+    title: "The Dirty Thirty",
+    content: "https://ucarecdn.com/ff4f3944-6587-497d-9896-3ea8e8d2aefb/" ,
     content_type: "image",
-    user_id: 1,
+    user_id: 1
   },
   {
-    title: "Roger Rabbit takes the 19-Polk to Toontown",
-    content: "https://ucarecdn.com/31d96850-b864-4665-9e43-3d7f8888ad98/",
+    title: "Ghost Hunting With The Fam",
+    content: "https://ucarecdn.com/8f54a82a-47d6-485c-b947-5ec5e4aceceb/" ,
     content_type: "image",
-    user_id: 1,
+    user_id: 1
+  },
+  {
+    title: "Puppies Learning to Howl",
+    content: "https://www.youtube.com/watch?v=eNHDG-2w1xo",
+    content_type: "video",
+    user_id: 1
+  },
+  {
+    title: "Beyonce",
+    content: "Who runs the world? GIRLS.",
+    content_type: "quote",
+    user_id: 1
+  },
+  {
+    title: "Tightrope by Janelle Monae",
+    content: "https://open.spotify.com/track/1ljzHUgt2SU2ADkhfa9eBC",
+    content_type: "music",
+    user_id: 1
+  },
+  {
+    title: "Dad's Bicycle Art",
+    content: "https://ucarecdn.com/c6ce2c91-787c-4d97-bedc-771e44a5d3cd/",
+    content_type: "image",
+    user_id: 1
+  },
+  {
+    title: "Countdown by Beyonce",
+    content: "https://open.spotify.com/track/3axkNosdVQLZiq1HakuGhc",
+    content_type: "song",
+    user_id: 1
+  },
+  {
+    title: "Zipper Being Awesome!",
+    content: "https://ucarecdn.com/bf10b940-9805-4f9b-8be6-c7b88a48e95c/",
+    content_type: "image",
+    user_id: 1
+  },
+  {
+    title: "Hannah and Josh Come To Cleveland!",
+    content: "https://ucarecdn.com/80cfedbd-e10d-4882-8731-b0d582a56983/",
+    content_type: "image",
+    user_id: 1
   },
 ]
+
 
 p Article.create(ARTICLES)
 a = Article.all
