@@ -51,7 +51,7 @@ $(document).on('turbolinks:load', function(){
 
   $(".quote-title").fitText(2.0);
 
-  $(document).on('click', function(e) {
+  $(document).on('click touchstart', function(e) {
       if (e.target.id == 'cog') {
         $(".dropdown-content").show();
       } else {
