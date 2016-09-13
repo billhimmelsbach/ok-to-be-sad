@@ -27,7 +27,10 @@ $(document).on('turbolinks:load', function(){
   };
 
   setTimeout(function() {
-    $('.swipe-right-icon').fadeIn();
+    if (($('.newusertext').length)!=1) {
+      console.log($('.newusertext').length);
+      $('.swipe-right-icon').fadeIn();
+    }
   }, 1500);
 
   // $('.swipe-right-icon').show();
@@ -67,15 +70,14 @@ $(document).on('turbolinks:load', function(){
   // });
 
 
-  $('.cog').on("click touchstart", function(e) { //button click class name is myDiv
+  $('.cog').on("click touchstart", function(e) {
     $(".dropdown-content").show();
-   e.stopPropagation();
- });
-//
+    e.stopPropagation();
+  });
+
   $(function(){
-  $(document).on("click touchstart", function(){
-  $('.dropdown-content').hide(); //hide the button
-//
+    $(document).on("click touchstart", function(){
+      $('.dropdown-content').hide(); //hide the button
   });
 });
   // $(".cog").click(function() {
