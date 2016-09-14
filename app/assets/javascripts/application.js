@@ -133,7 +133,7 @@ $(document).on('turbolinks:load', function(){
 
   toggle_click = 0;
   $('#cog').on("touchstart", function(e) {
-    if (toggle === 0) {
+    if (toggle_click === 0) {
       $(".dropdown-content").show();
       e.stopPropagation();
       toggle_click++;
