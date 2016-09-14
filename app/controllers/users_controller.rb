@@ -60,7 +60,7 @@ class UsersController < ApplicationController
 
   def trial
     session[:user_id] = "1"
-    flash[:success] = "Here's a sample account to take for a spin. Take a look around, then sign up for your own account!"
+    flash[:success] = "Take a look around, then sign up for your own account!"
     redirect_to root_path
   end
 

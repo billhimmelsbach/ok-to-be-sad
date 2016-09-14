@@ -7,10 +7,13 @@
       <%= f.text_field :email, placeholder: 'Email' %>
       <%= f.password_field :password, placeholder: 'Password' %>
       <br>
-    <div class="CreateButton">
-      <%= f.submit "Log In" %><br><br>
-      Don't have an account? Please
-      <%= link_to "sign up!", new_user_path %>
+      <div class="CreateButton">
+        <button class="btn btn-success btn-primary" type="submit">
+          <i class="fa fa-sign-in fa-4x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <br><br>
+      <p>Don't have an account? Please <%= link_to "sign up!", new_user_path %> </p>
       <% end %>
       <br><br>
     </div>
