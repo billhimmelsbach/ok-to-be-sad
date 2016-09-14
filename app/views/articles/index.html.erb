@@ -22,7 +22,7 @@
         <% @articles.each do |article| %>
           <% if article.content_type == "image" %>
             <div>
-              <div class="text-center" style= "height:80vh;"> <img class = "img-responsive vertically-align-force" style="max-height:60vh; width:auto;" src="<%= article.content %>"> <h1></div>
+              <div class="text-center" style= "height:80vh;"> <img class = "img-responsive img-rounded vertically-align-force" style="max-height:60vh; width:auto;" src="<%= article.content %>"> <h1></div>
             </div>
           <% end %>
           <% if article.content_type == "video" %>

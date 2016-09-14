@@ -2,7 +2,7 @@
 <% if current_user != nil && current_user.id == @user.id %>
   <div class="dropdownprofile">
     <div class = "show-mobile">
-      <div id ="cog" class="cog glyphicon glyphicon-cog"></div>
+      <div id ="cog" class="glyphy-cog fa-cog fa fa-3x"></div>
     </div>
     <div class="dropdown-content">
       <br>
@@ -63,10 +63,12 @@
       <% if current_user != nil && current_user.id == article.user.id %>
         <div class="buttonrow">
           <%= link_to edit_article_path(article), class: "btn btn-info btn-primary" do %>
-            <i class="fa fa-reply fa-3x" aria-hidden="true"></i>
+            <i class="fa fa-pencil-square-o fa-3x" aria-hidden="true"></i>
           <% end %>
           <span style="margin-right:30px;"></span>
-          <button class="btn btn-info btn-primary" type="button" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-hidden="true"><i class="fa fa-reply fa-3x" aria-hidden="true"></i></button>
+          <button class="btn btn-info btn-danger" type="button" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-hidden="true">
+            <i class="fa fa-trash-o fa-3x" aria-hidden="true"></i>
+          </button>
         </div>
         <br>
           <div class = "row">

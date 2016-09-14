@@ -69,18 +69,32 @@ $(document).on('turbolinks:load', function(){
   //   $(".dropdown-content").hide();
   // });
 
-  toggle = 0;
-  $('.cog').on("touchstart", function(e) {
+  toggle_click = 0;
+  $('#cog').on("touchstart", function(e) {
     if (toggle === 0) {
       $(".dropdown-content").show();
       e.stopPropagation();
-      toggle++;
+      toggle_click++;
     }
     else {
       $(".dropdown-content").hide();
-      toggle--;
+      toggle_click--;
     }
   });
+
+  toggle_touch = 0;
+  $('#cog').on("click", function(e) {
+    if (toggle_touch === 0) {
+      $(".dropdown-content").show();
+      e.stopPropagation();
+      toggle_touch++;
+    }
+    else {
+      $(".dropdown-content").hide();
+      toggle_touch--;
+    }
+  });
+
 
   // $('.cog').on("click touchstart", function(e) {
   //   $(".dropdown-content").show();
