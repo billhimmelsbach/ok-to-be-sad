@@ -1,76 +1,79 @@
 <%= render :partial => "layouts/flash_messages"%>
-<div class= "swipe-right-icon absolute-middle">
-  <i class= "fa fa-angle-double-right fa-5x text-center swipe-icon" aria-hidden="true"></i>
-</div>
-<% if current_user == nil %>
-  <div class="newusertext text-center">
-    <div style="height:100%";>
-      <div class="wrapper">
-        <div class="clip-text clip-text_one" style="font-size:12.2vh;">Ok To Be Sad<br><div class="show-mobile"><i class="fa fa-angle-double-down fa-3x show-mobile" aria-hidden="true"></i></div>
-        <h1 style="font-size:5vh;" class="text-center splash-title2">A Community When You Need It The Most</h1>
-      </div>
-    </div>
-    <br>
-    <%= link_to new_user_path, class: "btn btn-success" do %>
-      <i class="fa fa-user-plus fa-3x" aria-hidden="true"><br><span class="font">Sign Up</span></i>
-    <% end %>
-    <span style="margin-right:30px;"></span>
-    <%= link_to new_session_path, class: "btn btn-info" do %>
-      <i class="fa fa-sign-in fa-3x" aria-hidden="true"><br><span class="font">Log In</span></i>
-    <% end %>
-    <span style="margin-right:30px;"></span>
-    <%= link_to trial_path, class: "btn  btn-warning" do %>
-      <i class="fa fa-forward fa-3x" aria-hidden="true"><br><span class="font">Demo</span></i>
-    <% end %>
+<div class="col-xs-10 col-xs-offset-1">
+  <div class= "swipe-right-icon absolute-middle">
+    <i class= "fa fa-angle-double-right fa-5x text-center swipe-icon" aria-hidden="true"></i>
   </div>
-<% else %>
-  <div class="col-xs-12" >
-    <div class="owl-carousel owl-theme" style="width: 1px; min-width: 100%;">
-      <% if @articles %>
-        <% @articles.each do |article| %>
-          <% if article.content_type == "image" %>
-            <div>
-              <div class="text-center" style= "height:80vh;"> <img class = "img-responsive img-rounded vertically-align-force" style="max-height:60vh; width:auto;" src="<%= article.content %>"> <h1></div>
-            </div>
-          <% end %>
-          <% if article.content_type == "video" %>
-            <div class="item-video" style="background-color:#39abb6; height:80vh; width:70vw; margin: 0 auto;" ><a class="owl-video" href="<%= article.content %>"></a></div>
-          <% end %>
-          <% if article.content_type == "song" %>
-            <div style= "text-align:center; width:100%; height:80vh;"> <iframe class="vertically-align-force"  src="https://embed.spotify.com/?uri=spotify:track:<%= article.content[-22..-1] %>&view=coverart" width="200" height="380" align="middle" frameborder="0" allowtransparency="true"></iframe></div>
-          <% end %>
-          <% if article.content_type == "quote" %>
-            <div style="height:80vh">
-              <div class="vertically-align-force">
-                <p class = "quote-title"><%= article.content %></p>
-                <p class = "quote-title">-<%= article.title %></p>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-        <div style= "height:80vh" class= "text-center">
-          <div class= "vertically-align-force">
-            <h1> Feeling lonely? <h1>
-            <br>
-            <h1> Try chatting with other people using the app right now!</h1>
-            <br>
-            <%= link_to new_message_path, class: "btn btn-info btn-primary" do %>
-              <i class="fa fa-comments fa-5x" aria-hidden="true"></i>
-            <% end %>
-          </div>
+  <% if current_user == nil %>
+    <div class="newusertext text-center">
+      <div style="height:100%";>
+        <div class="wrapper">
+          <div class="clip-text clip-text_one" style="font-size:11vh;">Ok To Be Sad<br>
+          <h1 style="font-size:3vh;" class="text-center splash-text">A Community When You Need It The Most</h1>
+          <div class="show-mobile animated bounce"><i class="fa fa-angle-double-down fa-2x show-mobile" aria-hidden="true"></i></div>
         </div>
-        <div style= "height:80vh" class= "text-center">
-          <div class= "vertically-align-force">
-            <h1> Want more? <h1>
-            <br>
-            <h1> Try out some different posts!</h1>
-            <br>
-            <%= link_to articles_path, class: "btn btn-info btn-primary" do %>
-              <i class="fa fa-refresh fa-5x" aria-hidden="true"></i>
-            <% end %>
-          </div>
-        </div>
-        <% end %>
+      </div>
+      <br>
+      <%= link_to new_user_path, class: "btn btn-success" do %>
+        <i class="fa fa-user-plus fa-3x" aria-hidden="true"><br><span class="font">Sign Up</span></i>
+      <% end %>
+      <span style="margin-right:30px;"></span>
+      <%= link_to new_session_path, class: "btn btn-info" do %>
+        <i class="fa fa-sign-in fa-3x" aria-hidden="true"><br><span class="font">Log In</span></i>
+      <% end %>
+      <span style="margin-right:30px;"></span>
+      <%= link_to trial_path, class: "btn  btn-warning" do %>
+        <i class="fa fa-forward fa-3x" aria-hidden="true"><br><span class="font">Demo</span></i>
       <% end %>
     </div>
-  </div>
+  <% else %>
+    <div class="col-xs-12" >
+      <div class="owl-carousel owl-theme" style="width: 1px; min-width: 100%;">
+        <% if @articles %>
+          <% @articles.each do |article| %>
+            <% if article.content_type == "image" %>
+              <div>
+                <div class="text-center" style= "height:80vh;"> <img class = "img-responsive img-rounded vertically-align-force" style="max-height:60vh; width:auto;" src="<%= article.content %>"> <h1></div>
+              </div>
+            <% end %>
+            <% if article.content_type == "video" %>
+              <div class="item-video" style="background-color:#39abb6; height:80vh; width:70vw; margin: 0 auto;" ><a class="owl-video" href="<%= article.content %>"></a></div>
+            <% end %>
+            <% if article.content_type == "song" %>
+              <div style= "text-align:center; width:100%; height:80vh;"> <iframe class="vertically-align-force"  src="https://embed.spotify.com/?uri=spotify:track:<%= article.content[-22..-1] %>&view=coverart" width="200" height="380" align="middle" frameborder="0" allowtransparency="true"></iframe></div>
+            <% end %>
+            <% if article.content_type == "quote" %>
+              <div style="height:80vh">
+                <div class="vertically-align-force">
+                  <p class = "quote-title"><%= article.content %></p>
+                  <p class = "quote-title">-<%= article.title %></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+          <div style= "height:80vh" class= "text-center">
+            <div class= "vertically-align-force">
+              <h1> Feeling lonely? <h1>
+              <br>
+              <h1> Try chatting with other people using the app right now!</h1>
+              <br>
+              <%= link_to new_message_path, class: "btn btn-info btn-primary" do %>
+                <i class="fa fa-comments fa-5x" aria-hidden="true"></i>
+              <% end %>
+            </div>
+          </div>
+          <div style= "height:80vh" class= "text-center">
+            <div class= "vertically-align-force">
+              <h1> Want more? <h1>
+              <br>
+              <h1> Try out some different posts!</h1>
+              <br>
+              <%= link_to articles_path, class: "btn btn-info btn-primary" do %>
+                <i class="fa fa-refresh fa-5x" aria-hidden="true"></i>
+              <% end %>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+</div>

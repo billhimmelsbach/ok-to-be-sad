@@ -41,10 +41,10 @@
     padding: .5em .75em;
     text-align: center;
     /* Color fallback */
-    color: #fff;
+    color: #00BFFF;
     -webkit-background-clip: text;
 
-    -webkit-text-fill-color: transparent;
+    /*-webkit-text-fill-color: transparent;*/
 }
 
 .clip-text:before,
@@ -67,11 +67,15 @@
 .clip-text:after {
     position: absolute;
     z-index: -1;
-    top: .3em;
-    right: .3em;
-    bottom: .3em;
-    left: .3em;
+    top: .4em;
+    right: .4em;
+    bottom: .4em;
+    left: .4em;
     background-color: #FFF;
+}
+
+.splash-text {
+  color: #00BFFF;
 }
 
 /* Change the background position to display letter when the black zone isn't here */
@@ -91,7 +95,7 @@
 }
 
 .clip-text_one {
-    background-image: url(http://bestanimations.com/Nature/Water/rain/rain-nature-animated-gif-32.gif);
+    background-image: url(https://media.giphy.com/media/sECpDyCgkK9eE/giphy.gif);
 }
 
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
