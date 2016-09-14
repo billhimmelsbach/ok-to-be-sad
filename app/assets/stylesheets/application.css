@@ -14,6 +14,8 @@
   http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html
 */
 
+/*#00BFFF*/
+
 .wrapper {
     text-align: center;
 }
@@ -150,7 +152,7 @@ h2 {
 }
 
 .navbar {
-  background-color: #060760 !important;
+  background-color: #00BFFF !important;
 }
 
 h1,
@@ -404,14 +406,6 @@ h6 {
   /*display: block;*/
 }
 
-/* Change color of dropdown links on hover */
-/*.dropdown-content a:active {background-color: #f1f1f1}*/
-
-/* Show the dropdown menu on hover */
-/*.dropdownprofile:active .dropdown-content {
-  display: block;
-}*/
-
 .newmain {
   height: 25vh;
 }
@@ -518,4 +512,13 @@ h6 {
 
 .fa {
   text-shadow: 1px 3px 2px rgba(0,0,0,0.2);
+}
+
+.delete-button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: 0;
+    background: transparent;
 }
