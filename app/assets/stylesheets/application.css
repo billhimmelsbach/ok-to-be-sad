@@ -222,11 +222,11 @@ h6 {
 
     .navbar {
       background-color: white !important;
-      border-top: 1px solid #060760;
+      border-top: 1px solid #00BFFF;
     }
 
     .glyphicon, .fa-navbar {
-      color: #060760;
+      color: #00BFFF;
     }
 
     #wrap > .container {
