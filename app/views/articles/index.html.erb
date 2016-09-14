@@ -11,9 +11,14 @@
       </div>
     </div>
     <br>
-    <%= link_to new_session_path do %>
-      <button class="btn btn-success btn-large">Log In</button>
+    <%= link_to new_user_path, class: "btn btn-success btn-primary" do %>
+      <i class="fa fa-user-plus fa-3x" aria-hidden="true"><br><span class="font">Sign Up</span></i>
     <% end %>
+    <span style="margin-right:30px;"></span>
+    <%= link_to new_session_path, class: "btn btn-info btn-primary" do %>
+      <i class="fa fa-sign-in fa-3x" aria-hidden="true"><br><span class="font">Log In</span></i>
+    <% end %>
+
   </div>
 <% else %>
   <div class="col-xs-12" >

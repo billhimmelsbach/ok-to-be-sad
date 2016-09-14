@@ -146,12 +146,7 @@ h2 {
   background-color: #00BFFF !important;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
