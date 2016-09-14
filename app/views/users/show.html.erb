@@ -61,15 +61,23 @@
       <% end %>
 
       <% if current_user != nil && current_user.id == article.user.id %>
-      link_to(body, url, html_options = {})
-      <%= link_to edit_article_path(article), class: "btn btn-info btn-primary" do %>
-        <i class="fa fa-reply fa-3x" aria-hidden="true"></i>
-      <% end %>
-      <span style="margin-right:30px;"></span>
-      <button class="delete-button" type="button" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-reply fa-3x" aria-hidden="true"></i></button>
-      <%= button_tag(type: "submit", class: "btn", name: "commit", value: "conceal", :style=>"background-color: transparent;") do %>
-        <i class="fa fa-floppy-o fa-3x" aria-hidden="true"></i>
-      <% end %>
+        <div class="buttonrow">
+          <%= link_to edit_article_path(article), class: "btn btn-info btn-primary" do %>
+            <i class="fa fa-reply fa-3x" aria-hidden="true"></i>
+          <% end %>
+          <span style="margin-right:30px;"></span>
+          <button class="btn btn-info btn-primary" type="button" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-hidden="true"><i class="fa fa-reply fa-3x" aria-hidden="true"></i></button>
+        </div>
+        <br>
+          <div class = "row">
+            <div class="collapse" id="delete<%= article.id %>"><a> <br>
+              <div class="well col-xs-6 col-xs-offset-3">
+                <h5 class="inline"> Are you sure you want to delete your article? </h5>
+                <button class="ruby-link btn-danger btn-primary btn-sm inline"><%= link_to "Delete Article", destroy_article_path(article), method: :delete, :class=>"ruby-link"%></button>
+                <button class = "btn-success btn-primary btn-sm inline" data-toggle="collapse" data-target="#delete<%= article.id %>" aria-expanded="false" aria-controls="collapseExample">Cancel</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <% end %>
