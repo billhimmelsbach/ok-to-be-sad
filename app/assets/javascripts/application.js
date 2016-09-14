@@ -54,7 +54,7 @@ $(document).on('turbolinks:load', function(){
   var $splashSwipeRightIcon = $('.splash-swipe-right-icon');
   var $splashPageBounce = $('.splash-page-bounce');
 
-  var timeout = 9000;
+  var timeout = 7000;
   var action = function() {
       $splashSwipeRightIcon.animateCss('bounceInLeft');
       $splashPageBounce.animateCss('bounce');
