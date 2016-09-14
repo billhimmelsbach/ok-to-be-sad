@@ -18,6 +18,15 @@
 //= require turbolinks
 //= require_tree .
 
+$.fn.extend({
+    animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+        });
+    }
+});
+
 
 $(document).on('turbolinks:load', function(){
 
@@ -42,9 +51,16 @@ $(document).on('turbolinks:load', function(){
     }
   };
 
-  if ($(".newusertext").length==1) {
-    console.log("TEST TEST");
-  }
+  var $splashSwipeRightIcon = $('.splash-swipe-right-icon');
+  var $splashPageBounce = $('.splash-page-bounce')
+
+  var timeout = 9000;
+  var action = function() {
+      $splashSwipeRightIcon.animateCss('bounceInLeft');
+      $splashPageBounce.animateCss('bounce');
+      setTimeout(action, timeout);
+  };
+  action();
 
 
 
