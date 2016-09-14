@@ -42,6 +42,12 @@ $(document).on('turbolinks:load', function(){
     }
   };
 
+  if ($(".newusertext").length==1) {
+    console.log("TEST TEST");
+  }
+
+
+
   // var flashicons = function() {
   //
   // };
@@ -93,7 +99,8 @@ $(document).on('turbolinks:load', function(){
     margin:5,
     video:true,
     nav: false,
-    autoHeight:true
+    autoHeight:true,
+    dots:false
   });
 
   $(".delete-button-collapse").on("click", function () {
