@@ -294,6 +294,11 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
       height: 115px;
       width: 100%;
       overflow:hidden !important;
+      background-color: #00BFFF !important;
+    }
+
+    .bottom-nav-div .fa {
+      color: white;
     }
 
     .bottom-nav-spacer {
