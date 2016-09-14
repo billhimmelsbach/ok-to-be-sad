@@ -551,3 +551,11 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
 .click-green {
   color: #baffc9;
 }
+
+.splash-button {
+  font-size:+150% !important;
+}
+
+.splash-button-container {
+  margin-top: 8vh;
+}

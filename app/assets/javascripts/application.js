@@ -52,7 +52,7 @@ $(document).on('turbolinks:load', function(){
   };
 
   var $splashSwipeRightIcon = $('.splash-swipe-right-icon');
-  var $splashPageBounce = $('.splash-page-bounce')
+  var $splashPageBounce = $('.splash-page-bounce');
 
   var timeout = 9000;
   var action = function() {
