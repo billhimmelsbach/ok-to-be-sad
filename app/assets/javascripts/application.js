@@ -96,6 +96,10 @@ $(document).on('turbolinks:load', function(){
     autoHeight:true
   });
 
+  $(".delete-button-collapse").on("click", function () {
+    $('html, body').animate({scrollTop: '+=150px'}, 800);
+  });
+
   var formContentType = $(".form-container").data("type");
   console.log(formContentType);
   formSelect("#" + formContentType + "-form");
