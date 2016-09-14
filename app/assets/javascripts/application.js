@@ -100,6 +100,19 @@ $(document).on('turbolinks:load', function(){
     $('html, body').animate({scrollTop: '+=150px'}, 800);
   });
 
+  var owl = $('.owl-carousel');
+
+  $(document.documentElement).keyup(function(event) {
+      // handle cursor keys
+      if (event.keyCode == 37) {
+          console.log("prev");
+          owl.trigger('prev.owl.carousel', [300]);
+      } else if (event.keyCode == 39) {
+        console.log("next");
+          owl.trigger('next.owl.carousel');
+      }
+  });
+
   var formContentType = $(".form-container").data("type");
   console.log(formContentType);
   formSelect("#" + formContentType + "-form");
