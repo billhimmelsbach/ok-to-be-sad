@@ -6,10 +6,8 @@
       <%= f.hidden_field :content_type, :value => "image" %>
       <br>
       <div class="text-center">
-        <%= f.submit @article.new_record? ? "Upload Image" : "Update Image", class: "btn btn-success btn-default btn-md"%>
-        <span style="margin-right:30px;"></span>
-        <%= button_to "Cancel", :back, method: :get, :class=>"ruby-link btn btn-info btn-default btn-md inline", :onclick => "window.history.go(-1)" %>
-      </div>
+      <%= render "layouts/form_buttons_large" %>
     <% end %>
+      </div>
   </div>
 </div>
