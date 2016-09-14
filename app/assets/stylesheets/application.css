@@ -293,16 +293,20 @@ h6 {
     }
 
     .bottom-nav-div {
-      position: absolute;
+      /*position: absolute;
       left: 0;
-      bottom: 0;
+      bottom: 0;*/
       height: 115px;
       width: 100%;
       overflow:hidden !important;
     }
 
+    .bottom-nav-spacer {
+      height: 400px;
+    }
+
     main {
-      margin-bottom: 125px;
+      margin-bottom: +125px;
     }
 }
 
