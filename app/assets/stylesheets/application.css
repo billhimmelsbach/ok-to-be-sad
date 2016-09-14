@@ -479,8 +479,8 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
 
 .swipe-icon {
   margin-left: 25%;
-  -webkit-animation: pulse 2s;
-  animation: pulse 2s;
+  -webkit-animation: bounceInLeft 2s;
+  animation: bounceInLeft 2s;
   -webkit-animation-iteration-count: 3;
   animation-iteration-count: 3;
 }
