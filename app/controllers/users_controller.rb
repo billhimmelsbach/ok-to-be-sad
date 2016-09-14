@@ -58,6 +58,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def trial
+    session[:user_id] = "1"
+    flash[:success] = "Take a look around, then sign up for your own account!"
+    redirect_to root_path
+  end
+
   private
 
   def user_params

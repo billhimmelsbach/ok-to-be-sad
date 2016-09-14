@@ -18,13 +18,58 @@
 //= require turbolinks
 //= require_tree .
 
+
 $(document).on('turbolinks:load', function(){
 
+  var $formButtons = $(".form-icons");
+  var $formPartials = $(".form-partials");
+
   var formSelect = function(form) {
-    $(".form-partials").hide();
-    $(form).fadeIn();
-    console.log("Hit!");
+    $formPartials.hide();
+    $(form).fadeIn(150);
+    $formButtons.removeClass("click-red click-yellow click-green click-orange");
+    if (form == "#video-form") {
+      $("#video-form-button").addClass("click-red");
+    }
+    if (form == "#image-form") {
+      $("#image-form-button").addClass("click-yellow");
+    }
+    if (form == "#song-form") {
+      $("#song-form-button").addClass("click-green");
+    }
+    if (form == "#quote-form") {
+      $("#quote-form-button").addClass("click-orange");
+    }
   };
+
+  // var flashicons = function() {
+  //
+  // };
+
+  // setTimeout(function() {
+  //   $("#video-form-button").addClass("click-red");
+  // }, 300);
+  // setTimeout(function() {
+  //   $("#image-form-button").addClass("click-yellow");
+  // }, 350);
+  // setTimeout(function() {
+  //   $("#song-form-button").addClass("click-green");
+  // }, 400);
+  // setTimeout(function() {
+  //   $("#video-form-button").removeClass("click-red");
+  // }, 400);
+  // setTimeout(function() {
+  //   $("#quote-form-button").addClass("click-orange");
+  // }, 550);
+  // setTimeout(function() {
+  //   $("#image-form-button").removeClass("click-yellow");
+  // }, 450);
+  // setTimeout(function() {
+  //   $("#song-form-button").removeClass("click-green");
+  // }, 300);
+  // setTimeout(function() {
+  //   $("#quote-form-button").removeClass("click-orange");
+  // }, 350);
 
   setTimeout(function() {
     if (($('.newusertext').length)!=1) {
@@ -41,7 +86,7 @@ $(document).on('turbolinks:load', function(){
 
   setTimeout(function() {
     $('.alert').slideUp();
-  }, 3000);
+  }, 5000);
 
   $('.owl-carousel').owlCarousel({
     items:1,
@@ -51,12 +96,29 @@ $(document).on('turbolinks:load', function(){
     autoHeight:true
   });
 
+  $(".delete-button-collapse").on("click", function () {
+    $('html, body').animate({scrollTop: '+=150px'}, 800);
+  });
+
+  var owl = $('.owl-carousel');
+
+  $(document.documentElement).keyup(function(event) {
+      // handle cursor keys
+      if (event.keyCode == 37) {
+          console.log("prev");
+          owl.trigger('prev.owl.carousel', [300]);
+      } else if (event.keyCode == 39) {
+        console.log("next");
+          owl.trigger('next.owl.carousel');
+      }
+  });
+
   var formContentType = $(".form-container").data("type");
   console.log(formContentType);
   formSelect("#" + formContentType + "-form");
 
   $(".quote-title").fitText(2.0);
-
+  // $(".clip-text").fitText(0.24);
   // $(document).on('click touchstart', function(e) {
   //     if (e.target.id == ('cog' || 'dropdown-content')) {
   //       $(".dropdown-content").show();
@@ -69,17 +131,42 @@ $(document).on('turbolinks:load', function(){
   //   $(".dropdown-content").hide();
   // });
 
-
-  $('.cog').on("click touchstart", function(e) {
-    $(".dropdown-content").show();
-    e.stopPropagation();
+  toggle_click = 0;
+  $('#cog').on("touchstart", function(e) {
+    if (toggle_click === 0) {
+      $(".dropdown-content").show();
+      e.stopPropagation();
+      toggle_click++;
+    }
+    else {
+      $(".dropdown-content").hide();
+      toggle_click--;
+    }
   });
 
-  $(function(){
-    $(document).on("click touchstart", function(){
-      $('.dropdown-content').hide(); //hide the button
+  toggle_touch = 0;
+  $('#cog').on("click", function(e) {
+    if (toggle_touch === 0) {
+      $(".dropdown-content").show();
+      e.stopPropagation();
+      toggle_touch++;
+    }
+    else {
+      $(".dropdown-content").hide();
+      toggle_touch--;
+    }
   });
-});
+
+
+  // $('.cog').on("click touchstart", function(e) {
+  //   $(".dropdown-content").show();
+  //   e.stopPropagation();
+  // });
+  //
+  // $(function(){
+  //   $(document).on("click touchstart", function(){
+  //     $('.dropdown-content').hide(); //hide the button
+  // });
   // $(".cog").click(function() {
   //     console.log("test");
   //     $(".dropdown-content").show();
@@ -141,8 +228,8 @@ $(document).on('turbolinks:load', function(){
   //   $("#quote-form").fadeIn();
   // });
 
-  $(".ProfilePhoto").click(function() {
-      console.log("test");
-      $(".dropdown-content").hide();
-  });
+  // $(".ProfilePhoto").click(function() {
+  //     console.log("test");
+  //     $(".dropdown-content").hide();
+  // });
 });

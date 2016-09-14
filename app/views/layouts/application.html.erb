@@ -3,9 +3,9 @@
 <head>
   <title>OkToBeSad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/owl.carousel.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
@@ -74,14 +74,11 @@
         </div>
       </div>
     </main>
-
-    <footer class="text-center">
-    </footer>
-
-    <div class = "row">
-      <div class="col-xs-12 navbar navbar-fixed-bottom bottom-nav-div">
-        <div class="row" id="bottomNav">
-          <% if current_user %>
+    
+    <% if current_user %>
+      <div class = "row">
+        <div class="col-xs-12 navbar navbar-fixed-bottom bottom-nav-div">
+          <div class="row" id="bottomNav">
             <div class="col-xs-3 text-center">
               <%= link_to :back do %><br>
                 <i class="fa fa-arrow-circle-left fa-navbar fa-2x" aria-hidden="false"></i>
