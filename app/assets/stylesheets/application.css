@@ -2,7 +2,8 @@
  * app/assets/stylesheets/application.css
  */
 
-/*= require animate
+/*
+ *= require animate
  *= require bootstrap-3.3.6.min
  *= require rails_bootstrap_forms
  *= require_tree .
@@ -82,7 +83,6 @@
     content: none;
 }
 
-/* Use Background-size cover for photo background and no-repeat background */
 .clip-text--cover,
 .clip-text--cover:before {
     background-repeat: no-repeat;
@@ -90,7 +90,6 @@
             background-size: cover;
 }
 
-/* Background image from http://thepatternlibrary.com/ and http://lorempixel.com */
 .clip-text_one {
     background-image: url(http://bestanimations.com/Nature/Water/rain/rain-nature-animated-gif-32.gif);
 }
