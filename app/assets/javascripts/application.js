@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', function(){
 
   var formSelect = function(form) {
     $formPartials.hide();
-    $(form).fadeIn();
+    $(form).fadeIn(150);
     $formButtons.removeClass("click-red click-yellow click-green click-orange");
     if (form == "#video-form") {
       $("#video-form-button").addClass("click-red");
