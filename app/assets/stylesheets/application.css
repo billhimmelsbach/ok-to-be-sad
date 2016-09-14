@@ -97,14 +97,6 @@
 
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 
- /*footer {
-   left: 0;
-   bottom: 0;
-   height: 40px;
-   width: 100%;
-   font-size: 14px;
- }*/
-
  html, body{
    height: 100%;
    padding-top: 60px;
@@ -334,10 +326,6 @@ h6 {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  /*left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);*/
 }
 
 .ProfilePhoto {
@@ -382,13 +370,11 @@ h6 {
   cursor: pointer;
 }
 
-/* The container <div> - needed to position the dropdown content */
 .dropdownprofile {
   position: relative;
   display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -480,25 +466,12 @@ h6 {
 
 .swipe-icon {
   margin-left: 25%;
-  /*border: 5px solid #FFFFFF;*/
   -webkit-animation: pulse 2s;
   animation: pulse 2s;
-  /*animation-duration: bounce 800ms ease-out;
-  -webkit-animation: pulsate 1.5s ease-out;*/
   -webkit-animation-iteration-count: 3;
   animation-iteration-count: 3;
-  /*opacity: 0.0*/
 }
 
-.{
-  -webkit-animation-duration: bounce 800ms ease-out;
-  -moz-animation-duration: bounce 800ms ease-out;
-  -o-animation-duration: bounce 800ms ease-out;
-  animation-duration: bounce 800ms ease-out;
-  /*-webkit-animation-duration: 2s;
-  -webkit-animation-delay: 2s;
-  -webkit-animation-iteration-count: 5;*/
-}
 
 .media-object {
   max-height: 10vh;
