@@ -41,6 +41,14 @@
               </div>
             <% end %>
             <% if article.content_type == "video" %>
+            <div class = "index-iframe-container" style="height: 80vh">
+              <div class = "embed-container vertically-align-force" style="height:35vh">
+                <iframe class="ytplayer" type="text/html"
+                  src="https://www.youtube.com/embed/<%= youtube_embed(article.content) %>"
+                  frameborder="0">
+                </iframe>
+              </div>
+            </div>
               <div class="item-video" style="background-color:#39abb6; height:80vh; width:70vw; margin: 0 auto;" ><a class="owl-video" href="<%= article.content %>"></a></div>
             <% end %>
             <% if article.content_type == "song" %>
