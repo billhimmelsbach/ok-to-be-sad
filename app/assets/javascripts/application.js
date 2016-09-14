@@ -18,13 +18,58 @@
 //= require turbolinks
 //= require_tree .
 
+
 $(document).on('turbolinks:load', function(){
 
+  var $formButtons = $(".form-icons");
+  var $formPartials = $(".form-partials");
+
   var formSelect = function(form) {
-    $(".form-partials").hide();
+    $formPartials.hide();
     $(form).fadeIn();
-    console.log("Hit!");
+    $formButtons.removeClass("click-red click-yellow click-green click-orange");
+    if (form == "#video-form") {
+      $("#video-form-button").addClass("click-red");
+    }
+    if (form == "#image-form") {
+      $("#image-form-button").addClass("click-yellow");
+    }
+    if (form == "#song-form") {
+      $("#song-form-button").addClass("click-green");
+    }
+    if (form == "#quote-form") {
+      $("#quote-form-button").addClass("click-orange");
+    }
   };
+
+  // var flashicons = function() {
+  //
+  // };
+
+  // setTimeout(function() {
+  //   $("#video-form-button").addClass("click-red");
+  // }, 300);
+  // setTimeout(function() {
+  //   $("#image-form-button").addClass("click-yellow");
+  // }, 350);
+  // setTimeout(function() {
+  //   $("#song-form-button").addClass("click-green");
+  // }, 400);
+  // setTimeout(function() {
+  //   $("#video-form-button").removeClass("click-red");
+  // }, 400);
+  // setTimeout(function() {
+  //   $("#quote-form-button").addClass("click-orange");
+  // }, 550);
+  // setTimeout(function() {
+  //   $("#image-form-button").removeClass("click-yellow");
+  // }, 450);
+  // setTimeout(function() {
+  //   $("#song-form-button").removeClass("click-green");
+  // }, 300);
+  // setTimeout(function() {
+  //   $("#quote-form-button").removeClass("click-orange");
+  // }, 350);
 
   setTimeout(function() {
     if (($('.newusertext').length)!=1) {

@@ -1,7 +1,7 @@
-<%= button_tag(:back, type: "button", class: "btn", name: "commit", value: "conceal", :style=>"background-color: transparent;", :onclick => "window.history.go(-1)") do %>
-  <i class="fa fa-reply fa-5x" aria-hidden="true"></i>
+<%= link_to :back, class: "btn btn-info btn-primary" do %>
+  <i class="fa fa-reply fa-3x" aria-hidden="true"></i>
 <% end %>
 <span style="margin-right:30px;"></span>
-<%= button_tag(type: "submit", class: "btn", name: "commit", value: "conceal", :style=>"background-color: transparent;") do %>
-  <i class="fa fa-floppy-o fa-5x" aria-hidden="true"></i>
-<% end %>
+<button class="btn btn-success btn-primary" type="submit">
+  <i class="fa fa-floppy-o fa-3x" aria-hidden="true"></i>
+</button>
