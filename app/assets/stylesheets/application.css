@@ -160,6 +160,10 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.3)
 }
 
+.font-light-shadow {
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3)
+}
+
 .grayed {
     -webkit-filter: grayscale(100%);
     -webkit-transition: .3s ease-in-out;
