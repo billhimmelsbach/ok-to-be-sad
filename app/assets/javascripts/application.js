@@ -86,7 +86,7 @@ $(document).on('turbolinks:load', function(){
 
   setTimeout(function() {
     $('.alert').slideUp();
-  }, 3000);
+  }, 5000);
 
   $('.owl-carousel').owlCarousel({
     items:1,
