@@ -4,7 +4,8 @@
       <%= f.label :body, "What's on your mind?" %>
       <%= f.text_area :body, rows: 2, class: 'form-control', required: true, maxlength: 2000 %>
     </div>
-
-    <%= f.submit 'Post', class: 'btn btn-primary btn-lg' %>
+    <button class="btn btn-success btn-info" type="submit">
+      <i class="fa fa-paper-plane fa-3x" aria-hidden="true"></i>
+    </button>
   <% end %>
 </div>
