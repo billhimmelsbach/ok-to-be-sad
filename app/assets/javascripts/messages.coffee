@@ -1,3 +1,4 @@
+#handles the faye interactions and csrf protection
 window.client = new Faye.Client('/faye')
 
 client.addExtension {

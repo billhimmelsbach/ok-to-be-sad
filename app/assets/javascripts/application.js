@@ -18,142 +18,128 @@
 //= require turbolinks
 //= require_tree .
 
+//extends animate.css to be called as js functions
 $.fn.extend({
-    animateCss: function (animationName) {
-        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        this.addClass('animated ' + animationName).one(animationEnd, function() {
-            $(this).removeClass('animated ' + animationName);
-        });
-    }
+  animateCss: function (animationName) {
+    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+      this.addClass('animated ' + animationName).one(animationEnd, function() {
+        $(this).removeClass('animated ' + animationName);
+      });
+  }
 });
 
 
 $(document).on('turbolinks:load', function(){
 
+//repeated cached in variables for performance
   var $formButtons = $(".form-icons");
   var $formPartials = $(".form-partials");
+  var $videoFormButton = $("#video-form-button");
+  var $imageFormButton = $("#image-form-button");
+  var $songFormButton = $("#song-form-button");
+  var $quoteFormButton = $("#quote-form-button");
+  var $splashSwipeRightIcon = $('.splash-swipe-right-icon');
+  var $splashPageBounce = $('.splash-page-bounce');
 
+  //handles showing and hiding forms
   var formSelect = function(form) {
     $formPartials.hide();
     $(form).fadeIn(150);
     $formButtons.removeClass("click-red click-yellow click-green click-orange");
     if (form == "#video-form") {
-      $("#video-form-button").addClass("click-red");
+      $videoFormButton.addClass("click-red");
     }
     if (form == "#image-form") {
-      $("#image-form-button").addClass("click-yellow");
+      $imageFormButton.addClass("click-yellow");
     }
     if (form == "#song-form") {
-      $("#song-form-button").addClass("click-green");
+      $songFormButton.addClass("click-green");
     }
     if (form == "#quote-form") {
-      $("#quote-form-button").addClass("click-orange");
+      $quoteFormButton .addClass("click-orange");
     }
   };
 
-  var $splashSwipeRightIcon = $('.splash-swipe-right-icon');
-  var $splashPageBounce = $('.splash-page-bounce');
 
-  var timeout = 7000;
-  var action = function() {
-      $splashSwipeRightIcon.animateCss('bounceInLeft');
-      $splashPageBounce.animateCss('bounce');
-      setTimeout(action, timeout);
-  };
-  action();
+  //event listeners for swapping out forms
+  $(document).on("click touchstart", "#video-form-button", function() {
+    formSelect("#video-form");
+  });
 
+  $(document).on("click touchstart", "#image-form-button", function() {
+    formSelect("#image-form");
+  });
 
+  $(document).on("click touchstart", "#song-form-button", function() {
+    formSelect("#song-form");
+  });
 
-  // var flashicons = function() {
-  //
-  // };
+  $(document).on("click touchstart", "#quote-form-button", function() {
+    formSelect("#quote-form");
+  });
 
-  // setTimeout(function() {
-  //   $("#video-form-button").addClass("click-red");
-  // }, 300);
-  // setTimeout(function() {
-  //   $("#image-form-button").addClass("click-yellow");
-  // }, 350);
-  // setTimeout(function() {
-  //   $("#song-form-button").addClass("click-green");
-  // }, 400);
-  // setTimeout(function() {
-  //   $("#video-form-button").removeClass("click-red");
-  // }, 400);
-  // setTimeout(function() {
-  //   $("#quote-form-button").addClass("click-orange");
-  // }, 550);
-  // setTimeout(function() {
-  //   $("#image-form-button").removeClass("click-yellow");
-  // }, 450);
-  // setTimeout(function() {
-  //   $("#song-form-button").removeClass("click-green");
-  // }, 300);
-  // setTimeout(function() {
-  //   $("#quote-form-button").removeClass("click-orange");
-  // }, 350);
+  //a recursive function that continually runs the bounce animations when on the splash page
+  if (($('.newusertext').length)==1) {
+    var timeout = 7000;
+    var action = function() {
+        $splashSwipeRightIcon.animateCss('bounceInLeft');
+        $splashPageBounce.animateCss('bounce');
+        setTimeout(action, timeout);
+    };
+    action();
+  }
 
-  setTimeout(function() {
-    if (($('.newusertext').length)!=1) {
-      console.log($('.newusertext').length);
+  //if the user is on index carousel, creates a brief animation to show swipe direction
+  if (($('.newusertext').length)!=1) {
+    setTimeout(function() {
       $('.swipe-right-icon').fadeIn();
-    }
-  }, 1500);
+    }, 1000);
+    setTimeout(function() {
+      $('.swipe-right-icon').fadeOut();
+    }, 6000);
+  }
 
-  // $('.swipe-right-icon').show();
-
-  setTimeout(function() {
-    $('.swipe-right-icon').fadeOut();
-  }, 5000);
-
+  //hides alert messages after timeout
   setTimeout(function() {
     $('.alert').slideUp();
   }, 5000);
 
-  $('.owl-carousel').owlCarousel({
+  //initializes owl carousel
+  var $owl = $('.owl-carousel');
+
+  //sets the owl carousel options
+  $owl.owlCarousel({
     items:1,
     margin:5,
     video:true,
     nav: false,
-    autoHeight:true,
     dots:false
   });
 
+  //sets the form content type by stashing it in a data tag set by ruby
+
+  var formContentType = $(".form-container").data("type");
+  formSelect("#" + formContentType + "-form");
+
+  //when a user clicks on a delete button, scrolls page down to see the modal
   $(".delete-button-collapse").on("click", function () {
     $('html, body').animate({scrollTop: '+=150px'}, 800);
   });
 
-  var owl = $('.owl-carousel');
-
+  //enables the use of keyboard buttons as a shortcut to the owl carousel
   $(document.documentElement).keyup(function(event) {
-      // handle cursor keys
-      if (event.keyCode == 37) {
-          console.log("prev");
-          owl.trigger('prev.owl.carousel', [300]);
-      } else if (event.keyCode == 39) {
-        console.log("next");
-          owl.trigger('next.owl.carousel');
-      }
+    if (event.keyCode == 37) {
+      owl.trigger('prev.owl.carousel', [300]);
+    }
+    else if (event.keyCode == 39) {
+      owl.trigger('next.owl.carousel');
+    }
   });
 
-  var formContentType = $(".form-container").data("type");
-  console.log(formContentType);
-  formSelect("#" + formContentType + "-form");
-
+  //dynamically scales text size using fitText for quotes
   $(".quote-title").fitText(2.0);
-  // $(".clip-text").fitText(0.24);
-  // $(document).on('click touchstart', function(e) {
-  //     if (e.target.id == ('cog' || 'dropdown-content')) {
-  //       $(".dropdown-content").show();
-  //     } else {
-  //       $(".dropdown-content").hide();
-  //     }
-  // });
 
-  // $(document).not(".dropdownprofile").click(function() {
-  //   $(".dropdown-content").hide();
-  // });
-
+  //a poorly executed toggle switch for handling cog action on all iOS and Android devices
   toggle_click = 0;
   $('#cog').on("touchstart", function(e) {
     if (toggle_click === 0) {
@@ -180,79 +166,4 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
-
-  // $('.cog').on("click touchstart", function(e) {
-  //   $(".dropdown-content").show();
-  //   e.stopPropagation();
-  // });
-  //
-  // $(function(){
-  //   $(document).on("click touchstart", function(){
-  //     $('.dropdown-content').hide(); //hide the button
-  // });
-  // $(".cog").click(function() {
-  //     console.log("test");
-  //     $(".dropdown-content").show();
-  // });
-
-  // $(document).on("click", "#video-form-button", function() {
-  //   formSelect("#video-form");
-  // });
-  //
-  // $(document).on("click", "#image-form-button", function() {
-  //   formSelect("#image-form");
-  // });
-  //
-  // $(document).on("click", "#song-form-button", function() {
-  //   formSelect("#song-form");
-  // });
-  //
-  // $(document).on("click", "#quote-form-button", function() {
-  //   formSelect("#quote-form");
-  // });
-
-  $(document).on("click touchstart", "#video-form-button", function() {
-    formSelect("#video-form");
-  });
-
-  $(document).on("click touchstart", "#image-form-button", function() {
-    formSelect("#image-form");
-  });
-
-  $(document).on("click touchstart", "#song-form-button", function() {
-    formSelect("#song-form");
-  });
-
-  $(document).on("click touchstart", "#quote-form-button", function() {
-    formSelect("#quote-form");
-  });
-  // $(document).on("click", "#video-form-button", function() {
-  //   $(".form-partials").hide();
-  //   console.log("VIDEO!");
-  //   $("#video-form").fadeIn();
-  // });
-
-  //
-  // $(document).on("click", "#image-form-button", function() {
-  //   $(".form-partials").hide();
-  //   console.log("IMAGE!");
-  //   $("#image-form").fadeIn();
-  // });
-  //
-  // $(document).on("click", "#song-form-button", function() {
-  //   $(".form-partials").hide();
-  //   console.log("SONG!");
-  //   $("#song-form").fadeIn();
-  // });
-  //
-  // $(document).on("click", "#quote-form-button", function() {
-  //   $(".form-partials").hide();
-  //   console.log("QUOTE!");
-  //   $("#quote-form").fadeIn();
-  // });
-
-  // $(".ProfilePhoto").click(function() {
-  //     console.log("test");
-  //     $(".dropdown-content").hide();
-  // });
 });

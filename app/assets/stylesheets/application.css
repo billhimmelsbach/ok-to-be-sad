@@ -10,13 +10,11 @@
  *= require_self
  */
 
- /*
-  Based from this article from Divya Manian -
-  http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html
-*/
 
 /*#00BFFF*/
 
+
+/*this code block handles all of the splash screen logo CSS*/
 .wrapper {
     text-align: center;
 }
@@ -30,7 +28,7 @@
     text-transform: uppercase;
 }
 
-/* Clip text element */
+/* clip text element */
 .clip-text {
     font-size: 6em;
     font-weight: bold;
@@ -40,11 +38,8 @@
     margin: .25em;
     padding: .5em .75em;
     text-align: center;
-    /* Color fallback */
     color: #00BFFF;
     -webkit-background-clip: text;
-
-    /*-webkit-text-fill-color: transparent;*/
 }
 
 .clip-text:before,
@@ -53,7 +48,7 @@
     content: '';
 }
 
-/* Background */
+/* background */
 .clip-text:before {
     z-index: -2;
     top: 0;
@@ -63,7 +58,7 @@
     background-image: inherit;
 }
 
-/* Text Background (black zone) */
+/* text border background */
 .clip-text:after {
     position: absolute;
     z-index: -1;
@@ -76,9 +71,10 @@
 
 .splash-text {
   color: #00BFFF;
+  font-size: 4vh;
 }
 
-/* Change the background position to display letter when the black zone isn't here */
+/* shows the letters when background isn't present */
 .clip-text--no-textzone:before {
     background-position: -.65em 0;
 }
@@ -94,64 +90,53 @@
             background-size: cover;
 }
 
-.clip-text_one {
+.clip-text-one {
     background-image: url(https://i.imgur.com/rcVVgcL.gif);
+    font-size: 9vh;
 }
 
-@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 
- html, body{
-   height: 100%;
-   padding-top: 60px;
- }
+/*general application layout css*/
+html, body{
+ height: 100%;
+ padding-top: 60px;
+}
 
- .footer {
-   font-size: 1.5em;
- }
+.footer {
+ font-size: 1.5em;
+}
 
- .navbar-brand>img {
-    margin-top: -10px !important;
-    padding: 0px;
-    height: 40px;
-    width: 140px;
- }
+p {
+  text-align: center;
+}
 
+.buttonrow {
+  text-align: center;
+}
+
+.img-responsive {
+  margin: 0 auto;
+}
+
+.height-100 {
+  height 100%;
+}
+
+
+/*the following code block involves bootstrap overrides marked with important tags*/
+.navbar-brand>img {
+  margin-top: -10px !important;
+  padding: 0;
+  height: 40px;
+  width: 140px;
+}
 
 .navbar a {
   color: #FFFFFF !important;
 }
 
- main {
-   margin-top: -4%;
- }
-
-.CreateButton {
-  text-align: center;
-}
-
-.CancelButton {
-  text-align: center;
-  margin-top: 3%;
-}
-
-.EditButton {
-  text-align: center;
-}
-
-h2 {
-  text-align: center;
-}
-
-.vote-total {
-  font-size: 10vh
-}
-
 .navbar {
   background-color: #00BFFF !important;
-}
-
-h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
-  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .font-color, h1, h2, h3, h4, h5, h6 {
@@ -160,182 +145,78 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.3)
 }
 
+main {
+ margin-top: -4%;
+}
+
+.form-headline {
+  margin-top:-1px; margin-bottom:-1px;
+}
+
+
+/*form related animations and classes*/
+.click-red {
+  color: #ffb3ba;
+}
+
+.quick-transition {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s eas
+}
+
+.click-yellow {
+  color: #ffffba;
+}
+
+.click-orange {
+  color: #ffdfba;
+}
+
+.click-green {
+  color: #baffc9;
+}
+
+.create-button, .edit-button {
+  text-align: center;
+}
+
+.cancel-button {
+  text-align: center;
+  margin-top: 3%;
+}
+
+
+/*font related styling*/
+h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 .font-light-shadow {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.3)
 }
 
-.grayed {
-    -webkit-filter: grayscale(100%);
-    -webkit-transition: .3s ease-in-out;
-    -moz-filter: grayscale(100%);
-    -moz-transition: .3s ease-in-out;
-    -o-filter: grayscale(100%);
-    -o-transition: .3s ease-in-out;
-  opacity: 0.4;
-}
 
+/*helper class for hiding mobile*/
 .hidden-xs {
   display: none !important;
   visibility: hidden !important;
 }
 
+
+/*cog is not displayed on desktop*/
 .dropdownprofile, .cog{
   display: none;
 }
-@media only screen and (max-width: 770px) {
-    .nav-div {
-        display:none;
-    }
 
-    html {
-      margin-top: -100px
-    }
-
-    main {
-      margin-top: 0%;
-    }
-
-    .bottom-nav-div, .show-mobile, .cog, .newusertext {
-      display: block !important;
-      visibility: visible !important;
-    }
-
-    .newuserimage {
-      display: none;
-    }
-
-    html,
-    body {
-      height: 100%;
-    }
-
-    /*.show-mobile {
-      padding-top: 3vh;
-      padding-bottom: 3vh;
-    }*/
-
-    #wrap {
-      min-height: 100%;
-      height: auto !important;
-      height: 100%;
-      margin: 0 auto -60px;
-      padding: 0 0 60px;
-    }
-
-    .navbar {
-      background-color: white !important;
-      border-top: 1px solid #00BFFF;
-    }
-
-    .glyphy-cog, .fa-navbar {
-      color: #00BFFF;
-    }
-
-    #wrap > .container {
-      padding: 10px 15px 0;
-    }
-
-    footer {
-      margin-bottom: 10vh;
-    }
-
-    .navbar-header {
-     	float:none;
-        width:100%;
-        padding:10px;
-    }
-
-    .navbar-brand {
-        font-size:20pt;
-        float:none;
-    }
-
-    #bottomNav a {
-        font-size:15pt;
-        color:#ddd;
-        text-decoration:none;
-    }
-
-    #bottomNav a:hover {
-        color:#fff;
-    }
-
-    .index-container {
-      padding: 0px !important;
-    }
-
-    .brand-image {
-      overflow:hidden !important;
-      height:auto !important;
-      margin-bottom: -5vh;
-    }
-
-    .flash-message-container {
-      padding: 5px !important;
-    }
-
-    .show-page-container {
-    }
-
-    .pagination {
-      margin-bottom:15vh;
-    }
-
-    .pagination a {
-      font-size: 1.5em;
-    }
-
-    .pagination span {
-      font-size: 1.5em;
-    }
-
-    .pagination-user-desktop {
-      display:none;
-    }
-
-    .owl-image {
-      max-height:80vh;
-      width:auto;
-    }
-    .quote-title {
-      font-size: 1.8em !important;
-    }
-
-    .bottom-nav-div {
-      /*position: absolute;
-      left: 0;
-      bottom: 0;*/
-      height: 115px;
-      width: 100%;
-      overflow:hidden !important;
-      background-color: #00BFFF !important;
-    }
-
-    .bottom-nav-div .fa {
-      color: white;
-    }
-
-    .bottom-nav-spacer {
-      height: 400px;
-    }
-
-    main {
-      margin-bottom: +125px;
-    }
-}
 
 .bottom-nav-div, .show-mobile {
   display: none;
   visibility: none;
 }
 
-.index-container {
-  padding: 30px 150px;
-}
 
-.flash-message-container {
-  padding-top: 30px;
-}
 
 .vertically-align-force {
   position: relative;
@@ -345,13 +226,24 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
   transform: translateY(-50%);
 }
 
-.ProfilePhoto {
+.profile-photo {
   width: 20vw;
   height: auto;
   margin: 0 auto;
 }
 
 
+/*small padding changes*/
+.index-container {
+  padding: 30px 150px;
+}
+
+.flash-message-container {
+  padding-top: 30px;
+}
+
+
+/*mobile user show page cog related CSS*/
 .dropdown-menu>li>a {
   color:black !important;
 }
@@ -397,7 +289,7 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 250px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 /* Links inside the dropdown */
@@ -406,7 +298,6 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
   padding: 12px 16px;
   text-decoration: none;
   font-size: 1.6em;
-  /*display: block;*/
 }
 
 .newmain {
@@ -510,53 +401,146 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
   animation-delay: 3s;
 }
 
-/*.bottom-nav-div {
-  text-shadow: -10px -10px -10px rgba(0,0,0,3) !important;
-}*/
-
 .bottom-nav-div {
-    -webkit-box-shadow: 0px -3px 2px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow:    0px -3px 2px rgba(0, 0, 0, 0.2);
-    box-shadow:         0px -3px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 -3px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow:    0 -3px 2px rgba(0, 0, 0, 0.2);
+  box-shadow:         0 -3px 2px rgba(0, 0, 0, 0.2);
 }
 
 .delete-button {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    outline: none;
-    border: 0;
-    background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: 0;
+  background: transparent;
 }
 
-.click-red {
-  color: #ffb3ba;
+h2 {
+  text-align: center;
 }
 
-.quick-transition {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s eas
+
+/*media queries for mobile*/
+@media only screen and (max-width: 770px) {
+
+  /*bootstrap overides*/
+  .bottom-nav-div {
+    height: 115px;
+    width: 100%;
+    overflow:hidden !important;
+    background-color: #00BFFF !important;
+  }
+
+  .index-container {
+    padding: 0 !important;
+  }
+
+  .brand-image {
+    overflow:hidden !important;
+    height:auto !important;
+    margin-bottom: -5vh;
+  }
+
+  .flash-message-container {
+    padding: 5px !important;
+  }
+
+  .quote-title {
+    font-size: 1.8em !important;
+  }
+
+  .bottom-nav-div, .show-mobile, .cog, .newusertext {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .navbar {
+    background-color: white !important;
+    border-top: 1px solid #00BFFF;
+  }
+
+  #wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+  }
+
+  .nav-div {
+      display:none;
+  }
+
+  .newuserimage {
+    display: none;
+  }
+
+  /*general body css*/
+  html {
+    margin-top: -100px
+  }
+
+  main {
+    margin-top: 0%;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  main {
+    margin-bottom: +125px;
+  }
+
+  .glyphy-cog, .fa-navbar {
+    color: #00BFFF;
+  }
+
+  #wrap > .container {
+    padding: 10px 15px 0;
+  }
+
+  footer {
+    margin-bottom: 10vh;
+  }
+
+  .navbar-header {
+   	float:none;
+      width:100%;
+      padding:10px;
+  }
+
+  .navbar-brand {
+      font-size:20pt;
+      float:none;
+  }
+
+  #bottomNav a {
+      font-size:15pt;
+      color:#ddd;
+      text-decoration:none;
+  }
+
+  #bottomNav a:hover {
+      color:#fff;
+  }
+
+  .bottom-nav-div .fa {
+    color: white;
+  }
+
+  .bottom-nav-spacer {
+    height: 400px;
+  }
+
+  .owl-image {
+    max-height:80vh;
+    width:auto;
+  }
+
+  .navbar {
+    background-color: #00BFFF !important;
+  }
 }
-
-.click-yellow {
-  color: #ffffba;
-}
-
-.click-orange {
-  color: #ffdfba;
-}
-
-.click-green {
-  color: #baffc9;
-}
-
-/*i {
-  font-size:.8em !important;
-
-}*/
-
-/*.splash-button-container {
-  margin-top: 8vh;
-}*/

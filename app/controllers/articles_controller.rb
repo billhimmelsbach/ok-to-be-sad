@@ -2,6 +2,8 @@ class ArticlesController < ApplicationController
   include AuthHelper
   include SessionsHelper
 
+  before_action :set_article, only: [:update, :destroy, :edit]
+
   def index
     @user = User.find_by_id(session[:user_id])
     if @user
@@ -26,12 +28,10 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
-    auth_fail("edit other people's article information!", @article.user) if !auth_route(@article.user)
+    auth_fail("edit other people's article information!", @article.user) unless auth_route(@article.user)
   end
 
   def update
-    set_article
     if auth_route(@article.user)
       if @article.update(article_params)
         flash[:success] = "#{@article.title} successfully updated"
@@ -46,7 +46,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    set_article
     if auth_route(@article.user)
       @article.destroy
       flash[:success] = "Your article titled \"#{@article.title}\" was deleted."

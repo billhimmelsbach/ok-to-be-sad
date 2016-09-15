@@ -6,11 +6,11 @@
       <%= f.text_field :content_type, placeholder: 'image' %>
       <%= f.uploadcare_uploader :content, :data => {:images_only => true, :image_shrink => "1000x1000", :clearable => true }%>
       <br><br>
-      <div class = "EditButton">
+      <div class = "edit-button">
         <%= f.submit @article.new_record? ? "Create Post" : "Update Post"%>
       </div>
     <% end %>
-    <div class = "CancelButton">
+    <div class = "cancel-button">
       <%= button_to "Cancel", :back, method: :get, :class=>"ruby-link btn btn-info btn-default btn-md inline" %>
     </div>
     <br><br>

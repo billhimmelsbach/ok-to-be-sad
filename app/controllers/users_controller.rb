@@ -2,13 +2,15 @@ class UsersController < ApplicationController
   include AuthHelper
   include SessionsHelper
 
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
   def new
     @user = User.new
     render :new
   end
 
   def create
-    set_user
+    @user = User.new(user_params)
     if @user.save
       login(@user)
       flash[:notice] = "User account created. Welcome!"
@@ -20,20 +22,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @articles = @user.articles.order("updated_at DESC")
     render :show
   end
 
   def edit
-    @user = User.find(params[:id])
-    auth_fail("edit other people's user information!", @user) if !auth_route(@user)
+    auth_fail("edit other people's user information!", @user) unless auth_route(@user)
   end
 
   def update
-    @user = User.find(params[:id])
-    # params.delete(:password) if params[:password].blank?
-    # params[:user].delete(:password_confirmation) if params[:password_confirmation].blank?
     if auth_route(@user)
       if @user.update(user_params)
         flash[:success] = "Your profile was successfully updated"
@@ -48,7 +45,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
     if auth_route(@user)
       @user.destroy
       flash[:success] = "Your account has been deactivated."
@@ -71,6 +67,6 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.new(user_params)
+    @user = User.find(params[:id])
   end
 end
