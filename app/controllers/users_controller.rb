@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    render :new
   end
 
   def create
@@ -22,8 +21,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @articles = @user.articles.order("updated_at DESC")
-    render :show
+    if auth_route(@user)
+      @articles = @user.articles.order("updated_at DESC")
+    else
+      auth_fail("access other user's profiles", root_path)
+    end
   end
 
   def edit

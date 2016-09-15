@@ -74,6 +74,10 @@
   font-size: 4vh;
 }
 
+.owl-splash {
+  height: 120%;
+}
+
 /* shows the letters when background isn't present */
 .clip-text--no-textzone:before {
     background-position: -.65em 0;
@@ -119,7 +123,15 @@ p {
 }
 
 .height-100 {
-  height 100%;
+  height: 100%;
+}
+
+.height-80 {
+  height: 80%;
+}
+
+owl-fix {
+  width: 1px; min-width: 100%;
 }
 
 
@@ -206,7 +218,7 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
 
 
 /*cog is not displayed on desktop*/
-.dropdownprofile, .cog{
+.drop-down-profile, .cog{
   display: none;
 }
 
@@ -279,7 +291,7 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
   cursor: pointer;
 }
 
-.dropdownprofile {
+.drop-down-profile {
   position: relative;
   display: inline-block;
 }
@@ -329,7 +341,7 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
   width:auto;
 }
 
-.form-partials {
+.form-partials, .new-user-text {
   display:none;
 }
 
@@ -420,6 +432,16 @@ h2 {
   text-align: center;
 }
 
+.spacer {
+  display: none;
+  margin-bottom:15vh;
+}
+
+.img-splash {
+  height:50vh !important;
+  width: 40vh !important;
+}
+
 
 /*media queries for mobile*/
 @media only screen and (max-width: 770px) {
@@ -450,7 +472,7 @@ h2 {
     font-size: 1.8em !important;
   }
 
-  .bottom-nav-div, .show-mobile, .cog, .newusertext {
+  .bottom-nav-div, .show-mobile, .cog, .new-user-text {
     display: block !important;
     visibility: visible !important;
   }
@@ -468,7 +490,7 @@ h2 {
     padding: 0 0 60px;
   }
 
-  .nav-div {
+  .nav-div, .made-mobile {
       display:none;
   }
 
@@ -542,5 +564,9 @@ h2 {
 
   .navbar {
     background-color: #00BFFF !important;
+  }
+
+  .spacer {
+    display: block;
   }
 }

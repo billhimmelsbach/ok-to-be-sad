@@ -1,8 +1,8 @@
-<%= render :partial => "layouts/flash_messages"%>
-  <div class= "swipe-right-icon absolute-middle">
-    <i class= "fa fa-angle-double-right fa-5x text-center swipe-icon animated bounceInLeft" aria-hidden="true"></i>
+<%= render :partial => "layouts/flash_messages" %>
+  <div class="swipe-right-icon absolute-middle">
+    <i class="fa fa-angle-double-right fa-5x text-center swipe-icon animated bounceInLeft" aria-hidden="true"></i>
   </div>
-<% if current_user == nil %>
+<% if current_user==nil %>
   <%= render :partial => "splash_page" %>
 <% else %>
   <%= render :partial => "article_carousel" %>

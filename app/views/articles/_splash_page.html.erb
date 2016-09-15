@@ -1,5 +1,6 @@
 <div class="col-xs-10 col-xs-offset-1 height-100">
-  <div class="newusertext text-center" data-splash="true">
+
+  <div class="new-user-text text-center" data-splash="true">
     <div class="wrapper">
       <div class="clip-text clip-text-one font font-light-shadow text-center">Ok To Be Sad
         <br>
@@ -11,42 +12,57 @@
     </div>
   </div>
   <br>
+
+  <div class="made-mobile text-center" data-splash="true">
+    <div class="wrapper">
+      <div class="clip-text clip-text-one font font-light-shadow text-center">Sorry, but Ok To Be Sad is made for mobile.
+        <br>
+        <h1 class="text-center splash-text font">Check us out on your phone!</h1>
+      </div>
+    </div>
+  </div>
+  <br>
   <div class="row">
-    <div class="owl-carousel owl-theme text-center" style="height:120%;">
-      <div style="height 80vh;">
+    <div class="owl-carousel owl-theme text-center owl-splash">
+
+      <div class="height-80">
         <figure>
-          <img src="https://i.imgur.com/jN4sURQ.png" alt="share mockup">
+          <img src="https://i.imgur.com/QsBYOGH.png" alt="share mockup" style="max-height:33%;">
           <figcaption><h3>All the things that make you happy. Now.<h3></figcaption>
         </figure>
         <i class="fa fa-angle-double-right fa-4x animated splash-swipe-right-icon" aria-hidden="true"></i>
       </div>
+
       <div>
         <figure>
-          <img src="https://i.imgur.com/kduTLcz.png" alt="upload mockup">
+          <img src="https://i.imgur.com/kduTLcz.png" alt="upload mockup" style="max-height:33%;">
           <figcaption><h3>Upload your favorite videos, songs, pictures, and quotes!<h3></figcaption>
         </figure>
       </div>
+
       <div>
         <figure>
-          <img src="https://i.imgur.com/9aPdOPd.png" alt="chat mockup">
+          <img src="https://i.imgur.com/9aPdOPd.png" alt="chat mockup" style="max-height:33%;">
           <figcaption><h3>Talk to others! You're not the only one with the sads!<h3></figcaption>
         </figure>
       </div>
+
     </div>
   </div>
 </div>
-  <div class="text-center">
-    <%= link_to new_user_path, class: "btn btn-success splash-button-container" do %>
-      <i class="fa fa-user-plus fa-2x splash-button" aria-hidden="true"><br><span class="font">Sign Up</span></i>
-    <% end %>
+<div class="text-center">
 
-    <%= link_to new_session_path, class: "btn btn-info splash-button-container" do %>
-      <i class="fa fa-sign-in fa-2x splash-button" aria-hidden="true"><br><span class="font">Log In</span></i>
-    <% end %>
+  <%= link_to new_user_path, class: "btn btn-success splash-button-container" do %>
+    <i class="fa fa-user-plus fa-2x splash-button" aria-hidden="true"><br><span class="font">Sign Up</span></i>
+  <% end %>
 
-    <%= link_to trial_path, class: "btn btn-warning splash-button-container" do %>
-      <i class="fa fa-forward fa-2x splash-button" aria-hidden="true"><br><span class="font">Demo</span></i>
-    <% end %>
-  </div>
+  <%= link_to new_session_path, class: "btn btn-info splash-button-container" do %>
+    <i class="fa fa-sign-in fa-2x splash-button" aria-hidden="true"><br><span class="font">Log In</span></i>
+  <% end %>
+
+  <%= link_to trial_path, class: "btn btn-warning splash-button-container" do %>
+    <i class="fa fa-forward fa-2x splash-button" aria-hidden="true"><br><span class="font">Demo</span></i>
+  <% end %>
+
 </div>
 <br>

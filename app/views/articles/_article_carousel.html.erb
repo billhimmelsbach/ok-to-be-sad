@@ -1,39 +1,62 @@
+
+<!-- Owl Carousel requires CSS styling to be done inline in order to render the views -->
+<!-- the inline styling below is therefore intentional -->
+
 <div class="col-xs-12" >
-  <div class="owl-carousel owl-theme" style="width: 1px; min-width: 100%;">
+  <div class="owl-carousel owl-theme">
     <% if @articles %>
       <% @articles.each do |article| %>
-        <% if article.content_type == "image" %>
+
+        <% if article.content_type=="image" %>
           <div>
-            <div class="text-center" style= "height:80vh;">
-              <img class = "img-responsive img-rounded vertically-align-force" style="max-height:60vh; width:auto;" src="<%= article.content %>">
+            <div class="text-center" style="height:80vh;">
+              <img class="img-responsive img-rounded vertically-align-force" style="max-height:60vh; width:auto;" src="<%= article.content %>">
             </div>
           </div>
         <% end %>
-        <% if article.content_type == "video" %>
-          <div class = "index-iframe-container" style="height: 80vh">
-            <div class = "embed-container vertically-align-force" style="height:40vh">
-              <div class="item-video" style="background-color:#39abb6; height:35vh; margin: 0 auto;" >
+
+        <% if article.content_type=="video" %>
+          <div style="height: 80vh">
+            <div class="embed-container vertically-align-force" style="height:40vh">
+              <div class="item-video" style="height:35vh; margin: 0 auto;" >
                 <a class="owl-video" href="<%= article.content %>"></a>
               </div>
             </div>
           </div>
         <% end %>
-        <% if article.content_type == "song" %>
-          <div style= "text-align:center; width:100%; height:80vh;">
-            <iframe class="vertically-align-force"  src="https://embed.spotify.com/?uri=spotify:track:<%= article.content[-22..-1] %>&view=coverart" width="200" height="380" align="middle" frameborder="0" allowtransparency="true"></iframe>
+
+        <% if article.content_type=="song" %>
+          <div style="text-align:center; width:100%; height:80vh;">
+            <iframe class="vertically-align-force" src="https://embed.spotify.com/?uri=spotify:track:<%= article.content[-22..-1] %>&view=coverart" width="200" height="380" align="middle" frameborder="0" allowtransparency="true"></iframe>
           </div>
         <% end %>
-        <% if article.content_type == "quote" %>
+
+        <% if article.content_type=="quote" %>
           <div style="height:80vh">
             <div class="vertically-align-force">
-              <p class = "quote-title"><%= article.content %></p>
-              <p class = "quote-title">-<%= article.title %></p>
+              <p class="quote-title"><%= article.content %></p>
+              <p class="quote-title">-<%= article.title %></p>
             </div>
           </div>
         <% end %>
+
       <% end %>
-      <div style= "height:80vh" class= "text-center">
-        <div class= "vertically-align-force">
+
+      <% if @user.articles.distinct.count < 1 || nil %>
+        <div class="text-center" style="height:80vh;">
+          <div class="vertically-align-force">
+            <h1>Welcome! Let's start by adding some of your favorite things!</h1>
+            <h2> Click
+              <%= link_to new_article_path, class: "btn btn-primary btn-success" do %>
+                <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i>
+              <% end %>
+            to start!</h2>
+          </div>
+        </div>
+      <% end %>
+
+      <div style="height:80vh" class="text-center">
+        <div class="vertically-align-force">
           <h1> Feeling lonely? <h1>
           <br>
           <h1> Try chatting with other people using the app right now!</h1>
@@ -43,8 +66,9 @@
           <% end %>
         </div>
       </div>
-      <div style= "height:80vh" class= "text-center">
-        <div class= "vertically-align-force">
+
+      <div style="height:80vh" class="text-center">
+        <div class="vertically-align-force">
           <h1> Want more? <h1>
           <br>
           <h1> Try out some different posts!</h1>

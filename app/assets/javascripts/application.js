@@ -46,16 +46,16 @@ $(document).on('turbolinks:load', function(){
     $formPartials.hide();
     $(form).fadeIn(150);
     $formButtons.removeClass("click-red click-yellow click-green click-orange");
-    if (form == "#video-form") {
+    if (form=="#video-form") {
       $videoFormButton.addClass("click-red");
     }
-    if (form == "#image-form") {
+    if (form=="#image-form") {
       $imageFormButton.addClass("click-yellow");
     }
-    if (form == "#song-form") {
+    if (form=="#song-form") {
       $songFormButton.addClass("click-green");
     }
-    if (form == "#quote-form") {
+    if (form=="#quote-form") {
       $quoteFormButton .addClass("click-orange");
     }
   };
@@ -79,7 +79,7 @@ $(document).on('turbolinks:load', function(){
   });
 
   //a recursive function that continually runs the bounce animations when on the splash page
-  if (($('.newusertext').length)==1) {
+  if (($('.new-user-text').length)==1) {
     var timeout = 7000;
     var action = function() {
         $splashSwipeRightIcon.animateCss('bounceInLeft');
@@ -90,7 +90,7 @@ $(document).on('turbolinks:load', function(){
   }
 
   //if the user is on index carousel, creates a brief animation to show swipe direction
-  if (($('.newusertext').length)!=1) {
+  if (($('.new-user-text').length)!=1) {
     setTimeout(function() {
       $('.swipe-right-icon').fadeIn();
     }, 1000);
@@ -109,11 +109,23 @@ $(document).on('turbolinks:load', function(){
 
   //sets the owl carousel options
   $owl.owlCarousel({
-    items:1,
-    margin:5,
-    video:true,
-    nav: false,
-    dots:false
+    responsive : {
+      0 : {
+        items: 1,
+        margin: 5,
+        video: true,
+        nav: false,
+        dots: false,
+      },
+      768 : {
+        margin: 600,
+        items: 1,
+        video:true,
+        nav: false,
+        dots: false,
+        stagePadding: 300,
+      }
+    }
   });
 
   //sets the form content type by stashing it in a data tag set by ruby
@@ -128,11 +140,11 @@ $(document).on('turbolinks:load', function(){
 
   //enables the use of keyboard buttons as a shortcut to the owl carousel
   $(document.documentElement).keyup(function(event) {
-    if (event.keyCode == 37) {
-      owl.trigger('prev.owl.carousel', [300]);
+    if (event.keyCode==37) {
+      $owl.trigger('prev.owl.carousel', [300]);
     }
-    else if (event.keyCode == 39) {
-      owl.trigger('next.owl.carousel');
+    else if (event.keyCode==39) {
+      $owl.trigger('next.owl.carousel');
     }
   });
 
@@ -142,7 +154,7 @@ $(document).on('turbolinks:load', function(){
   //a poorly executed toggle switch for handling cog action on all iOS and Android devices
   toggle_click = 0;
   $('#cog').on("touchstart", function(e) {
-    if (toggle_click === 0) {
+    if (toggle_click ===0) {
       $(".dropdown-content").show();
       e.stopPropagation();
       toggle_click++;
@@ -155,7 +167,7 @@ $(document).on('turbolinks:load', function(){
 
   toggle_touch = 0;
   $('#cog').on("click", function(e) {
-    if (toggle_touch === 0) {
+    if (toggle_touch ===0) {
       $(".dropdown-content").show();
       e.stopPropagation();
       toggle_touch++;

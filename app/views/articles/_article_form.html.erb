@@ -1,22 +1,22 @@
-<div class = "row form-container" data-type = "<%= @article.content_type %>">
-  <div class = "col-xs-12 text-center">
-    <div class = "col-xs-3 form-icons" id="video-form-button">
+<div class="row form-container" data-type = "<%= @article.content_type %>">
+  <div class="col-xs-12 text-center">
+    <div class="col-xs-3 form-icons" id="video-form-button">
       <i class="fa fa-youtube-play fa-5x" aria-hidden="true"></i>
     </div>
-    <div class = "col-xs-3 form-icons" id="image-form-button">
+    <div class="col-xs-3 form-icons" id="image-form-button">
       <i class="fa fa-camera-retro fa-5x" aria-hidden="true"></i>
     </div>
-    <div class = "col-xs-3 form-icons" id="song-form-button">
+    <div class="col-xs-3 form-icons" id="song-form-button">
       <i class="fa fa-spotify fa-5x" aria-hidden="true"></i>
     </div>
-    <div class = "col-xs-3 form-icons" id="quote-form-button">
+    <div class="col-xs-3 form-icons" id="quote-form-button">
       <i class="fa fa-pencil fa-5x" aria-hidden="true"></i>
     </div>
   </div>
 </div>
 <br><br>
 
-<div class = "row">
+<div class="row">
   <div id="video-form" class="form-partials">
     <%= render :partial => "articles/forms/video_form"%>
   </div>

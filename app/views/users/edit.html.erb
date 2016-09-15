@@ -1,4 +1,4 @@
-<%= render :partial => "layouts/flash_messages"%>
+<%= render :partial => "layouts/flash_messages" %>
 <h2><strong>Edit Your Profile</strong></h2>
 <br><br>
 
@@ -7,7 +7,7 @@
 </div>
 
 <div class="text-center">
-  <% if current_user != nil && current_user.id == @user.id %>
+  <% if current_user != nil && current_user.id==@user.id %>
     <%= render "deactivate_account" %>
   <% end %>
 </div>

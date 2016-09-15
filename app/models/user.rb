@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   private
 
   def default_values
-    self.image = "https://ucarecdn.com/1386c488-f2db-4b63-959f-32656a7e35c6/" if self.image == ""
+    self.image = "https://ucarecdn.com/1386c488-f2db-4b63-959f-32656a7e35c6/" if self.image==""
   end
 
   def self.confirm(params)
