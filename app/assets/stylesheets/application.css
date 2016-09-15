@@ -568,5 +568,6 @@ h2 {
   .spacer {
     display: block;
     margin-bottom:15vh;
+    color: #FFFFFF !important;
   }
 }
