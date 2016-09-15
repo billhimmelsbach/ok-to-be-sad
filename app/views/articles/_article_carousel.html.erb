@@ -2,11 +2,13 @@
 <!-- Owl Carousel requires CSS styling to be done inline in order to render the views -->
 <!-- the inline styling below is therefore intentional -->
 
+<!-- owl carousel -->
 <div class="col-xs-12" >
   <div class="owl-carousel owl-theme">
     <% if @articles %>
       <% @articles.each do |article| %>
 
+        <!-- image template-->
         <% if article.content_type=="image" %>
           <div>
             <div class="text-center" style="height:80vh;">
@@ -15,6 +17,7 @@
           </div>
         <% end %>
 
+        <!-- video template-->
         <% if article.content_type=="video" %>
           <div style="height: 80vh">
             <div class="embed-container vertically-align-force" style="height:40vh">
@@ -25,12 +28,14 @@
           </div>
         <% end %>
 
+        <!-- song template -->
         <% if article.content_type=="song" %>
           <div style="text-align:center; width:100%; height:80vh;">
             <iframe class="vertically-align-force" src="https://embed.spotify.com/?uri=spotify:track:<%= article.content[-22..-1] %>&view=coverart" width="200" height="380" align="middle" frameborder="0" allowtransparency="true"></iframe>
           </div>
         <% end %>
 
+        <!-- quote template -->
         <% if article.content_type=="quote" %>
           <div style="height:80vh">
             <div class="vertically-align-force">
@@ -39,9 +44,9 @@
             </div>
           </div>
         <% end %>
-
       <% end %>
 
+      <!-- only shown to users with no posts -->
       <% if @user.articles.distinct.count < 1 || nil %>
         <div class="text-center" style="height:80vh;">
           <div class="vertically-align-force">
@@ -55,6 +60,7 @@
         </div>
       <% end %>
 
+      <!-- after articles have been displayed then chat -->
       <div style="height:80vh" class="text-center">
         <div class="vertically-align-force">
           <h1> Feeling lonely? <h1>
@@ -67,6 +73,7 @@
         </div>
       </div>
 
+      <!-- refresh posts -->
       <div style="height:80vh" class="text-center">
         <div class="vertically-align-force">
           <h1> Want more? <h1>

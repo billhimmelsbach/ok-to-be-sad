@@ -1,3 +1,4 @@
+<!-- top row of form buttons -->
 <div class="row form-container" data-type = "<%= @article.content_type %>">
   <div class="col-xs-12 text-center">
     <div class="col-xs-3 form-icons" id="video-form-button">
@@ -16,6 +17,7 @@
 </div>
 <br><br>
 
+<!-- form partials that are swapped in and out as necessary -->
 <div class="row">
   <div id="video-form" class="form-partials">
     <%= render :partial => "articles/forms/video_form"%>
