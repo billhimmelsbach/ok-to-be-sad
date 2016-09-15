@@ -1,5 +1,5 @@
 module SessionsHelper
-  
+
   def login(user)
     session[:user_id] = user.id
     @current_user = user
@@ -16,10 +16,10 @@ module SessionsHelper
   end
 
   def logged_in
-     unless logged_in?
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-     end
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
   end
 
   def logout
