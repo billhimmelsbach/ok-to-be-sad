@@ -10,7 +10,9 @@
           <div class="clip-text clip-text_one font font-light-shadow text-center" style="font-size:9vh;">Ok To Be Sad
             <br>
             <h1 style="font-size:4.0vh;" class="text-center splash-text font">A Community When You Need It The Most</h1>
-            <div class="show-mobile animated splash-page-bounce"><i class="fa fa-angle-double-down fa-2x show-mobile" aria-hidden="true"></i></div>
+            <div class="show-mobile animated splash-page-bounce">
+              <i class="fa fa-angle-double-down fa-2x show-mobile" aria-hidden="true"></i>
+            </div>
           </div>
         </div>
       </div>
@@ -40,20 +42,21 @@
       </div>
     </div>
   </div>
-      <div class="text-center">
-        <%= link_to new_user_path, class: "btn btn-success splash-button-container" do %>
-          <i class="fa fa-user-plus fa-2x splash-button" aria-hidden="true"><br><span class="font">Sign Up</span></i>
-        <% end %>
+    <div class="text-center">
+      <%= link_to new_user_path, class: "btn btn-success splash-button-container" do %>
+        <i class="fa fa-user-plus fa-2x splash-button" aria-hidden="true"><br><span class="font">Sign Up</span></i>
+      <% end %>
 
-        <%= link_to new_session_path, class: "btn btn-info splash-button-container" do %>
-          <i class="fa fa-sign-in fa-2x splash-button" aria-hidden="true"><br><span class="font">Log In</span></i>
-        <% end %>
+      <%= link_to new_session_path, class: "btn btn-info splash-button-container" do %>
+        <i class="fa fa-sign-in fa-2x splash-button" aria-hidden="true"><br><span class="font">Log In</span></i>
+      <% end %>
 
-        <%= link_to trial_path, class: "btn btn-warning splash-button-container" do %>
-          <i class="fa fa-forward fa-2x splash-button" aria-hidden="true"><br><span class="font">Demo</span></i>
-        <% end %>
+      <%= link_to trial_path, class: "btn btn-warning splash-button-container" do %>
+        <i class="fa fa-forward fa-2x splash-button" aria-hidden="true"><br><span class="font">Demo</span></i>
+      <% end %>
     </div>
-    <br>
+  </div>
+  <br>
 <% else %>
   <div class="col-xs-12" >
     <div class="owl-carousel owl-theme" style="width: 1px; min-width: 100%;">
@@ -61,7 +64,9 @@
         <% @articles.each do |article| %>
           <% if article.content_type == "image" %>
             <div>
-              <div class="text-center" style= "height:80vh;"> <img class = "img-responsive img-rounded vertically-align-force" style="max-height:60vh; width:auto;" src="<%= article.content %>"> <h1></div>
+              <div class="text-center" style= "height:80vh;">
+                <img class = "img-responsive img-rounded vertically-align-force" style="max-height:60vh; width:auto;" src="<%= article.content %>">
+              </div>
             </div>
           <% end %>
           <% if article.content_type == "video" %>
