@@ -113,14 +113,8 @@ ARTICLES = [
     user_id: 1
   },
   {
-    title: "Tightrope by Janelle Monae",
-    content: "https://open.spotify.com/track/1ljzHUgt2SU2ADkhfa9eBC",
-    content_type: "music",
-    user_id: 1
-  },
-  {
     title: "Dad's Bicycle Art",
-    content: "https://ucarecdn.com/c6ce2c91-787c-4d97-bedc-771e44a5d3cd/",
+    content: "https://ucarecdn.com/33e03449-cecd-415c-a26b-0099d951f23d/",
     content_type: "image",
     user_id: 1
   },
@@ -142,6 +136,37 @@ ARTICLES = [
     content_type: "image",
     user_id: 1
   },
+  {
+    title: "Adventure Time - What Am I To You?",
+    content: "https://youtu.be/hLqSODxRoZM",
+    content_type: "video",
+    user_id: 1
+  },
+  {
+    title: "Dad and I Doing Manly Man Things",
+    content: "https://ucarecdn.com/57311d79-3ba1-4e05-ae8f-9cbaa32c1055/",
+    content_type: "image",
+    user_id: 1
+  },
+  {
+    title: "Tightrope by Janelle Monae",
+    content: "https://open.spotify.com/track/1ljzHUgt2SU2ADkhfa9eBC",
+    content_type: "song",
+    user_id: 1
+  },
+  {
+    title: "Tiff's Bill Poo, lolololol",
+    content: "https://ucarecdn.com/929e5f62-9820-4ddf-9a88-bbcecb21f8f5/" ,
+    content_type: "image",
+    user_id: 1
+  },
+  {
+    title: "Andrew Kurtz: The Man, The Legend",
+    content: "https://ucarecdn.com/e92f51a9-de03-4927-9320-1b14ea9da07b/",
+    content_type: "image",
+    user_id: 1
+  },
+    
 ]
 
 

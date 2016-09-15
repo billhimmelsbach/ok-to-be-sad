@@ -31,7 +31,7 @@ $.fn.extend({
 
 $(document).on('turbolinks:load', function(){
 
-//repeated cached in variables for performance
+//repeatedly called jquery selectors cached in variables for performance
   var $formButtons = $(".form-icons");
   var $formPartials = $(".form-partials");
   var $videoFormButton = $("#video-form-button");
@@ -80,7 +80,7 @@ $(document).on('turbolinks:load', function(){
 
   //a recursive function that continually runs the bounce animations when on the splash page
   if (($('.new-user-text').length)==1) {
-    var timeout = 7000;
+    var timeout = 5500;
     var action = function() {
         $splashSwipeRightIcon.animateCss('bounceInLeft');
         $splashPageBounce.animateCss('bounce');
@@ -121,8 +121,8 @@ $(document).on('turbolinks:load', function(){
         margin: 600,
         items: 1,
         video:true,
-        nav: false,
-        dots: false,
+        nav: true,
+        dots: true,
         stagePadding: 300,
       }
     }
