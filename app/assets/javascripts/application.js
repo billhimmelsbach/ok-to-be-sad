@@ -142,7 +142,7 @@ $(document).on('turbolinks:load', function(){
   //a poorly executed toggle switch for handling cog action on all iOS and Android devices
   toggle_click = 0;
   $('#cog').on("touchstart", function(e) {
-    if (toggle_click === 0) {
+    if (toggle_click ===0) {
       $(".dropdown-content").show();
       e.stopPropagation();
       toggle_click++;
@@ -155,7 +155,7 @@ $(document).on('turbolinks:load', function(){
 
   toggle_touch = 0;
   $('#cog').on("click", function(e) {
-    if (toggle_touch === 0) {
+    if (toggle_touch ===0) {
       $(".dropdown-content").show();
       e.stopPropagation();
       toggle_touch++;
