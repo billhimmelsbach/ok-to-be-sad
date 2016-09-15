@@ -568,6 +568,9 @@ h2 {
   .spacer {
     display: block;
     margin-bottom:15vh;
+  }
+  .spacer h1 {
     color: #FFFFFF !important;
+    text-shadow: none !important;
   }
 }
