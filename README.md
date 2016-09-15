@@ -91,15 +91,15 @@ User Profile:
 + Support for a wider array of devices using more granular orientation and width media queries
 + Vastly increase testing coverage and fully implement factory_girl
 + Allow friendships between users using a self-referential friendship table
-+ Users can message their friends exclusively through Faye, messaging suggestions are displayed on the article index
++ Users can message their friends selectively through Faye, messaging suggestions are displayed on the article index
 + Friends can share their favorite articles with their friends
 + Article indexes are automatically populated with friends' articles
 + Assist in new user creation by allowing them to choose from a list of popular articles to pre-seed their article list
 + Refreshing the article index with only articles that have not been seen recently though the use of a "last_seen" addition to the articles table
 + Once friendships and sharing have been enabled, enable FriendlyId for articles and users  
-+ Implement infinite scroll on the user show page, displaying them in groups of 10
-+ Create an admin account that can delete messages from the general chat. Consider also putting on a cap on messages per time period.
-+ Allow user to search for YouTube videos though the YT gem and Spotify songs through the Spotify API in a more user friendly way,
-+ Add social sharing gem for sharing of articles on Facebook and Twitter
-+ Consider switching to a polling method for messaging for better server scalability
++ Implement infinite scroll on the user show page, displaying articles in groups of 10
++ Create an admin account that can delete messages from the general chat. Consider also putting a cap on messages allowed per time period
++ Allow user to search for YouTube videos though the YT gem and Spotify songs through the Spotify API in a more user friendly way
++ Add the social sharing gem for sharing of articles on Facebook and Twitter
++ Consider switching to an AJAX/polling method for messaging for scalability 
 + Long Term Goal: Replace Owl/Livestamp with the React framework
