@@ -109,3 +109,7 @@ User Profile:
 + Add the social sharing gem for sharing of articles on Facebook and Twitter
 + Consider switching to an AJAX/polling method for messaging for scalability
 + Long Term Goal: Replace Owl/Livestamp with the React framework
+
+
+## Links to Developer’s GitHub :octocat:
+* [Bill Himmelsbach] (https://github.com/billhimmelsbach)
