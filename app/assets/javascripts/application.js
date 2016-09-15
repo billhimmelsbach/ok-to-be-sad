@@ -18,6 +18,15 @@
 //= require turbolinks
 //= require_tree .
 
+$.fn.extend({
+    animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+        });
+    }
+});
+
 
 $(document).on('turbolinks:load', function(){
 
@@ -41,6 +50,19 @@ $(document).on('turbolinks:load', function(){
       $("#quote-form-button").addClass("click-orange");
     }
   };
+
+  var $splashSwipeRightIcon = $('.splash-swipe-right-icon');
+  var $splashPageBounce = $('.splash-page-bounce');
+
+  var timeout = 7000;
+  var action = function() {
+      $splashSwipeRightIcon.animateCss('bounceInLeft');
+      $splashPageBounce.animateCss('bounce');
+      setTimeout(action, timeout);
+  };
+  action();
+
+
 
   // var flashicons = function() {
   //
@@ -93,7 +115,8 @@ $(document).on('turbolinks:load', function(){
     margin:5,
     video:true,
     nav: false,
-    autoHeight:true
+    autoHeight:true,
+    dots:false
   });
 
   $(".delete-button-collapse").on("click", function () {

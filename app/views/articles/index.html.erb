@@ -3,81 +3,108 @@
     <i class= "fa fa-angle-double-right fa-5x text-center swipe-icon animated bounceInLeft" aria-hidden="true"></i>
   </div>
 <% if current_user == nil %>
-  <div class="col-xs-10 col-xs-offset-1">
-    <div class="newusertext text-center">
+  <div class="col-xs-10 col-xs-offset-1" style="height:70vh;">
+    <div class="newusertext text-center" data-splash="true">
       <div style="height:100%";>
         <div class="wrapper">
-          <div class="clip-text clip-text_one font" style="font-size:11vh;">Ok To Be Sad<br>
-          <h1 style="font-size:4vh;" class="text-center splash-text font">A Community When You Need It The Most</h1>
-          <div class="show-mobile animated bounce"><i class="fa fa-angle-double-down fa-2x show-mobile" aria-hidden="true"></i></div>
+          <div class="clip-text clip-text_one font font-light-shadow text-center" style="font-size:9vh;">Ok To Be Sad
+            <br>
+            <h1 style="font-size:4.0vh;" class="text-center splash-text font">A Community When You Need It The Most</h1>
+            <div class="show-mobile animated splash-page-bounce"><i class="fa fa-angle-double-down fa-2x show-mobile" aria-hidden="true"></i></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-      <br>
-      <div class="text-center">
-        <%= link_to new_user_path, class: "btn btn-success" do %>
-          <i class="fa fa-user-plus fa-2x" aria-hidden="true"><br><span class="font">Sign Up</span></i>
-        <% end %>
-
-        <%= link_to new_session_path, class: "btn btn-info" do %>
-          <i class="fa fa-sign-in fa-2x" aria-hidden="true"><br><span class="font">Log In</span></i>
-        <% end %>
-
-        <%= link_to trial_path, class: "btn  btn-warning" do %>
-          <i class="fa fa-forward fa-2x" aria-hidden="true"><br><span class="font">Demo</span></i>
-        <% end %>
-      </div>
-</div>
-  <% else %>
-    <div class="col-xs-12" >
-      <div class="owl-carousel owl-theme" style="width: 1px; min-width: 100%;">
-        <% if @articles %>
-          <% @articles.each do |article| %>
-            <% if article.content_type == "image" %>
-              <div>
-                <div class="text-center" style= "height:80vh;"> <img class = "img-responsive img-rounded vertically-align-force" style="max-height:60vh; width:auto;" src="<%= article.content %>"> <h1></div>
-              </div>
-            <% end %>
-            <% if article.content_type == "video" %>
-              <div class="item-video" style="background-color:#39abb6; height:80vh; width:70vw; margin: 0 auto;" ><a class="owl-video" href="<%= article.content %>"></a></div>
-            <% end %>
-            <% if article.content_type == "song" %>
-              <div style= "text-align:center; width:100%; height:80vh;"> <iframe class="vertically-align-force"  src="https://embed.spotify.com/?uri=spotify:track:<%= article.content[-22..-1] %>&view=coverart" width="200" height="380" align="middle" frameborder="0" allowtransparency="true"></iframe></div>
-            <% end %>
-            <% if article.content_type == "quote" %>
-              <div style="height:80vh">
-                <div class="vertically-align-force">
-                  <p class = "quote-title"><%= article.content %></p>
-                  <p class = "quote-title">-<%= article.title %></p>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-          <div style= "height:80vh" class= "text-center">
-            <div class= "vertically-align-force">
-              <h1> Feeling lonely? <h1>
-              <br>
-              <h1> Try chatting with other people using the app right now!</h1>
-              <br>
-              <%= link_to new_message_path, class: "btn btn-info btn-primary" do %>
-                <i class="fa fa-comments fa-5x" aria-hidden="true"></i>
-              <% end %>
-            </div>
-          </div>
-          <div style= "height:80vh" class= "text-center">
-            <div class= "vertically-align-force">
-              <h1> Want more? <h1>
-              <br>
-              <h1> Try out some different posts!</h1>
-              <br>
-              <%= link_to articles_path, class: "btn btn-info btn-primary" do %>
-                <i class="fa fa-refresh fa-5x" aria-hidden="true"></i>
-              <% end %>
-            </div>
-          </div>
-          <% end %>
-        <% end %>
+    <br>
+    <div class="row">
+      <div class="owl-carousel owl-theme text-center" style="width: 1px; min-width: 100%;">
+        <div style="height 80vh;">
+          <figure>
+            <img src="https://i.imgur.com/jN4sURQ.png" alt="share mockup">
+            <figcaption><h3>All the things that make you happy. Now.<h3></figcaption>
+          </figure>
+          <i class="fa fa-angle-double-right fa-4x animated splash-swipe-right-icon" aria-hidden="true"></i>
+        </div>
+        <div>
+          <figure>
+            <img src="https://i.imgur.com/kduTLcz.png" alt="share mockup">
+            <figcaption><h3>Upload your favorite videos, songs, pictures, and quotes!<h3></figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img src="https://i.imgur.com/9aPdOPd.png" alt="share mockup">
+            <figcaption><h3>Talk to others! You're not the only one with the sads!<h3></figcaption>
+          </figure>
+        </div>
       </div>
     </div>
+      <div class="text-center" style="65vh;">
+        <%= link_to new_user_path, class: "btn btn-success splash-button-container" do %>
+          <i class="fa fa-user-plus fa-2x splash-button" aria-hidden="true"><br><span class="font">Sign Up</span></i>
+        <% end %>
+
+        <%= link_to new_session_path, class: "btn btn-info splash-button-container" do %>
+          <i class="fa fa-sign-in fa-2x splash-button" aria-hidden="true"><br><span class="font">Log In</span></i>
+        <% end %>
+
+        <%= link_to trial_path, class: "btn btn-warning splash-button-container" do %>
+          <i class="fa fa-forward fa-2x splash-button" aria-hidden="true"><br><span class="font">Demo</span></i>
+        <% end %>
+    </div>
+    <br>
+<% else %>
+  <div class="col-xs-12" >
+    <div class="owl-carousel owl-theme" style="width: 1px; min-width: 100%;">
+      <% if @articles %>
+        <% @articles.each do |article| %>
+          <% if article.content_type == "image" %>
+            <div>
+              <div class="text-center" style= "height:80vh;"> <img class = "img-responsive img-rounded vertically-align-force" style="max-height:60vh; width:auto;" src="<%= article.content %>"> <h1></div>
+            </div>
+          <% end %>
+          <% if article.content_type == "video" %>
+          <div class = "index-iframe-container" style="height: 80vh">
+            <div class = "embed-container vertically-align-force" style="height:40vh">
+              <div class="item-video" style="background-color:#39abb6; height:35vh; margin: 0 auto;" ><a class="owl-video" href="<%= article.content %>"></a></div>
+            </div>
+          </div>
+          <% end %>
+          <% if article.content_type == "song" %>
+            <div style= "text-align:center; width:100%; height:80vh;"> <iframe class="vertically-align-force"  src="https://embed.spotify.com/?uri=spotify:track:<%= article.content[-22..-1] %>&view=coverart" width="200" height="380" align="middle" frameborder="0" allowtransparency="true"></iframe></div>
+          <% end %>
+          <% if article.content_type == "quote" %>
+            <div style="height:80vh">
+              <div class="vertically-align-force">
+                <p class = "quote-title"><%= article.content %></p>
+                <p class = "quote-title">-<%= article.title %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+        <div style= "height:80vh" class= "text-center">
+          <div class= "vertically-align-force">
+            <h1> Feeling lonely? <h1>
+            <br>
+            <h1> Try chatting with other people using the app right now!</h1>
+            <br>
+            <%= link_to new_message_path, class: "btn btn-info btn-primary" do %>
+              <i class="fa fa-comments fa-5x" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        </div>
+        <div style= "height:80vh" class= "text-center">
+          <div class= "vertically-align-force">
+            <h1> Want more? <h1>
+            <br>
+            <h1> Try out some different posts!</h1>
+            <br>
+            <%= link_to articles_path, class: "btn btn-info btn-primary" do %>
+              <i class="fa fa-refresh fa-5x" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>

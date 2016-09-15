@@ -95,7 +95,7 @@
 }
 
 .clip-text_one {
-    background-image: url(https://media.giphy.com/media/sECpDyCgkK9eE/giphy.gif);
+    background-image: url(https://i.imgur.com/rcVVgcL.gif);
 }
 
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
@@ -157,6 +157,10 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
 .font-color, h1, h2, h3, h4, h5, h6 {
   color: #00BFFF !important;
   font-weight: bold !important;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3)
+}
+
+.font-light-shadow {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.3)
 }
 
@@ -500,6 +504,22 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
   text-shadow: 1px 3px 2px rgba(0,0,0,0.2);
 }
 
+.splash-page-bounce {
+  -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+/*.bottom-nav-div {
+  text-shadow: -10px -10px -10px rgba(0,0,0,3) !important;
+}*/
+
+.bottom-nav-div {
+    -webkit-box-shadow: 0px -3px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:    0px -3px 2px rgba(0, 0, 0, 0.2);
+    box-shadow:         0px -3px 2px rgba(0, 0, 0, 0.2);
+}
+
 .delete-button {
     appearance: none;
     -webkit-appearance: none;
@@ -530,4 +550,12 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
 
 .click-green {
   color: #baffc9;
+}
+
+.splash-button {
+  font-size:+150% !important;
+}
+
+.splash-button-container {
+  margin-top: 8vh;
 }

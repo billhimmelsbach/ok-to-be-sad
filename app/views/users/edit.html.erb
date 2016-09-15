@@ -8,12 +8,13 @@
 
 <div class="text-center">
   <% if current_user != nil && current_user.id == @user.id %>
+    <br><br>
     <div class="row userbuttons">
       <button class="ruby-link btn btn-danger inline btn-primary btn-md inline" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Deactivate Account</button>
     </div>
     <div class="row">
       <div class="collapse" id="collapseExample">
-        <div class="well col-xs-4 col-xs-offset-4">
+        <div class="well col-xs-8 col-xs-offset-2">
           <h5 class="inline">
             Are you sure you want to deactivate your account?
           </h5>
