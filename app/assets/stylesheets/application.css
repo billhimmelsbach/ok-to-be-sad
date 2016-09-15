@@ -104,6 +104,18 @@ html, body{
  font-size: 1.5em;
 }
 
+p {
+  text-align: center;
+}
+
+.buttonrow {
+  text-align: center;
+}
+
+.img-responsive {
+  margin: 0 auto;
+}
+
 
 /*the following code block involves bootstrap overrides marked with important tags*/
 .navbar-brand>img {
@@ -517,7 +529,7 @@ h2 {
     max-height:80vh;
     width:auto;
   }
-  
+
   .navbar {
     background-color: #00BFFF !important;
   }
