@@ -54,6 +54,12 @@ rails s
 
 + Use your browser to navigate to localhost:3000 or your default local port.
 
++ Once on the site, you may use the "Demo" button on the landing page or the password combination below to login in to the site:
+```
+email: test@test.com
+password: test
+```
+
 
 ### User Stories
 
