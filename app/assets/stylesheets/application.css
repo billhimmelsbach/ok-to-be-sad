@@ -432,6 +432,11 @@ h2 {
   text-align: center;
 }
 
+.spacer {
+  display: none;
+  margin-bottom:15vh;
+}
+
 
 /*media queries for mobile*/
 @media only screen and (max-width: 770px) {
@@ -554,5 +559,9 @@ h2 {
 
   .navbar {
     background-color: #00BFFF !important;
+  }
+
+  .spacer {
+    display: block;
   }
 }

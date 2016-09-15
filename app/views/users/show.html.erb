@@ -32,7 +32,6 @@
 <!-- iterates over all user's articles using content type as a templating guide -->
   <% @articles.each do |article| %>
   <div class="index-container col-xs-12 container-fluid well">
-    <div class="col-xs-12" style="padding: 10px">
 
       <% if @user.articles.distinct.count < 1 || nil %>
         <p>What makes you happy?</p>
@@ -82,7 +81,7 @@
           </button>
         </div>
         <br>
-          <div class="row" style="margin-bottom:15vh">
+          <div class="row">
             <div class="collapse" id="delete<%= article.id %>"><a> <br>
               <div class="well col-xs-8 col-xs-offset-2">
                 <h4 class="inline"> Are you sure you want to delete your article? </h4>
@@ -103,4 +102,6 @@
       <% end %>
     </div>
   <% end %>
+</div>
+<div class="spacer">`
 </div>
