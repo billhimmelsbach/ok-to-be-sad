@@ -41,6 +41,20 @@
         <% end %>
 
       <% end %>
+
+      <% if @user.articles.distinct.count < 1 || nil %>
+        <div class="text-center" style="height:80vh;">
+          <div class="vertically-align-force">
+            <h1>Welcome! Let's start by adding some of your favorite things!</h1>
+            <h2> Click
+              <%= link_to new_article_path, class: "btn btn-primary btn-success" do %>
+                <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i>
+              <% end %>
+            to start!</h2>
+          </div>
+        </div>
+      <% end %>
+
       <div style="height:80vh" class="text-center">
         <div class="vertically-align-force">
           <h1> Feeling lonely? <h1>
@@ -52,7 +66,7 @@
           <% end %>
         </div>
       </div>
-      
+
       <div style="height:80vh" class="text-center">
         <div class="vertically-align-force">
           <h1> Want more? <h1>

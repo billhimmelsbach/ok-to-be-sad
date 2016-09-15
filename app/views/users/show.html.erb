@@ -31,8 +31,12 @@
 
 <% if @user.articles.distinct.count < 1 || nil %>
   <div class="index-container col-xs-12 container-fluid well text-center">
-    <h1>Let's start by adding some of your favorite things!</h1>
-    <h2><%= link_to "Click here", new_article_path %> to start!</h2>
+    <h1>Welcome! Let's start by adding some of your favorite things!</h1>
+    <h2> Click
+      <%= link_to new_article_path, class: "btn btn-primary btn-success" do %>
+        <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i>
+      <% end %>
+    to start!</h2>
   </div>
 <% end %>
 
