@@ -57,7 +57,7 @@ rails s
 
 ### User Stories
 
-# [Link to User Stories] (https://docs.google.com/document/d/13yL4hnpr4J_7JZDuwjrke1BPLr7o-x7Scbo60_yEkFE/edit?usp=sharing)
+##### [Link to User Stories] (https://docs.google.com/document/d/13yL4hnpr4J_7JZDuwjrke1BPLr7o-x7Scbo60_yEkFE/edit?usp=sharing)
 
 
 ### ERD
