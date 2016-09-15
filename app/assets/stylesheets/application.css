@@ -341,7 +341,7 @@ h1, h2, h3, h4, h5, h6, i, a, .btn, .font {
   width:auto;
 }
 
-.form-partials {
+.form-partials, .new-user-text {
   display:none;
 }
 
@@ -437,6 +437,11 @@ h2 {
   margin-bottom:15vh;
 }
 
+.img-splash {
+  height:50vh !important;
+  width: 40vh !important;
+}
+
 
 /*media queries for mobile*/
 @media only screen and (max-width: 770px) {
@@ -467,7 +472,7 @@ h2 {
     font-size: 1.8em !important;
   }
 
-  .bottom-nav-div, .show-mobile, .cog, .newusertext {
+  .bottom-nav-div, .show-mobile, .cog, .new-user-text {
     display: block !important;
     visibility: visible !important;
   }
@@ -485,7 +490,7 @@ h2 {
     padding: 0 0 60px;
   }
 
-  .nav-div {
+  .nav-div, .made-mobile {
       display:none;
   }
 

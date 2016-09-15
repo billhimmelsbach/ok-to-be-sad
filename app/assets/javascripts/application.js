@@ -79,7 +79,7 @@ $(document).on('turbolinks:load', function(){
   });
 
   //a recursive function that continually runs the bounce animations when on the splash page
-  if (($('.newusertext').length)==1) {
+  if (($('.new-user-text').length)==1) {
     var timeout = 7000;
     var action = function() {
         $splashSwipeRightIcon.animateCss('bounceInLeft');
@@ -90,7 +90,7 @@ $(document).on('turbolinks:load', function(){
   }
 
   //if the user is on index carousel, creates a brief animation to show swipe direction
-  if (($('.newusertext').length)!=1) {
+  if (($('.new-user-text').length)!=1) {
     setTimeout(function() {
       $('.swipe-right-icon').fadeIn();
     }, 1000);
