@@ -2,9 +2,10 @@
   <div class="new-article">
     <%= bootstrap_form_for @article do |f| %>
       <%= f.text_field :title, placeholder: 'The Best Cat Photo Ever Taken', maxlength: 75, required: true%>
+      <br>
       <%= f.uploadcare_uploader :content, :data => {:images_only => true, :image_shrink => "800x800", :clearable => true } %>
       <%= f.hidden_field :content_type, :value => "image" %>
-      <br>
+      <br><br><br>
       <div class="text-center">
       <%= render "layouts/form_buttons_large" %>
     <% end %>
