@@ -129,10 +129,10 @@ $(document).on('turbolinks:load', function(){
   //enables the use of keyboard buttons as a shortcut to the owl carousel
   $(document.documentElement).keyup(function(event) {
     if (event.keyCode==37) {
-      owl.trigger('prev.owl.carousel', [300]);
+      $owl.trigger('prev.owl.carousel', [300]);
     }
     else if (event.keyCode==39) {
-      owl.trigger('next.owl.carousel');
+      $owl.trigger('next.owl.carousel');
     }
   });
 
