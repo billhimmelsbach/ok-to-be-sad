@@ -80,7 +80,7 @@ $(document).on('turbolinks:load', function(){
 
   //a recursive function that continually runs the bounce animations when on the splash page
   if (($('.new-user-text').length)==1) {
-    var timeout = 7000;
+    var timeout = 5500;
     var action = function() {
         $splashSwipeRightIcon.animateCss('bounceInLeft');
         $splashPageBounce.animateCss('bounce');
