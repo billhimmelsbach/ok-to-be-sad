@@ -1,5 +1,4 @@
 <%= render :partial => "layouts/flash_messages" %>
-
 <!-- show cog only if user owns the account -->
 <% if current_user != nil && current_user.id== @user.id %>
   <div class="drop-down-profile">
@@ -16,6 +15,7 @@
   </div>
 <% end %>
 
+<!-- user information -->
 <div class="profile-photo">
   <img src="<%= @user.image%>" class="product_img img-responsive img-circle">
 </div>
