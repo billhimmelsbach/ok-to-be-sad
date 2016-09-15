@@ -2,7 +2,7 @@
 #####[http://oktobesad.herokuapp.com] (http://oktobesad.herokuapp.com)
 
 
-*Do you have a favorite song or YouTube video that always seems to cheer you up? Ok To Be Sad makes your favorite media immediately accessible from your phone when you need it the most. The app meets you wherever you are, with a mobile first design and a user-centric philosophy. If your favorite content isn't enough to brighten your day, tap into Ok To Be Sad's community with its robust, instantaneous chat support. Ok To Be Sad: a community when you need it the most.*
+Do you have a favorite song or YouTube video that always seems to cheer you up? Ok To Be Sad makes your favorite media immediately accessible from your phone when you need it the most. The app meets you wherever you are, with a mobile first design and a user-centric philosophy. If your favorite content isn't enough to brighten your day, tap into Ok To Be Sad's community with its robust, instantaneous chat support. Ok To Be Sad: a community when you need it the most.
 
 
 ### Technologies Used
@@ -101,5 +101,5 @@ User Profile:
 + Create an admin account that can delete messages from the general chat. Consider also putting a cap on messages allowed per time period
 + Allow user to search for YouTube videos though the YT gem and Spotify songs through the Spotify API in a more user friendly way
 + Add the social sharing gem for sharing of articles on Facebook and Twitter
-+ Consider switching to an AJAX/polling method for messaging for scalability 
++ Consider switching to an AJAX/polling method for messaging for scalability
 + Long Term Goal: Replace Owl/Livestamp with the React framework
