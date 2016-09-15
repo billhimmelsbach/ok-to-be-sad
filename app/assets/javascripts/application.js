@@ -115,7 +115,7 @@ $(document).on('turbolinks:load', function(){
     margin:5,
     video:true,
     nav: false,
-    autoHeight:true,
+    // autoHeight:true,
     dots:false
   });
 
