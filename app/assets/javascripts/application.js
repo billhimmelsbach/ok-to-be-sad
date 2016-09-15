@@ -31,7 +31,7 @@ $.fn.extend({
 
 $(document).on('turbolinks:load', function(){
 
-//repeated cached in variables for performance
+//repeatedly called jquery selectors cached in variables for performance
   var $formButtons = $(".form-icons");
   var $formPartials = $(".form-partials");
   var $videoFormButton = $("#video-form-button");
