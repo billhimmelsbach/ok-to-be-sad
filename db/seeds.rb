@@ -5,7 +5,7 @@ USERS = [
     email: "test@test.com",
     password: "test",
     password_confirmation: "test",
-    image: "https://ucarecdn.com/41f452c8-6397-430a-8515-98e621f1b914/"
+    image: "https://ucarecdn.com/c2ecbac9-d17a-4cbd-98c8-3c4847fdb19f/-/resize/500x500/"
   },
   {
     first_name: "Nathan",
@@ -166,7 +166,7 @@ ARTICLES = [
     content_type: "image",
     user_id: 1
   },
-    
+
 ]
 
 

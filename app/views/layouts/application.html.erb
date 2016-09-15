@@ -3,22 +3,29 @@
 <head>
   <title>OkToBeSad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/owl.carousel.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+  <!-- CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.carousel.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.theme.default.min.css" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/lumen/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+  <!-- Javascript Libraries-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.0/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/livestamp/1.1.2/livestamp.min.js"></script>
 
+<!-- Upload Care -->
   <%= include_uploadcare_widget_from_cdn version: "2.9.0", min: true %>
-
   <script>
     UPLOADCARE_LOCALE = "en";
     UPLOADCARE_TABS = "file url camera facebook gdrive dropbox instagram flickr skydrive";
@@ -26,15 +33,20 @@
   </script>
 
 </head>
+
 <body>
+
+  <!-- Desktop Navbar -->
   <div class="col-xs-12">
     <div class="nav-div">
       <header>
         <nav class="navbar navbar-default navbar-fixed-top">
           <div class="col-xs-12 navbar-header" style="padding-left:-10px">
+
             <div class="col-xs-3 pull-left">
               <a href="/" class="navbar-brand">Ok To Be Sad</a>
             </div>
+
             <div class="col-xs-9 pull-right">
               <ul class="nav navbar-nav v-align pull-right">
                 <li>
@@ -44,6 +56,7 @@
                     <%= link_to "New Post", new_session_path, :class => "pull-right btn blue-grey lighten-3" %>
                   <% end %>
                 </li>
+
                 <% if current_user %>
                   <ul class="nav navbar-nav">
                     <li class="dropdown">
@@ -57,16 +70,19 @@
                         </ul>
                     </li>
                   </ul>
-              </ul>
+                </ul>
+
               <% else %>
                 <li><%= link_to "Sign up", new_user_path %></li>
                 <li><%= link_to "Log In", new_session_path %></li>
               <% end %>
+
             </div>
           </div>
         </nav>
       </header>
     </div>
+
 
     <main>
       <div class ="row">
@@ -76,30 +92,37 @@
       </div>
     </main>
 
+
+<!-- Mobile Navbar -->
     <% if current_user %>
       <div class="row">
         <div class="col-xs-12 navbar navbar-fixed-bottom bottom-nav-div">
           <div class="row" id="bottomNav">
+
             <div class="col-xs-3 text-center">
               <%= link_to :back do %><br>
                 <i class="fa fa-arrow-circle-left fa-navbar fa-2x" aria-hidden="false"></i>
               <% end %>
             </div>
+
             <div class="col-xs-3 text-center">
               <%= link_to root_path do %><br>
                 <i class="fa fa-home fa-navbar fa-2x" aria-hidden="false"></i>
               <% end %>
             </div>
+
             <div class="col-xs-3 text-center">
               <%= link_to new_article_path do %><br>
                 <i class="fa fa-plus-circle fa-navbar fa-2x" aria-hidden="false"></i>
               <% end %>
             </div>
+
             <div class="col-xs-3 text-center">
               <%= link_to user_path(current_user) do %><br>
                 <i class="fa fa-user fa-navbar fa-2x" aria-hidden="false"></i>
               <% end %>
             </div>
+
           <% end %>
         </div>
       </div>
