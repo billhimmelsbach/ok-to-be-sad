@@ -434,7 +434,6 @@ h2 {
 
 .spacer {
   display: none;
-  margin-bottom:15vh;
 }
 
 .img-splash {
@@ -568,5 +567,6 @@ h2 {
 
   .spacer {
     display: block;
+    margin-bottom:15vh;
   }
 }
