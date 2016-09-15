@@ -46,16 +46,16 @@ $(document).on('turbolinks:load', function(){
     $formPartials.hide();
     $(form).fadeIn(150);
     $formButtons.removeClass("click-red click-yellow click-green click-orange");
-    if (form == "#video-form") {
+    if (form=="#video-form") {
       $videoFormButton.addClass("click-red");
     }
-    if (form == "#image-form") {
+    if (form=="#image-form") {
       $imageFormButton.addClass("click-yellow");
     }
-    if (form == "#song-form") {
+    if (form=="#song-form") {
       $songFormButton.addClass("click-green");
     }
-    if (form == "#quote-form") {
+    if (form=="#quote-form") {
       $quoteFormButton .addClass("click-orange");
     }
   };
@@ -128,10 +128,10 @@ $(document).on('turbolinks:load', function(){
 
   //enables the use of keyboard buttons as a shortcut to the owl carousel
   $(document.documentElement).keyup(function(event) {
-    if (event.keyCode == 37) {
+    if (event.keyCode==37) {
       owl.trigger('prev.owl.carousel', [300]);
     }
-    else if (event.keyCode == 39) {
+    else if (event.keyCode==39) {
       owl.trigger('next.owl.carousel');
     }
   });
