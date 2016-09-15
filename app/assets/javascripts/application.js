@@ -109,11 +109,22 @@ $(document).on('turbolinks:load', function(){
 
   //sets the owl carousel options
   $owl.owlCarousel({
-    items:1,
-    margin:5,
-    video:true,
-    nav: false,
-    dots:false
+    responsive : {
+      0 : {
+        items: 1,
+        margin: 5,
+        video: true,
+        nav: false,
+        dots: false,
+      },
+      768 : {
+        margin: 200,
+        items: 2,
+        video:true,
+        nav: false,
+        dots: false,
+      }
+    }
   });
 
   //sets the form content type by stashing it in a data tag set by ruby
