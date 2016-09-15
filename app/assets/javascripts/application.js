@@ -41,6 +41,10 @@ $(document).on('turbolinks:load', function(){
   var $splashSwipeRightIcon = $('.splash-swipe-right-icon');
   var $splashPageBounce = $('.splash-page-bounce');
 
+  //cog menu toggling for iOS and Android
+  var toggle_touch = 0;
+  var toggle_click = 0;
+
   //handles showing and hiding forms
   var formSelect = function(form) {
     $formPartials.hide();
@@ -151,8 +155,7 @@ $(document).on('turbolinks:load', function(){
   //dynamically scales text size using fitText for quotes
   $(".quote-title").fitText(2.0);
 
-  //a poorly executed toggle switch for handling cog action on all iOS and Android devices
-  toggle_click = 0;
+  //a toggle switch for handling cog action on all iOS and Android devices
   $('#cog').on("touchstart", function(e) {
     if (toggle_click ===0) {
       $(".dropdown-content").show();
@@ -165,7 +168,6 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
-  toggle_touch = 0;
   $('#cog').on("click", function(e) {
     if (toggle_touch ===0) {
       $(".dropdown-content").show();
