@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    render :new
   end
 
   def create
@@ -23,7 +22,6 @@ class UsersController < ApplicationController
 
   def show
     @articles = @user.articles.order("updated_at DESC")
-    render :show
   end
 
   def edit
