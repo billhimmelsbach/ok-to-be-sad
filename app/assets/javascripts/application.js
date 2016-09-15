@@ -121,8 +121,8 @@ $(document).on('turbolinks:load', function(){
         margin: 600,
         items: 1,
         video:true,
-        nav: false,
-        dots: false,
+        nav: true,
+        dots: true,
         stagePadding: 300,
       }
     }
