@@ -1,8 +1,8 @@
-<%= render :partial => "layouts/flash_messages"%>
-<% if current_user != nil && current_user.id == @user.id %>
+<%= render :partial => "layouts/flash_messages" %>
+<% if current_user != nil && current_user.id== @user.id %>
   <div class="dropdownprofile">
-    <div class = "show-mobile">
-      <div id ="cog" class="glyphy-cog fa-cog fa fa-3x"></div>
+    <div class="show-mobile">
+      <div id="cog" class="glyphy-cog fa-cog fa fa-3x"></div>
     </div>
     <div class="dropdown-content">
       <br>
@@ -22,7 +22,7 @@
 <h4>Date Joined:
   <%= @user.created_at.localtime.strftime("%B #{@user.created_at.day.ordinalize}, %Y") %>
 </h4>
-<div class= "show-mobile text-center">
+<div class="show-mobile text-center">
   <i class="fa fa-angle-double-down bounce animated scroll-down fa-5x" aria-hidden="true"></i>
 </div>
   <% @articles.each do |article| %>
@@ -35,11 +35,11 @@
       <% end %>
 
       <% if article.content_type == "image" %>
-        <div class="text-center"> <img class = "img-responsive" style="max-height:60vh; width:auto;" src="<%= article.content %>"> <h1><%= article.title %></div>
+        <div class="text-center"> <img class="img-responsive" style="max-height:60vh; width:auto;" src="<%= article.content %>"> <h1><%= article.title %></div>
       <% end %>
 
       <% if article.content_type == "video" %>
-        <div class = "embed-container">
+        <div class="embed-container">
           <iframe class="ytplayer" type="text/html"
             src="https://www.youtube.com/embed/<%= youtube_embed(article.content) %>"
             frameborder="0">
@@ -48,8 +48,8 @@
       <% end %>
 
       <% if article.content_type == "song" %>
-        <div style = "height: 25vh;">
-          <div style= "text-align:center; width:100%; height:25vh;">
+        <div style="height: 25vh;">
+          <div style="text-align:center; width:100%; height:25vh;">
             <iframe class ="vertically-align-force" src="https://embed.spotify.com/?uri=spotify:track:<%= article.content[-22..-1] %>" width="300" height="80" frameborder="0" aligb="middle" allowtransparency="true"></iframe>
           </div>
         </div>
@@ -57,12 +57,12 @@
 
       <% if article.content_type == "quote" %>
         <div>
-          <p class = "quote-title"><%= article.content %></p>
-          <p class = "quote-title">-<%= article.title %></p>
+          <p class="quote-title"><%= article.content %></p>
+          <p class="quote-title">-<%= article.title %></p>
         </div>
       <% end %>
 
-      <% if current_user != nil && current_user.id == article.user.id %>
+      <% if current_user != nil && current_user.id== article.user.id %>
         <div class="buttonrow">
           <%= link_to edit_article_path(article), class: "btn btn-info btn-primary" do %>
             <i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i>
@@ -73,7 +73,7 @@
           </button>
         </div>
         <br>
-          <div class = "row">
+          <div class="row">
             <div class="collapse" id="delete<%= article.id %>"><a> <br>
               <div class="well col-xs-8 col-xs-offset-2">
                 <h4 class="inline"> Are you sure you want to delete your article? </h4>

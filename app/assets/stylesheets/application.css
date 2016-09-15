@@ -130,6 +130,11 @@ p {
   height: 80%;
 }
 
+owl-fix {
+  width: 1px; min-width: 100%;
+}
+
+
 
 /*the following code block involves bootstrap overrides marked with important tags*/
 .navbar-brand>img {
