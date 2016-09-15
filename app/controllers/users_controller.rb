@@ -21,7 +21,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @articles = @user.articles.order("updated_at DESC")
+    if auth_route(@user)
+      @articles = @user.articles.order("updated_at DESC")
+    else
+      auth_fail("access other user's profiles", root_path)
+    end
   end
 
   def edit
