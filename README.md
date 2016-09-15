@@ -1,34 +1,10 @@
 # [Ok To Be Sad] (http://oktobesad.herokuapp.com)
+#####[http://oktobesad.herokuapp.com] (http://oktobesad.herokuapp.com)
 
-*Do you have a favorite song or YouTube video that always seems to cheer you up? Ok To Be Sad makes your favorite media immediately accessible from your phone when you need it the most. Once in  *
-
-### ERD
-Entity Relationship Diagram:
-![Entity Relationship Diagram](public/readme/ERD.png)
-
-### Wireframes
-Landing Page When Logged In:
-
-![Landing Page When Logged In](public/readme/articleindex.png)
-
-Splash Page When Not Logged In:
-
-![Landing Page When Logged In](public/readme/splashscreen.png)
-
-Sign Up:
-
-![Sign Up](public/readme/signup.png)
-
-Article Forms:
-
-![Article Forms](public/readme/forms.png)
-
-User Profile:
-
-![User Show Page](public/readme/usershowpage.png)
+*Do you have a favorite song or YouTube video that always seems to cheer you up? Ok To Be Sad makes your favorite media immediately accessible from your phone when you need it the most. The app meets you wherever you are, with a mobile first design and a user-centric philosophy. If your favorite content isn't enough to brighten your day, tap into Ok To Be Sad's community with its robust, instantaneous chat support. Ok To Be Sad: a community when you need it the most.*
 
 
-### Technologies
+### Technologies Used
 + Ruby on Rails
 + Javascript / jQuery
 + WebSocket Implementation of Faye Instant Messaging
@@ -76,6 +52,43 @@ rails s
 ```
 
 + Use your browser to navigate to localhost:3000 or your default local port.
+
+### User Stories
+
+# [Link to User Stories] (https://docs.google.com/document/d/13yL4hnpr4J_7JZDuwjrke1BPLr7o-x7Scbo60_yEkFE/edit?usp=sharing)
+
+
+### ERD
+Entity Relationship Diagram:
+![Entity Relationship Diagram](public/readme/ERD.png)
+
+
+### Wireframes
+Landing Page When Logged In:
+
+![Landing Page When Logged In](public/readme/articleindex.png)
+
+Splash Page When Not Logged In:
+
+![Landing Page When Logged In](public/readme/splashscreen.png)
+
+Sign Up:
+
+![Sign Up](public/readme/signup.png)
+
+Article Forms:
+
+![Article Forms](public/readme/forms.png)
+
+User Profile:
+
+![User Show Page](public/readme/usershowpage.png)
+
+
+
+
+
+
 
 
 ### Planned Features
