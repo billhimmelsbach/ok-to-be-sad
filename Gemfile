@@ -39,6 +39,9 @@ gem 'faye-rails', '~> 2.0'
 
 gem 'thin'
 
+gem 'rspec'
+
+gem 'factory-girl'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

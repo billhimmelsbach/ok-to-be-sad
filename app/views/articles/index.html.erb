@@ -3,7 +3,7 @@
     <i class= "fa fa-angle-double-right fa-5x text-center swipe-icon animated bounceInLeft" aria-hidden="true"></i>
   </div>
 <% if current_user == nil %>
-  <div class="col-xs-10 col-xs-offset-1" style="height:70vh;">
+  <div class="col-xs-10 col-xs-offset-1" style="height:100%;">
     <div class="newusertext text-center" data-splash="true">
       <div style="height:100%";>
         <div class="wrapper">
@@ -17,7 +17,7 @@
     </div>
     <br>
     <div class="row">
-      <div class="owl-carousel owl-theme text-center" style="width: 1px; min-width: 100%;">
+      <div class="owl-carousel owl-theme text-center" style="width: 1px; min-width: 100%; height:120%;">
         <div style="height 80vh;">
           <figure>
             <img src="https://i.imgur.com/jN4sURQ.png" alt="share mockup">
@@ -39,7 +39,8 @@
         </div>
       </div>
     </div>
-      <div class="text-center" style="65vh;">
+  </div>
+      <div class="text-center">
         <%= link_to new_user_path, class: "btn btn-success splash-button-container" do %>
           <i class="fa fa-user-plus fa-2x splash-button" aria-hidden="true"><br><span class="font">Sign Up</span></i>
         <% end %>
