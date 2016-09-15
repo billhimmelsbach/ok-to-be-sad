@@ -8,18 +8,23 @@ Entity Relationship Diagram:
 
 ### Wireframes
 Landing Page When Logged In:
+
 ![Landing Page When Logged In](public/wireframes/articleindex.png)
 
 Splash Page When Not Logged In:
+
 ![Landing Page When Logged In](public/wireframes/splashscreen.png)
 
 Sign Up:
+
 ![Sign Up](public/wireframes/signup.png)
 
 Article Forms:
+
 ![Article Forms](public/wireframes/forms.png)
 
 User Profile:
+
 ![User Show Page](public/wireframes/usershowpage.png)
 
 
@@ -32,9 +37,10 @@ User Profile:
 + Livestamp jQuery Library for Timestamp Live Updates
 + UploadCare Media Uploading
 
+
 ### Installation Steps
 
-+ Clone this repository using this command in your terminal (you may want to fork and then clone if you wish to contribute):
++ Clone this repository using git clone in your terminal (you may want to fork and then clone if you wish to contribute):
 ```
 git clone https://github.com/billhimmelsbach/ok-to-be-sad.git
 ```
@@ -59,12 +65,17 @@ rake db:create
 rake db:migrate
 ```
 
++ Seed the database with the demo user's data by using rake db:seed in your terminal:
+```
+rake db:seed
+```
+
 + Start the Rails server using your terminal:
 ```
 rails s
 ```
-Start the server by typing rails server in the terminal
-Open your browser and input localhost:3000 or whatever is displayed in your terminal after running the server
+
++ Use your browser to navigate to localhost:3000 or your default local port.
 
 
 ### Planned Features
