@@ -4,28 +4,28 @@
 
 ### ERD
 Entity Relationship Diagram:
-![Entity Relationship Diagram](public/wireframes/ERD.png)
+![Entity Relationship Diagram](public/readme/ERD.png)
 
 ### Wireframes
 Landing Page When Logged In:
 
-![Landing Page When Logged In](public/wireframes/articleindex.png)
+![Landing Page When Logged In](public/readme/articleindex.png)
 
 Splash Page When Not Logged In:
 
-![Landing Page When Logged In](public/wireframes/splashscreen.png)
+![Landing Page When Logged In](public/readme/splashscreen.png)
 
 Sign Up:
 
-![Sign Up](public/wireframes/signup.png)
+![Sign Up](public/readme/signup.png)
 
 Article Forms:
 
-![Article Forms](public/wireframes/forms.png)
+![Article Forms](public/readme/forms.png)
 
 User Profile:
 
-![User Show Page](public/wireframes/usershowpage.png)
+![User Show Page](public/readme/usershowpage.png)
 
 
 ### Technologies
