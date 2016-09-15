@@ -118,11 +118,12 @@ $(document).on('turbolinks:load', function(){
         dots: false,
       },
       768 : {
-        margin: 200,
-        items: 2,
+        margin: 600,
+        items: 1,
         video:true,
         nav: false,
         dots: false,
+        stagePadding: 300,
       }
     }
   });
